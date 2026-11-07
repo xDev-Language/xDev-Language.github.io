@@ -2,10 +2,10 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
-const crypto = require('node:crypto');
 const { parseSource } = require('./xdev-doc-parser');
 
 const ROOT = path.resolve(__dirname, '..');
+
 const CATEGORIES = [
   { id: 'core', folder: 'Function core', name: 'Functions core', group: 'RTL', description: 'Strings, numbers, dates, arrays and file operations.' },
   { id: 'gt', folder: 'Function GT', name: 'Functions GT', group: 'RTL', description: 'Terminal settings and graphics-driver interfaces.' },
@@ -31,100 +31,277 @@ const CATEGORIES = [
   { id: 'commands', folder: 'Commands', name: 'Commands', group: 'Language', description: 'Database, file and environment commands.' },
   { id: 'directives', folder: 'Directives', name: 'Directives', group: 'Language', description: 'Preprocessor directives and compile-time definitions.' },
   { id: 'operators', folder: 'Operators', name: 'Operators', group: 'Language', description: 'Expressions, comparisons and logical operations.' },
-  { id: 'statements', folder: 'Statements', name: 'Statements', group: 'Language', description: 'Declarations, control flow and program structure.' }
+  { id: 'statements', folder: 'Statements', name: 'Statements', group: 'Language', description: 'Declarations, control flow and program structure.' },
 ];
 
 function slug(value) {
-  return value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
-    .replace(/[^a-z0-9_-]+/g, '-').replace(/^-|-$/g, '') || 'entry';
+  return (
+    value
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9_-]+/g, '-')
+      .replace(/^-|-$/g, '') || 'entry'
+  );
 }
 
-function sourceCollections(root) {
-  return [
-    { id: 'examples', name: 'Examples', directory: 'examples' },
-    { id: 'tests', name: 'Tests', directory: 'tests' },
-    { id: 'rosetta-code', name: 'Rosetta Code', directory: 'examples/rosetta-code' }
-  ].map(collection => {
-    const files = []; const diagnostics = [];
-    function walk(directory) {
-      if (!fs.existsSync(directory)) return;
-      for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
-        const file = path.join(directory, entry.name);
-        if (entry.isDirectory()) {
-          if (collection.id !== 'examples' || path.relative(root, file).split(path.sep).join('/') !== 'examples/rosetta-code') walk(file);
-        }
-        else if (entry.isFile()) {
-          const relative = path.relative(root, file).split(path.sep).join('/');
-          if (!/\.prg$/i.test(entry.name) && relative !== 'examples/UTF-8-demo.txt') continue;
-          const source = fs.readFileSync(file, 'utf8');
-          const kind = /\.prg$/i.test(entry.name) ? 'prg' : 'text';
-          const parsed = kind === 'prg' ? parseSource(source) : { documents: [], diagnostics: [] };
-          diagnostics.push(...parsed.diagnostics.map(message => `${relative}: ${message}`));
-          const document = parsed.documents[0];
-          const sections = document?.sections || {};
-          const reference = (sections.EXAMPLES || '').trim().replace(/\\/g, '/').replace(/^\.\//, '');
-          const ownSource = !reference || reference === relative || reference === entry.name;
-          const viewPath = relative.replace(/\.[^/.]+$/, '.html');
-          files.push({ path: relative, name: relative.slice(collection.directory.length + 1),
-            url: relative.split('/').map(encodeURIComponent).join('/'), viewPath,
-            viewUrl: viewPath.split('/').map(encodeURIComponent).join('/'),
-            title: sections.NAME || entry.name, summary: (sections.ONELINER || '').replace(/\s+/g, ' ').trim(),
-            sections, kind, source, example: document ? (ownSource ? document.sourceExample : sections.EXAMPLES) : source });
-        }
-      }
+function toPosixPath(relativePath) {
+  return relativePath.split(path.sep).join('/');
+}
+
+function encodePathSegments(relativePath) {
+  return relativePath.split('/').map(encodeURIComponent).join('/');
+}
+
+const SOURCE_COLLECTIONS = [
+  { id: 'examples', name: 'Examples', directory: 'examples' },
+  { id: 'tests', name: 'Tests', directory: 'tests' },
+  { id: 'rosetta-code', name: 'Rosetta Code', directory: 'examples/rosetta-code' },
+];
+
+function documentImages(root, sourcePath, sections, diagnostics) {
+  const images = [];
+  const names = (sections.IMAGE || '').split('\n').map((line) => line.trim()).filter(Boolean);
+
+  for (const name of new Set(names)) {
+    if (!/\.png$/i.test(name) || /[\\/:\x00-\x1f]/.test(name)) {
+      diagnostics.push(`${sourcePath}: $IMAGE$ requires a PNG filename without a directory: ${name}`);
+      continue;
     }
-    walk(path.join(root, collection.directory));
-    files.sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
-    return { ...collection, url: `${collection.directory}/index.html`, files, diagnostics };
-  });
+
+    const relativePath = toPosixPath(path.join(path.dirname(sourcePath), 'images', name));
+    const filePath = path.join(root, relativePath);
+    if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
+      diagnostics.push(`${sourcePath}: $IMAGE$ file not found: ${relativePath}`);
+      continue;
+    }
+
+    const imageDirectory = fs.realpathSync(path.dirname(filePath)) + path.sep;
+    const outsideImages = !fs.realpathSync(filePath).startsWith(imageDirectory);
+    const outsideProject = !imageDirectory.startsWith(fs.realpathSync(root) + path.sep);
+    if (outsideImages || outsideProject) {
+      diagnostics.push(`${sourcePath}: $IMAGE$ must stay inside its local images directory: ${name}`);
+      continue;
+    }
+
+    const signature = fs.readFileSync(filePath).subarray(0, 8);
+    if (!signature.equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
+      diagnostics.push(`${sourcePath}: $IMAGE$ is not a PNG file: ${relativePath}`);
+      continue;
+    }
+
+    images.push({ name, path: relativePath, url: encodePathSegments(relativePath) });
+  }
+  return images;
 }
 
-function loadCatalog(root = ROOT) {
-  const documents = []; const diagnostics = []; const sourceParts = [];
-  for (const category of CATEGORIES) {
-    const directory = path.join(root, 'content', category.folder);
-    if (!fs.existsSync(directory)) continue;
-    const files = fs.readdirSync(directory).filter(file => file.toLowerCase().endsWith('.prg')).sort();
-    for (const file of files) {
-      const source = fs.readFileSync(path.join(directory, file), 'utf8');
-      sourceParts.push(category.id, file, source);
-      const parsed = parseSource(source);
-      if (!parsed.documents.length && !parsed.diagnostics.length) parsed.diagnostics.push('No $DOC$ documentation block found.');
-      diagnostics.push(...parsed.diagnostics.map(message => `${category.folder}/${file}: ${message}`));
-      parsed.documents.forEach((doc, index) => {
-        const base = slug(path.basename(file, path.extname(file)));
-        const id = index ? `${base}-${index + 1}` : base;
-        documents.push({ ...doc, id, category: category.id, name: doc.sections.NAME || path.basename(file, '.prg'),
-          summary: (doc.sections.ONELINER || '').replace(/\s+/g, ' ').trim(),
-          url: `reference/${category.id}/${id}.html`,
-          sourceUrl: `content/${category.folder.split('/').map(encodeURIComponent).join('/')}/${encodeURIComponent(file)}`, sourceFile: file });
+function buildSourceCollection(collection, root) {
+  const files = [];
+  const diagnostics = [];
+
+  function walk(directory) {
+    if (!fs.existsSync(directory)) {
+      return;
+    }
+
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const filePath = path.join(directory, entry.name);
+      const relativePath = toPosixPath(path.relative(root, filePath));
+
+      if (entry.isDirectory()) {
+        // Rosetta Code has its own collection.
+        const isRosettaInsideExamples =
+          collection.id === 'examples' && relativePath === 'examples/rosetta-code';
+
+        if (!isRosettaInsideExamples) {
+          walk(filePath);
+        }
+        continue;
+      }
+
+      if (!entry.isFile()) {
+        continue;
+      }
+
+      const isPrg = /\.prg$/i.test(entry.name);
+      const isUtf8Demo = relativePath === 'examples/UTF-8-demo.txt';
+
+      if (!isPrg && !isUtf8Demo) {
+        continue;
+      }
+
+      const source = fs.readFileSync(filePath, 'utf8');
+      const kind = isPrg ? 'prg' : 'text';
+      const parsed = kind === 'prg'
+        ? parseSource(source)
+        : { documents: [], diagnostics: [] };
+
+      for (const message of parsed.diagnostics) {
+        diagnostics.push(`${relativePath}: ${message}`);
+      }
+
+      const document = parsed.documents[0];
+      const sections = document?.sections || {};
+
+      const reference = (sections.EXAMPLES || '')
+        .trim()
+        .replace(/\\/g, '/')
+        .replace(/^\.\//, '');
+      const ownSource =
+        !reference || reference === relativePath || reference === entry.name;
+
+      let example;
+      if (!document) {
+        example = source;
+      } else if (ownSource) {
+        example = document.sourceExample;
+      } else {
+        example = sections.EXAMPLES;
+      }
+
+      const viewPath = relativePath.replace(/\.[^/.]+$/, '.html');
+
+      files.push({
+        path: relativePath,
+        name: relativePath.slice(collection.directory.length + 1),
+        url: encodePathSegments(relativePath),
+        viewPath,
+        viewUrl: encodePathSegments(viewPath),
+        title: sections.NAME || entry.name,
+        summary: (sections.ONELINER || '').replace(/\s+/g, ' ').trim(),
+        sections,
+        images: documentImages(root, relativePath, sections, diagnostics),
+        kind,
+        source,
+        example,
       });
     }
   }
-  const urls = new Set();
-  for (const doc of documents) {
-    if (urls.has(doc.url)) throw new Error(`Duplicate documentation URL: ${doc.url}`);
-    urls.add(doc.url);
-  }
-  documents.sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
-  const categories = CATEGORIES.map(category => ({ ...category,
-    count: documents.filter(doc => doc.category === category.id).length, url: `reference/${category.id}/index.html` }));
-  const collections = sourceCollections(root);
-  diagnostics.push(...collections.flatMap(collection => collection.diagnostics));
-  const pageUrls = new Set(['index.html', 'reference/index.html', ...categories.map(category => category.url), ...urls]);
-  for (const collection of collections) {
-    for (const url of [collection.url, ...collection.files.map(file => file.viewUrl)]) {
-      if (pageUrls.has(url)) throw new Error(`Duplicate documentation URL: ${url}`);
-      pageUrls.add(url);
+
+  walk(path.join(root, collection.directory));
+
+  files.sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
+
+  return {
+    ...collection,
+    url: `${collection.directory}/index.html`,
+    files,
+    diagnostics,
+  };
+}
+
+function loadCatalog(root = ROOT) {
+  const documents = [];
+  const diagnostics = [];
+
+  for (const category of CATEGORIES) {
+    const directory = path.join(root, 'content', category.folder);
+
+    if (!fs.existsSync(directory)) {
+      continue;
+    }
+
+    const prgFiles = fs
+      .readdirSync(directory)
+      .filter((file) => file.toLowerCase().endsWith('.prg'))
+      .sort();
+
+    for (const file of prgFiles) {
+      const source = fs.readFileSync(path.join(directory, file), 'utf8');
+
+      const parsed = parseSource(source);
+
+      if (!parsed.documents.length && !parsed.diagnostics.length) {
+        parsed.diagnostics.push('No $DOC$ documentation block found.');
+      }
+
+      for (const message of parsed.diagnostics) {
+        diagnostics.push(`${category.folder}/${file}: ${message}`);
+      }
+
+      parsed.documents.forEach((doc, index) => {
+        const base = slug(path.basename(file, path.extname(file)));
+        const id = index > 0 ? `${base}-${index + 1}` : base;
+        const name = doc.sections.NAME || path.basename(file, '.prg');
+
+        documents.push({
+          ...doc,
+          id,
+          category: category.id,
+          name,
+          summary: (doc.sections.ONELINER || '').replace(/\s+/g, ' ').trim(),
+          url: `reference/${category.id}/${id}.html`,
+          sourceUrl: `content/${encodePathSegments(category.folder)}/${encodeURIComponent(file)}`,
+          sourceFile: file,
+          images: documentImages(root, `content/${category.folder}/${file}`, doc.sections, diagnostics),
+        });
+      });
     }
   }
-  return { documents, categories, collections, diagnostics,
-    version: crypto.createHash('sha256').update(sourceParts.join('\0')).digest('hex').slice(0, 20) };
+
+  documents.sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
+
+  const categories = CATEGORIES.map((category) => ({
+    ...category,
+    count: documents.filter((doc) => doc.category === category.id).length,
+    url: `reference/${category.id}/index.html`,
+  }));
+
+  const collections = SOURCE_COLLECTIONS.map((collection) => buildSourceCollection(collection, root));
+
+  for (const collection of collections) {
+    diagnostics.push(...collection.diagnostics);
+  }
+
+  const pageUrls = [
+    'index.html',
+    'reference/index.html',
+    ...categories.map((category) => category.url),
+    ...documents.map((doc) => doc.url),
+  ];
+
+  for (const collection of collections) {
+    pageUrls.push(collection.url, ...collection.files.map((file) => file.viewUrl));
+  }
+
+  const usedUrls = new Set();
+  for (const url of pageUrls) {
+    if (usedUrls.has(url)) {
+      throw new Error(`Duplicate documentation URL: ${url}`);
+    }
+    usedUrls.add(url);
+  }
+
+  const images = new Map();
+  const entries = [
+    ...documents,
+    ...collections.flatMap((collection) => collection.files),
+  ];
+  for (const entry of entries) {
+    for (const image of entry.images) {
+      images.set(image.path, image);
+    }
+  }
+
+  return {
+    documents,
+    categories,
+    collections,
+    images: [...images.values()],
+    diagnostics,
+  };
 }
 
 function publicCatalog(catalog) {
-  return { categories: catalog.categories, documents: catalog.documents.map(({ name, summary, category, url }) =>
-    ({ name, summary, category, url })) };
+  return {
+    categories: catalog.categories,
+    documents: catalog.documents.map(({ name, summary, category, url }) => ({
+      name,
+      summary,
+      category,
+      url,
+    })),
+  };
 }
 
-module.exports = { ROOT, CATEGORIES, loadCatalog, publicCatalog, slug };
+module.exports = { ROOT, loadCatalog, publicCatalog };

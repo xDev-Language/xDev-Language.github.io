@@ -59,6 +59,8 @@
  * @ reference to INT parameter  OK
  * function without AS           OK
  *
+ * $IMAGE$
+ *
  * $DOCEND$
  */
 

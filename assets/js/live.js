@@ -1,13 +1,38 @@
 'use strict';
 
 (() => {
-  const version = document.querySelector('meta[name="doc-version"]')?.content;
-  if (!version) return;
-  setInterval(async () => {
-    if (document.hidden) return;
+  const POLL_INTERVAL_MS = 1200;
+
+  const versionMeta = document.querySelector('meta[name="doc-version"]');
+  const version = versionMeta?.content;
+
+  if (!version) {
+    return;
+  }
+
+  const versionUrl = document.body.dataset.base + '__version';
+
+  async function checkForUpdate() {
+    if (document.hidden) {
+      return;
+    }
+
     try {
-      const response = await fetch(document.body.dataset.base + '__version', { cache: 'no-store' });
-      if (response.ok && await response.text() !== version) location.reload();
-    } catch {}
-  }, 1200);
+      const response = await fetch(versionUrl, { cache: 'no-store' });
+
+      if (!response.ok) {
+        return;
+      }
+
+      const latest = await response.text();
+
+      if (latest !== version) {
+        location.reload();
+      }
+    } catch {
+      // The local server may be restarting.
+    }
+  }
+
+  setInterval(checkForUpdate, POLL_INTERVAL_MS);
 })();

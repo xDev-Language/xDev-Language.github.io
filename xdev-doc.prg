@@ -11,6 +11,7 @@
  * $DESCRIPTION$ Detailed description.
  * $EXAMPLES$    Usage examples.
  * $OUTPUT$      Output description (e.g. a file or stream).
+ * $IMAGE$       PNG filenames, one per line, in images/ beside this .prg file.
  * $STATUS$      Status (e.g. R).
  * $COMPLIANCE$  Compatibility (e.g. H for xDev).
  * $PLATFORMS$   Supported platforms (e.g. All, Win).
