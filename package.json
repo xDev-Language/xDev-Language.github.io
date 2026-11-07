@@ -1,0 +1,12 @@
+{
+  "name": "xdev-documentation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "xDev language reference, generated from executable PRG documentation.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node tools/xdev-doc-server.js",
+    "build": "node tools/xdev-doc-build.js",
+    "test": "node --test tests/*.test.js"
+  }
+}
