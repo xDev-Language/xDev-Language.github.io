@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CToMonth( "November" ) OK
+ * CToMonth( "JUL" )      OK
+ * CToMonth( "xyz" )      OK
  *
  * $CATEGORY$
  *

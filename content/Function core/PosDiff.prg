@@ -23,6 +23,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * PosDiff( cString1, cString2 ) OK
+ * PosDiff( "AB", "ABC" )        OK
+ * PosDiff( "AB", "AB" )         OK
  *
  * $CATEGORY$
  *

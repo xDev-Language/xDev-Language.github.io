@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CToDoW( "Monday" ) OK
+ * CToDoW( "mon" )    OK
+ * CToDoW( "xyz" )    OK
  *
  * $CATEGORY$
  *

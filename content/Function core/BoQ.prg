@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * BoQ( SToD( "20261115" ) ) OK
+ * BoQ( SToD( "20260331" ) ) OK
  *
  * $CATEGORY$
  *

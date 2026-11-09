@@ -23,6 +23,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * RangeRem( 0, 31, cText )                 OK
+ * RangeRem( 91, 64, "A()&BC/?D" )          OK
+ * RangeRem( "0", "9", "Tel. 601 234 567" ) OK
  *
  * $CATEGORY$
  *

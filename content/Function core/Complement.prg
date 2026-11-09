@@ -21,6 +21,16 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Complement( .T. )                            OK
+ * Complement( .F. )                            OK
+ * Complement( 99 )                             OK
+ * Complement( -9.9 )                           OK
+ * Asc( Complement( "A" ) )                     OK
+ * Complement( Complement( "xDev" ) )           OK
+ * DToS( Complement( SToD( "19000101" ) ) )     OK
+ * DToS( Complement( SToD( "" ) ) )             OK
+ * Empty( Complement( SToD( "30000101" ) ) )    OK
+ * Complement( Complement( dToday ) ) == dToday OK
  *
  * $CATEGORY$
  *

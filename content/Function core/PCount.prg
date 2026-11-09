@@ -32,6 +32,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * 0
+ * 1
+ * 3
  *
  * $CATEGORY$
  * Function core

@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * DeleteFile( "deletefile.txt" ) OK
+ * File( "deletefile.txt" )       OK
+ * DeleteFile( "deletefile.txt" ) OK
  *
  * $CATEGORY$
  *

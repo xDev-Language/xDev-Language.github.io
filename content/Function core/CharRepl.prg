@@ -24,6 +24,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharRepl( "-", "2026-11-02", "." )   OK
+ * CharRepl( "abc", "aabbcc", "xyz" )   OK
+ * CharRepl( "abc", "aabbcc", "x" )     OK
+ * CharRepl( "ab", "ab", "bc" )         OK
+ * CharRepl( "ab", "ab", "bc", .T. )    OK
  *
  * $CATEGORY$
  *

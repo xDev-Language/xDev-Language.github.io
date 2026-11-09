@@ -24,6 +24,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * nTotal                         OK
+ * cList                          OK
  *
  * $CATEGORY$
  *

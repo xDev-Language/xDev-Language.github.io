@@ -25,6 +25,7 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharRelRep( "b", "b b b b", "1", "bbb11111", "x" ) OK
  *
  * $CATEGORY$
  *

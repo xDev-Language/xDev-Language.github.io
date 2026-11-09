@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * NToCMonth( 11 ) OK
+ * NToCMonth( 13 ) OK
  *
  * $CATEGORY$
  *

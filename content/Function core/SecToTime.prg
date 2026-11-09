@@ -22,6 +22,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * SecToTime( nEnd - nBegin )   OK
+ * SecToTime( 45873.22, .T. )   OK
+ * SecToTime( 45366.98 )        OK
+ * SecToTime( 90000 )           OK
  *
  * $CATEGORY$
  *

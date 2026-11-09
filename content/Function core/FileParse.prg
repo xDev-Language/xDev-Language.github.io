@@ -32,6 +32,18 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Record count: OK
+ * First record: OK
+ * Quoted delimiter: OK
+ * Quoted line ending: OK
+ * Final field: OK
+ * Custom delimiter: OK
+ * Malformed input discards all rows: OK
+ * Expected malformed error: OK
+ * Missing input: OK
+ * Expected I/O error: OK
+ * Expected delimiter error: OK
+ * Expected type error: OK
  *
  * $CATEGORY$
  * Function core

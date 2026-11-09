@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharOnly( "0123456789", cNip ) OK
+ * CharOnly( "an", "banana" )     OK
  *
  * $CATEGORY$
  *

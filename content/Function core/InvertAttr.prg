@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * InvertAttr( 7 )                       OK
+ * NToColor( InvertAttr( "W+/B" ), .T. ) OK
  *
  * $CATEGORY$
  *

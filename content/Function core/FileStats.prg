@@ -31,6 +31,20 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Metadata success: OK
+ * Byte size: OK
+ * Attributes are text: OK
+ * Creation date type: OK
+ * Creation date present: OK
+ * Creation seconds range: OK
+ * Change date type: OK
+ * Change seconds range: OK
+ * No outputs required: OK
+ * Missing file: OK
+ * Expected I/O error: OK
+ * Failure preserves output: OK
+ * Expected reference error: OK
+ * Expected argument error: OK
  *
  * $CATEGORY$
  * Function core

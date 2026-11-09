@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * ColorToN( "W/N" )  OK
+ * ColorToN( "W+/B" ) OK
+ * ColorToN( "N/W" )  OK
  *
  * $CATEGORY$
  *

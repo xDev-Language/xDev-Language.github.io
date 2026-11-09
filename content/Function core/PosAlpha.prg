@@ -23,6 +23,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * PosAlpha( cString )          OK
+ * PosAlpha( cString, .T. )     OK
+ * PosAlpha( cString, .F., 2 )  OK
+ * PosAlpha( "2026" )           OK
  *
  * $CATEGORY$
  *

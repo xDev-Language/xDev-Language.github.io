@@ -36,6 +36,27 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Return value: OK
+ * Hard delimiter found: OK
+ * More input remains: OK
+ * Content end offset: OK
+ * End including CRLF: OK
+ * Extracted contents: OK
+ * Final end: OK
+ * Final EOF: OK
+ * Word-wrapped end: OK
+ * Whitespace consumed: OK
+ * Wrap is not hard delimiter: OK
+ * No wrapping ignores width: OK
+ * Custom end: OK
+ * Custom next position: OK
+ * Tab affects wrapping: OK
+ * Tab byte skipped: OK
+ * Empty input EOF: OK
+ * Empty input offset: OK
+ * Expected width error: OK
+ * Expected delimiter-array error: OK
+ * Expected reference error: OK
  *
  * $CATEGORY$
  * Function core

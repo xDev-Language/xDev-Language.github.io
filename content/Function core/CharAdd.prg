@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharAdd( "01234", Chr( 1 ) )   OK
+ * CharAdd( "12345", Chr( 255 ) ) OK
  *
  * $CATEGORY$
  *

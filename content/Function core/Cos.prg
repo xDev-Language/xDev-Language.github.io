@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Cos( 0 )                      OK
+ * Round( Cos( Pi() / 4 ), 6 )   OK
+ * Round( Cos( Pi() / 2 ), 6 )   OK
+ * Round( Cos( DToR( 60 ) ), 6 ) OK
  *
  * $CATEGORY$
  *

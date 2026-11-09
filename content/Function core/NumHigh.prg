@@ -37,6 +37,27 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Zero: OK
+ * Numeric word: OK
+ * Hexadecimal word: OK
+ * Mixed case: OK
+ * One byte: OK
+ * Byte boundary: OK
+ * High bit: OK
+ * Maximum: OK
+ * Leading zeroes: OK
+ * Stop at invalid byte: OK
+ * Empty string: OK
+ * Non-hex first byte: OK
+ * Fraction discarded: OK
+ * Matches binary representation: OK
+ * Expected error: negative: OK
+ * Expected error: numeric range: OK
+ * Expected error: hexadecimal range: OK
+ * Expected error: logical: OK
+ * Expected error: NIL: OK
+ * Expected error: missing argument: OK
+ * Expected overflow: OK
  *
  * $CATEGORY$
  * Function core

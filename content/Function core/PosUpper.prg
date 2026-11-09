@@ -23,6 +23,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * PosUpper( cName )          OK
+ * PosUpper( cName, .T. )     OK
+ * PosUpper( cName, .F., 3 )  OK
  *
  * $CATEGORY$
  *

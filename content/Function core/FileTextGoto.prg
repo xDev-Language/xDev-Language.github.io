@@ -32,6 +32,14 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Return value: OK
+ * Requested record: OK
+ * Blank record: OK
+ * Clamp at last: OK
+ * Clamp at first: OK
+ * Fraction discarded: OK
+ * Expected type error: OK
+ * Expected missing line error: OK
  *
  * $CATEGORY$
  * Function core

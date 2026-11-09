@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * SinH( 0 )                OK
+ * Round( SinH( 1 ), 6 )    OK
+ * SinH( -1 ) == -SinH( 1 ) OK
  *
  * $CATEGORY$
  *

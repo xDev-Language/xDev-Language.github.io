@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * AllTrim( cName )                    OK
+ * "Hello, " + AllTrim( cName ) + "!"  OK
+ * AllTrim( "  " )                     OK
  *
  * $CATEGORY$
  *

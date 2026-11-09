@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Round( Cot( Pi() / 4 ), 6 ) OK
+ * Round( Cot( Pi() / 2 ), 6 ) OK
+ * Round( Cot( Pi() / 9 ), 6 ) OK
  *
  * $CATEGORY$
  *

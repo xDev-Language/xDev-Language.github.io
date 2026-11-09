@@ -36,6 +36,22 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Hash result: OK
+ * Automatic MAIN: OK
+ * Colon delimiter: OK
+ * Pipe delimiter: OK
+ * Quoted whitespace and marker: OK
+ * Doubled quote: OK
+ * Default case sensitivity: OK
+ * Insensitive section and key: OK
+ * No automatic MAIN: OK
+ * Repeated section merges: OK
+ * Expected malformed result: OK
+ * Expected malformed I/O error: OK
+ * Expected missing result: OK
+ * Expected missing I/O error: OK
+ * Expected delimiter error: OK
+ * Expected argument error: OK
  *
  * $CATEGORY$
  * Function core

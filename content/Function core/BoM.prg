@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * BoM( SToD( "20261115" ) ) OK
+ * BoM()                     OK
  *
  * $CATEGORY$
  *

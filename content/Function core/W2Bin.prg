@@ -31,6 +31,23 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Two bytes: OK
+ * Low byte first: OK
+ * High byte second: OK
+ * Zero bytes: OK
+ * One: OK
+ * 256: OK
+ * High bit: OK
+ * Maximum: OK
+ * Round trip zero: OK
+ * Round trip value: OK
+ * Round trip maximum: OK
+ * Fraction discarded: OK
+ * Expected error: negative: OK
+ * Expected error: too large: OK
+ * Expected error: string: OK
+ * Expected error: NIL: OK
+ * Expected error: missing argument: OK
  *
  * $CATEGORY$
  * Function core

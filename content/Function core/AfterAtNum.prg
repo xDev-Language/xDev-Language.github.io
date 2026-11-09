@@ -24,6 +24,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * AfterAtNum( ".", "archive.tar.gz" )    OK
+ * AfterAtNum( ".", "archive.tar.gz", 1 ) OK
+ * AfterAtNum( "@", "anna@example.com" )  OK
+ * AfterAtNum( "/", "archive.tar.gz" )    OK
  *
  * $CATEGORY$
  *

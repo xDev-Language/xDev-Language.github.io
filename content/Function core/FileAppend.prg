@@ -22,6 +22,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * FileAppend( "second.txt", "first.txt" )        OK
+ * FileStr( "first.txt" )                         OK
+ * FileAppend( "no-such-file.txt", "first.txt" )  OK
+ * FErase( "first.txt" ) + FErase( "second.txt" ) OK
  *
  * $CATEGORY$
  *

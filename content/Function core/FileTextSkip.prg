@@ -33,6 +33,14 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Return value: OK
+ * Default advances one: OK
+ * Zero preserves position: OK
+ * Clamp at first: OK
+ * Skip reaches EOF: OK
+ * EOF record number: OK
+ * Back from EOF: OK
+ * Expected type error: OK
  *
  * $CATEGORY$
  * Function core

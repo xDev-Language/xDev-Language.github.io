@@ -23,6 +23,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Expand( "123456" )         OK
+ * Expand( "123456", 2 )      OK
+ * Expand( "123456", "." )    OK
+ * Expand( "123456", 2, "." ) OK
+ * Expand( "A" )              OK
  *
  * $CATEGORY$
  *

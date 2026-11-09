@@ -25,6 +25,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * PosRange( Chr( 0 ), Chr( 31 ), cInput )       OK
+ * PosRange( Chr( 0 ), Chr( 31 ), cInput, .T. )  OK
+ * PosRange( "0", "9", "Room 101" )              OK
  *
  * $CATEGORY$
  *

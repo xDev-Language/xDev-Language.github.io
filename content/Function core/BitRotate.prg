@@ -23,6 +23,13 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * BitRotate( 1, 3 )                       OK
+ * BitRotate( 8, -3 )                      OK
+ * BitRotate( 1, -1 ) == BitShift( 1, 63 ) OK
+ * BitRotate( 255, 2 )                     OK
+ * BitRotate( 255, -2 )                    OK
+ * BitRotate( 10352, 3, 16 )               OK
+ * BitRotate( 10352, 3, 8 )                OK
  *
  * $CATEGORY$
  *

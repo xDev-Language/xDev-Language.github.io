@@ -31,6 +31,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Managed handle: OK
+ * Close succeeds: OK
+ * Close I/O status: OK
+ * Expected shared resource already closed: OK
+ * Expected closed-resource code: OK
+ * Expected numeric argument error: OK
  *
  * $CATEGORY$
  * Function core

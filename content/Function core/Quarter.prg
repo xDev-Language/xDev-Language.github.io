@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Quarter( SToD( "20260331" ) ) OK
+ * Quarter( SToD( "20261102" ) ) OK
  *
  * $CATEGORY$
  *

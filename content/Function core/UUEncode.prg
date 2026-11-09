@@ -30,6 +30,17 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Known Cat vector: OK
+ * Empty body: OK
+ * Zero count: OK
+ * Partial source: OK
+ * Binary round trip: OK
+ * Multiple lines: OK
+ * 45-byte line: OK
+ * Fractional count: OK
+ * Expected count error: OK
+ * Expected negative count error: OK
+ * Expected argument error: OK
  *
  * $CATEGORY$
  * Function core

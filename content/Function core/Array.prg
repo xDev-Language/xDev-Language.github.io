@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Len( aDays )         OK
+ * aDays[ 1 ]           OK
+ * Len( aBoard[ 1 ] )   OK
+ * aBoard[ 2 ][ 2 ]     OK
  *
  * $CATEGORY$
  *

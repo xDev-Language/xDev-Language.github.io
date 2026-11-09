@@ -23,6 +23,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * PosRepl( "ABCDEFG", "XXX", 3 ) OK
+ * PosRepl( "ABCDEFG", "XXX" )    OK
+ * PosRepl( "ABCDEF", "123", 5 )  OK
+ * PosRepl( "ABCDEF", "123", 6 )  OK
  *
  * $CATEGORY$
  *

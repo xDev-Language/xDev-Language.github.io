@@ -28,7 +28,6 @@ const CATEGORIES = [
   { id: 'xml', folder: 'user-lib/xml', name: 'XML', group: 'User libraries', description: 'XML parsing and document operations.' },
   { id: 'zlib', folder: 'user-lib/zlib', name: 'Zlib', group: 'User libraries', description: 'Compression and decompression bindings.' },
   { id: 'classes', folder: 'Classes', name: 'Classes', group: 'Language', description: 'Class interfaces, methods and properties.' },
-  { id: 'commands', folder: 'Commands', name: 'Commands', group: 'Language', description: 'Database, file and environment commands.' },
   { id: 'directives', folder: 'Directives', name: 'Directives', group: 'Language', description: 'Preprocessor directives and compile-time definitions.' },
   { id: 'operators', folder: 'Operators', name: 'Operators', group: 'Language', description: 'Expressions, comparisons and logical operations.' },
   { id: 'statements', folder: 'Statements', name: 'Statements', group: 'Language', description: 'Declarations, control flow and program structure.' },

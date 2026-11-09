@@ -34,6 +34,16 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Six fields: OK
+ * Area number: OK
+ * Line count: OK
+ * Current record: OK
+ * First offset: OK
+ * Byte size: OK
+ * EOF flag: OK
+ * Last line offset: OK
+ * EOF offset: OK
+ * EOF state: OK
  *
  * $CATEGORY$
  * Function core

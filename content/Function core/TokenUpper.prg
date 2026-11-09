@@ -24,6 +24,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * TokenUpper( "Good morning" )        OK
+ * TokenUpper( "Good morning", , 5 )   OK
+ * TokenUpper( "/ab/ab/ab", "/", 2 )   OK
+ * TokenUpper( "anna maria kowalska" ) OK
  *
  * $CATEGORY$
  *

@@ -22,6 +22,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharMix( "ABC", "123" )                       OK
+ * CharMix( "ABCDE", "12" )                      OK
+ * CharMix( "AB", "12345" )                      OK
+ * CharMix( "HELLO", "" )                        OK
+ * CharMix( CharOdd( "a1b2" ), CharEven( "a1b2" ) ) OK
  *
  * $CATEGORY$
  *

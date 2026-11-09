@@ -25,6 +25,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * AScan( aNames, "Ewa" )                     OK
+ * AScan( aNames, "An" )                      OK
+ * AScan( aNames, "An", , , .T. )             OK
+ * AScan( aPrices, {| n | n > 10 } )          OK
+ * AScan( aNames, "Anna", 2 )                 OK
  *
  * $CATEGORY$
  *

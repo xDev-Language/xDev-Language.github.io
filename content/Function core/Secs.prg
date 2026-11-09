@@ -21,6 +21,7 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Secs( "01:01:01" ) OK
  *
  * $CATEGORY$
  *

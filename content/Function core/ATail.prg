@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * ATail( aHistory )   OK
+ * ATail( {} )         OK
  *
  * $CATEGORY$
  *

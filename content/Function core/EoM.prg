@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * EoM( SToD( "20261115" ) ) OK
+ * EoM( SToD( "20240210" ) ) OK
+ * EoM( SToD( "20260210" ) ) OK
  *
  * $CATEGORY$
  *

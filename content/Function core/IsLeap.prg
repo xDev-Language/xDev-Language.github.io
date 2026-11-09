@@ -21,6 +21,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * IsLeap( SToD( "20240101" ) ) OK
+ * IsLeap( SToD( "20260101" ) ) OK
+ * IsLeap( SToD( "19000101" ) ) OK
+ * IsLeap( SToD( "20000101" ) ) OK
+ * IsLeap()                     OK
  *
  * $CATEGORY$
  *

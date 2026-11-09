@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * DToR( 0 )                OK
+ * Round( DToR( 180 ), 6 )  OK
+ * Round( DToR( 360 ), 6 )  OK
+ * Round( DToR( -180 ), 6 ) OK
  *
  * $CATEGORY$
  *

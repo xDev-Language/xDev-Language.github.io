@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharSList( "mississippi" ) OK
+ * CharSList( "2026-11-02" )  OK
  *
  * $CATEGORY$
  *

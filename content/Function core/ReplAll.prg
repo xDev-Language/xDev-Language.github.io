@@ -23,6 +23,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * ReplAll( "  42  ", "*" )      OK
+ * ReplAll( "--42--", " ", "-" ) OK
  *
  * $CATEGORY$
  *

@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * IsCntrl( Chr( 9 ) )   OK
+ * IsCntrl( Chr( 13 ) )  OK
+ * IsCntrl( Chr( 127 ) ) OK
+ * IsCntrl( "ABC" )      OK
  *
  * $CATEGORY$
  *

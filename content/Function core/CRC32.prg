@@ -28,6 +28,15 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Empty: OK
+ * Standard check vector: OK
+ * Standard vector in hex: OK
+ * Lowercase abc: OK
+ * Zero byte: OK
+ * Case matters: OK
+ * Binary suffix matters: OK
+ * Expected argument error: OK
+ * Expected missing argument error: OK
  *
  * $CATEGORY$
  * Function core

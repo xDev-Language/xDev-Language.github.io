@@ -25,6 +25,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * StrDiff( "ABC", "ABC" )  OK
+ * StrDiff( "ABC", "ADC" )  OK
+ * StrDiff( "CBA", "ABC" )  OK
+ * StrDiff( "ABC", "AXBC" ) OK
+ * StrDiff( "AXBC", "ABC" ) OK
  *
  * $CATEGORY$
  *

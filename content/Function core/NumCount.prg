@@ -27,6 +27,25 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Initially zero: OK
+ * Set: OK
+ * Increment: OK
+ * Decrement: OK
+ * Read: OK
+ * Fraction discarded: OK
+ * NIL increment: OK
+ * Expected error: input type: OK
+ * Expected error: mode type: OK
+ * Errors preserve counter: OK
+ * Set maximum: OK
+ * Expected overflow: OK
+ * Overflow preserves counter: OK
+ * Set minimum: OK
+ * Expected underflow: OK
+ * Underflow preserves counter: OK
+ * Expected excessive input: OK
+ * Reset with NIL: OK
+ * Read reset counter: OK
  *
  * $CATEGORY$
  * Function core

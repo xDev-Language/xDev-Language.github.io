@@ -23,6 +23,14 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CToN( "60000" )                     OK
+ * CToN( "11", 2 )                     OK
+ * CToN( "1110101001100000", 2 )       OK
+ * CToN( "ABCD", 16 )                  OK
+ * CToN( "XXP", 36 )                   OK
+ * CToN( "  ff  ", 16 )                OK
+ * CToN( "FFFFFFFFFFFFFFFF", 16, .T. ) OK
+ * CToN( "12G", 16 )                   OK
  *
  * $CATEGORY$
  *

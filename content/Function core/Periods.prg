@@ -23,6 +23,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Round( Periods( 4000, 200, nMonthlyRate ), 2 ) OK
+ * Periods( 1200, 100, 0 )                        OK
+ * Periods( 4000, 20, nMonthlyRate )              OK
  *
  * $CATEGORY$
  *

@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * LToC()      OK
+ * LToC( .F. ) OK
+ * LToC( .T. ) OK
  *
  * $CATEGORY$
  *

@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * TrueName( "." ) == DirName()                            OK
+ * Right( TrueName( "xdev.txt" ), 8 )                      OK
+ * TrueName( "sub/../xdev.txt" ) == TrueName( "xdev.txt" ) OK
  *
  * $CATEGORY$
  *

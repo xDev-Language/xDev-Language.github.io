@@ -29,6 +29,21 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Field count: OK
+ * Quoted delimiter: OK
+ * Unquoted field: OK
+ * Final quoted field: OK
+ * Empty-field count: OK
+ * Leading empty field: OK
+ * Trailing empty field: OK
+ * Escaped quote: OK
+ * Custom delimiter: OK
+ * Binary data: OK
+ * Empty input: OK
+ * Malformed quote returns empty: OK
+ * Trailing junk returns empty: OK
+ * Expected delimiter error: OK
+ * Expected type error: OK
  *
  * $CATEGORY$
  * Function core

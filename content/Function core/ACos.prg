@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * ACos( 1 )                       OK
+ * Round( ACos( 0.7 ), 6 )         OK
+ * Round( RToD( ACos( 0.5 ) ), 6 ) OK
  *
  * $CATEGORY$
  *

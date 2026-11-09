@@ -24,6 +24,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * PosEqual( cString1, cString2 )       OK
+ * PosEqual( cString1, cString2, 2 )    OK
+ * PosEqual( cString1, cString2, 1, 4 ) OK
  *
  * $CATEGORY$
  *

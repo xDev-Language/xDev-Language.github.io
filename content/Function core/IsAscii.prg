@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * IsAscii( "xDev" )   OK
+ * IsAscii( " xDev" )  OK
+ * IsAscii( "Łódź" )   OK
  *
  * $CATEGORY$
  *

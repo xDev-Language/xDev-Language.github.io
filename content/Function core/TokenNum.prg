@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * TokenInit( "one two three" )         OK
+ * TokenNum()                           OK
+ * TokenInit( "one,two,,four", ",", 1 ) OK
+ * TokenNum()                           OK
  *
  * $CATEGORY$
  *

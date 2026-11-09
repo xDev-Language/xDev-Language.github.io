@@ -36,6 +36,30 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Zero: OK
+ * One: OK
+ * Uppercase: OK
+ * Mixed case: OK
+ * 16 bits: OK
+ * 32 bits: OK
+ * Maximum signed: OK
+ * Minimum signed: OK
+ * All bits set: OK
+ * Negative value: OK
+ * Leading zeroes: OK
+ * Stop at invalid byte: OK
+ * Stop at zero byte: OK
+ * Empty string: OK
+ * Non-hex first byte: OK
+ * No leading spaces: OK
+ * No sign: OK
+ * No prefix: OK
+ * Round trip positive: OK
+ * Round trip negative: OK
+ * Expected overflow: OK
+ * Expected argument error: number: OK
+ * Expected argument error: NIL: OK
+ * Expected argument error: missing: OK
  *
  * $CATEGORY$
  * Function core

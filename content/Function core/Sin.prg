@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Sin( 0 )                      OK
+ * Round( Sin( Pi() / 4 ), 6 )   OK
+ * Sin( Pi() / 2 )               OK
+ * Round( Sin( DToR( 30 ) ), 6 ) OK
  *
  * $CATEGORY$
  *

@@ -36,6 +36,17 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Borrowed numeric handle: OK
+ * Open succeeds: OK
+ * Initial line: OK
+ * Expected missing-file result: OK
+ * Expected I/O error: OK
+ * Failed replacement preserves open area: OK
+ * Close result: OK
+ * Close succeeds: OK
+ * Closed area EOF: OK
+ * Expected type error: OK
+ * Expected write-only mode error: OK
  *
  * $CATEGORY$
  * Function core

@@ -29,6 +29,16 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Empty: OK
+ * One byte: OK
+ * Two bytes: OK
+ * Three bytes: OK
+ * Unsigned binary byte: OK
+ * Length in high byte: OK
+ * Length wraps modulo 256: OK
+ * Order matters: OK
+ * Expected argument error: OK
+ * Expected missing argument error: OK
  *
  * $CATEGORY$
  * Function core

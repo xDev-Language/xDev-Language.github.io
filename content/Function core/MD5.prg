@@ -21,6 +21,13 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * MD5( "" )                                                               OK
+ * MD5( "a" )                                                              OK
+ * MD5( "abc" )                                                            OK
+ * MD5( "message digest" )                                                 OK
+ * MD5( "abcdefghijklmnopqrstuvwxyz" )                                     OK
+ * MD5( "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" ) OK
+ * MD5( Replicate( "1234567890", 8 ) )                                     OK
  *
  * $CATEGORY$
  *

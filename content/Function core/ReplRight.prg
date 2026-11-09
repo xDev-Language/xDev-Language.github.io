@@ -23,6 +23,7 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * ReplRight( PadR( "Total", 10 ), "." ) + "42" OK
  *
  * $CATEGORY$
  *

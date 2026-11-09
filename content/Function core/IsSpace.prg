@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Len( aSpace )           OK
+ * IsSpace( Chr( 10 ) )    OK
+ * IsSpace( "x" )          OK
  *
  * $CATEGORY$
  *

@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Sign( 48335 ) OK
+ * Sign( -258 )  OK
+ * Sign( 0 )     OK
+ * Sign( -0.5 )  OK
  *
  * $CATEGORY$
  *

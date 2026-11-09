@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * DoY( SToD( "20260101" ) ) OK
+ * DoY( SToD( "20261102" ) ) OK
+ * DoY( SToD( "20241231" ) ) OK
  *
  * $CATEGORY$
  *

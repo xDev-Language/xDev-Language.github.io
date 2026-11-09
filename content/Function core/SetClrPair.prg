@@ -23,6 +23,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * GetClrPair( cColor, 6 )           OK
+ * SetClrPair( "W/N,N/W", 2, "GR+/B" ) OK
+ * SetClrPair( "W/N", 3, "R/W" )       OK
  *
  * $CATEGORY$
  *

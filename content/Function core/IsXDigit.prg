@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * cHex                OK
+ * IsXDigit( "g" )     OK
  *
  * $CATEGORY$
  *

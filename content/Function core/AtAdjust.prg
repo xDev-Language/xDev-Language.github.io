@@ -46,6 +46,23 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Insert spaces: OK
+ * Remove spaces: OK
+ * Keep other bytes: OK
+ * Custom fill: OK
+ * Numeric fill: OK
+ * Remove custom fill: OK
+ * First match: OK
+ * Last match: OK
+ * Skip initial bytes: OK
+ * Already aligned: OK
+ * Missing occurrence: OK
+ * Empty search: OK
+ * Invalid position: OK
+ * Binary string: OK
+ * Expected argument error: non-string search: OK
+ * Expected argument error: non-numeric position: OK
+ * Expected argument error: fill outside byte range: OK
  *
  * $CATEGORY$
  * Function core

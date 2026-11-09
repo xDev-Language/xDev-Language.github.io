@@ -25,6 +25,14 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * StrFile( Replicate( "X", 20 ), "strfile.txt" )  OK
+ * StrFile( "AAAAA", "strfile.txt", .T., 10 )      OK
+ * FileStr( "strfile.txt" )                        OK
+ * StrFile( "AAAAA", "strfile.txt", .T., 10, .T. ) OK
+ * FileStr( "strfile.txt" )                        OK
+ * StrFile( "ABC", "strfile.txt", .T. )            OK
+ * FileStr( "strfile.txt" )                        OK
+ * FErase( "strfile.txt" )                         OK
  *
  * $CATEGORY$
  *

@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * DiskUsed() > 0            OK
+ * DiskUsed() <= DiskTotal() OK
  *
  * $CATEGORY$
  *

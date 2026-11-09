@@ -24,6 +24,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * aQueue[ 2 ] after AIns( aQueue, 2 )             OK
+ * aQueue[ 3 ] after AIns( aQueue, 2 )             OK
+ * Len( aQueue )                                   OK
+ * Len( aTeam ) after AIns( aTeam, 2, "Ewa", .T. ) OK
+ * aTeam[ 2 ]                                      OK
  *
  * $CATEGORY$
  *
@@ -40,9 +45,9 @@ PROCEDURE Main()
    LOCAL aTeam  := { "Anna", "Jan" }
 
    AIns( aQueue, 2 )
-   Check( 'aQueue[ 2 ] after AIns( aQueue, 2 )           ', aQueue[ 2 ], NIL )
-   Check( 'aQueue[ 3 ] after AIns( aQueue, 2 )           ', aQueue[ 3 ], "Ewa" )
-   Check( 'Len( aQueue )                                 ', Len( aQueue ), 3 )
+   Check( 'aQueue[ 2 ] after AIns( aQueue, 2 )             ', aQueue[ 2 ], NIL )
+   Check( 'aQueue[ 3 ] after AIns( aQueue, 2 )             ', aQueue[ 3 ], "Ewa" )
+   Check( 'Len( aQueue )                                   ', Len( aQueue ), 3 )
 
    AIns( aTeam, 2, "Ewa", .T. )
    Check( 'Len( aTeam ) after AIns( aTeam, 2, "Ewa", .T. ) ', Len( aTeam ), 3 )

@@ -30,6 +30,14 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Path size: OK
+ * Managed resource size: OK
+ * Size query after seeking: OK
+ * Cursor preserved: OK
+ * Open-based path query: OK
+ * Expected missing-file result: OK
+ * Expected I/O error: OK
+ * Expected argument error: OK
  *
  * $CATEGORY$
  * Function core

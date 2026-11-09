@@ -32,6 +32,13 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Initially not EOF: OK
+ * Last record is readable: OK
+ * After last record: OK
+ * EOF read is empty: OK
+ * Top clears EOF: OK
+ * Closed area EOF: OK
+ * Expected closed-area status: OK
  *
  * $CATEGORY$
  * Function core

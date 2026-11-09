@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * RemLeft( "000123", "0" ) OK
+ * RemLeft( "   xDev" )     OK
  *
  * $CATEGORY$
  *

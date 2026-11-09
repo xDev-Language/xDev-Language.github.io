@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * GetPairLen( cColors, 1 ) OK
+ * GetPairLen( cColors, 3 ) OK
  *
  * $CATEGORY$
  *

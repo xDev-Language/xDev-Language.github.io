@@ -22,6 +22,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Asc( cShift )                    OK
+ * Asc( SubStr( cShift, 2 ) )       OK
+ * CharRLR( CharRLL( "xDev", 3 ), 3 ) OK
  *
  * $CATEGORY$
  *

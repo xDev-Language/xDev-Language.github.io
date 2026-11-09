@@ -33,6 +33,37 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Read first: OK
+ * First contents: OK
+ * Read blank: OK
+ * Blank contents: OK
+ * Final unterminated line: OK
+ * Final contents: OK
+ * EOF: OK
+ * EOF is not I/O error: OK
+ * EOF clears output: OK
+ * Custom delimiter array: OK
+ * Custom first contents: OK
+ * Next custom line: OK
+ * Custom second contents: OK
+ * Bounded long line: OK
+ * First piece length: OK
+ * Read remainder: OK
+ * Remainder length: OK
+ * Exact payload boundary: OK
+ * Exact payload contents: OK
+ * No artificial empty line: OK
+ * Next boundary contents: OK
+ * Delimiter crosses buffer and limit: OK
+ * Split delimiter excluded: OK
+ * Continue after split delimiter: OK
+ * Split delimiter tail: OK
+ * Expected I/O failure: OK
+ * I/O failure code: OK
+ * Expected reference error: OK
+ * Expected empty delimiter error: OK
+ * Expected array element error: OK
+ * Expected limit error: OK
  *
  * $CATEGORY$
  * Function core

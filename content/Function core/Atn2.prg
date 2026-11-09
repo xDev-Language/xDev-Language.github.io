@@ -22,6 +22,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Round( RToD( Atn2( nY, nX ) ), 6 ) OK
+ * Atn2( 0, 1 )                       OK
+ * Round( RToD( Atn2( 1, 0 ) ), 6 )   OK
+ * Round( RToD( Atn2( 1, -1 ) ), 6 )  OK
  *
  * $CATEGORY$
  *

@@ -31,6 +31,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Numeric handle: OK
+ * Close succeeds: OK
+ * Close I/O status: OK
+ * Number variable is unchanged: OK
+ * Expected invalid numeric handle result: OK
+ * Expected I/O error: OK
  *
  * $CATEGORY$
  * Function core

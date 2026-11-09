@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Abs( -5 )                  OK
+ * Abs( 3.5 )                 OK
+ * Abs( nToday - nYesterday ) OK
  *
  * $CATEGORY$
  *

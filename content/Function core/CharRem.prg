@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharRem( " -", cPhone )       OK
+ * CharRem( "aeiou", "banana" )  OK
  *
  * $CATEGORY$
  *

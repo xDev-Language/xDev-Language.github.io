@@ -31,6 +31,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * MAIN
+ * S_SHOWNAME
  *
  * $CATEGORY$
  * Function core

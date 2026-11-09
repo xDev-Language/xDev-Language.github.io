@@ -21,6 +21,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Mantissa( 0 )                               OK
+ * Mantissa( 100 )                             OK
+ * Mantissa( -100 )                            OK
+ * Round( Mantissa( 0.01 ), 6 )                OK
+ * Mantissa( -1.01 )                           OK
+ * Mantissa( nValue ) * 2 ^ Exponent( nValue ) OK
  *
  * $CATEGORY$
  *

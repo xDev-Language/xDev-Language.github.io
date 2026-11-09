@@ -22,6 +22,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * DaysInMonth( 2 )      OK
+ * DaysInMonth( 2, .T. ) OK
+ * DaysInMonth( 11 )     OK
+ * DaysInMonth( 13 )     OK
  *
  * $CATEGORY$
  *

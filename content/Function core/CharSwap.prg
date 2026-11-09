@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharSwap( "badc" ) OK
+ * CharSwap( "abc" )  OK
  *
  * $CATEGORY$
  *

@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * IsAlNum( "ABC" )   OK
+ * IsAlNum( "123" )   OK
+ * IsAlNum( " xDev" ) OK
+ * IsAlNum( ".Net" )  OK
  *
  * $CATEGORY$
  *

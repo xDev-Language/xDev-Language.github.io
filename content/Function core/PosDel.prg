@@ -23,6 +23,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * PosDel( "Parameter", 3, 2 ) OK
+ * PosDel( "Parameter", , 2 )  OK
+ * PosDel( "report.txt", , 4 ) OK
  *
  * $CATEGORY$
  *

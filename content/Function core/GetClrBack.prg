@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * GetClrBack( "W+/B" ) OK
+ * GetClrBack( "W" )    OK
  *
  * $CATEGORY$
  *

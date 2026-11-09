@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * SecondsCPU() >= 0    OK
+ * SecondsCPU( 1 ) >= 0 OK
+ * SecondsCPU( 2 ) >= 0 OK
  *
  * $CATEGORY$
  *

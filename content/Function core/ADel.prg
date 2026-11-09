@@ -23,6 +23,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * aColors[ 2 ] after ADel( aColors, 2 )      OK
+ * aColors[ 3 ] after ADel( aColors, 2 )      OK
+ * Len( aColors )                             OK
+ * Len( aDays ) after ADel( aDays, 1, .T. )   OK
+ * aDays[ 1 ]                                 OK
  *
  * $CATEGORY$
  *

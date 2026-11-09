@@ -28,6 +28,15 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Temporary file created: OK
+ * Write bytes: OK
+ * Return value: OK
+ * Flush succeeded: OK
+ * Position preserved: OK
+ * Written contents: OK
+ * Invalid handle return: OK
+ * Expected I/O error: OK
+ * Expected argument error: OK
  *
  * $CATEGORY$
  * Function core

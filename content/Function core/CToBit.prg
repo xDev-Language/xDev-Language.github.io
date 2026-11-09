@@ -22,6 +22,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CToBit( "H", "ADVSHR" )                      OK
+ * CToBit( "RA", "ADVSHR" )                     OK
+ * CToBit( "XRYA", "ADVSHR" )                   OK
+ * BitToC( CToBit( "RA", "ADVSHR" ), "ADVSHR" ) OK
  *
  * $CATEGORY$
  *

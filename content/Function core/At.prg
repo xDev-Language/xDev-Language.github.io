@@ -24,6 +24,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * At( "@", cMail )                    OK
+ * Left( cMail, At( "@", cMail ) - 1 ) OK
+ * At( "a", cMail, 2 )                 OK
+ * At( "e", cMail, 1, 5 )              OK
+ * At( "#", cMail )                    OK
  *
  * $CATEGORY$
  *

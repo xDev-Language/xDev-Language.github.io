@@ -22,6 +22,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * DMY( SToD( "20261102" ) )      OK
+ * DMY( SToD( "20261102" ) )      OK
+ * DMY( SToD( "20261102" ), .T. ) OK
+ * DMY( .T. )                     OK
  *
  * $CATEGORY$
  *
@@ -32,13 +36,12 @@
  * $DOCEND$
  */
 
-#include "std.ch"
 
 PROCEDURE Main()
 
    Check( 'DMY( SToD( "20261102" ) )      ', DMY( SToD( "20261102" ) ), "2 November 26" )
 
-   SET CENTURY ON
+   SetCentury( .T. )
 
    Check( 'DMY( SToD( "20261102" ) )      ', DMY( SToD( "20261102" ) ), "2 November 2026" )
    Check( 'DMY( SToD( "20261102" ), .T. ) ', DMY( SToD( "20261102" ), .T. ), "2. November 2026" )

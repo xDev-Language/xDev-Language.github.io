@@ -25,6 +25,15 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * FileValid( "letter.txt" )               OK
+ * FileValid( "my letter.txt" )            OK
+ * FileValid( "my letter.txt", , , , .F. ) OK
+ * FileValid( "readme.txt", 8, 3 )         OK
+ * FileValid( "longername.txt", 8, 3 )     OK
+ * FileValid( "readme.txt", , , .T. )      OK
+ * FileValid( "dir/file.txt" )             OK
+ * FileValid( ".." )                       OK
+ * FileValid( "" )                         OK
  *
  * $CATEGORY$
  *

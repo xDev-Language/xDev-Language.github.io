@@ -22,6 +22,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * ValPos( "AX4B", 3 ) OK
+ * ValPos( "2024" )    OK
+ * ValPos( "AX4B", 1 ) OK
+ * ValPos( "AX4B", 9 ) OK
  *
  * $CATEGORY$
  *

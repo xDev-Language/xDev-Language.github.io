@@ -21,6 +21,7 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Round( Seconds() - nStart, 2 ) >= 0.2 OK
  *
  * $CATEGORY$
  *

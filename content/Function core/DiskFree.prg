@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * DiskFree() > 0                  OK
+ * DiskFree() <= DiskTotal()       OK
+ * DiskFree( "no-such-directory" ) OK
  *
  * $CATEGORY$
  *

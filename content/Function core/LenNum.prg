@@ -26,6 +26,20 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Zero: OK
+ * Positive: OK
+ * Negative: OK
+ * Decimal point: OK
+ * No retained zeroes: OK
+ * Small fraction: OK
+ * Maximum signed: OK
+ * Minimum signed: OK
+ * Maximum unsigned: OK
+ * Scientific notation: OK
+ * Tiny value: OK
+ * Expected error: text: OK
+ * Expected error: NIL: OK
+ * Expected error: missing: OK
  *
  * $CATEGORY$
  * Function core

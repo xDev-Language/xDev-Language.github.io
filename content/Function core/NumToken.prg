@@ -23,6 +23,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * NumToken( "Good Morning!" )                       OK
+ * NumToken( "Yes!  That is it. Maybe not?", ".!?" ) OK
+ * NumToken( cString, "," )                          OK
+ * NumToken( cString, ",", 1 )                       OK
+ * NumToken( "" )                                    OK
  *
  * $CATEGORY$
  *

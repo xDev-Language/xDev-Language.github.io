@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * SetPrec( 10 ) OK
+ * GetPrec()     OK
+ * SetPrec( 99 ) OK
+ * GetPrec()     OK
  *
  * $CATEGORY$
  *

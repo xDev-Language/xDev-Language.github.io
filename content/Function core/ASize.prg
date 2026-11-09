@@ -22,6 +22,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Len( aList ) after ASize( aList, 5 ) OK
+ * aList[ 5 ]                           OK
+ * Len( aList ) after ASize( aList, 2 ) OK
+ * aList[ 2 ]                           OK
  *
  * $CATEGORY$
  *

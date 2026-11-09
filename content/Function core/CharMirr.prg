@@ -22,6 +22,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharMirr( "xDev" )         OK
+ * CharMirr( "abc  " )        OK
+ * CharMirr( "abc  ", .T. )   OK
  *
  * $CATEGORY$
  *

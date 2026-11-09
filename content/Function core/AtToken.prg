@@ -23,6 +23,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * AtToken( "Good Day" )                 OK
+ * AtToken( "What a beautiful day.", 4 ) OK
+ * AtToken( "What a beautiful day.", 6 ) OK
+ * AtToken( "a,b,c", ",", 2 )            OK
  *
  * $CATEGORY$
  *

@@ -20,6 +20,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * ValType( nStart )             OK
+ * nStart > 0                    OK
+ * MilliSec( 50 )                OK
+ * MilliSeconds() - nStart >= 50 OK
  *
  * $CATEGORY$
  *

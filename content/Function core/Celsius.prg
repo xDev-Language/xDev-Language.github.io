@@ -21,6 +21,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Celsius( 212 )                OK
+ * Round( Celsius( 33.8 ), 6 )   OK
+ * Round( Celsius( 338.0 ), 6 )  OK
+ * Round( Celsius( 3380.0 ), 6 ) OK
+ * Round( Celsius( -33.8 ), 6 )  OK
  *
  * $CATEGORY$
  *

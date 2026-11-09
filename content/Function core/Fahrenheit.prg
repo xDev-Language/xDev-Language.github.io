@@ -21,6 +21,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Fahrenheit( 12.5 )   OK
+ * Fahrenheit( 125.0 )  OK
+ * Fahrenheit( 1250.0 ) OK
+ * Fahrenheit( -155.0 ) OK
+ * Fahrenheit( 100 )    OK
  *
  * $CATEGORY$
  *

@@ -33,6 +33,15 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * First read: OK
+ * Read does not move: OK
+ * Repeated read: OK
+ * Blank line: OK
+ * Blank line is not EOF: OK
+ * Final line: OK
+ * EOF result: OK
+ * Closed result: OK
+ * Expected closed-area status: OK
  *
  * $CATEGORY$
  * Function core

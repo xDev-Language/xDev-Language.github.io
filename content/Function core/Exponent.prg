@@ -21,6 +21,13 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Exponent( 0 )     OK
+ * Exponent( 100 )   OK
+ * Exponent( -100 )  OK
+ * Exponent( -1.01 ) OK
+ * Exponent( -2.01 ) OK
+ * Exponent( 0.01 )  OK
+ * Exponent( -0.01 ) OK
  *
  * $CATEGORY$
  *

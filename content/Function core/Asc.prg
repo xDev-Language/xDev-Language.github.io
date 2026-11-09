@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Asc( "A" )             OK
+ * Asc( "xDev" )          OK
+ * Chr( Asc( "A" ) + 1 )  OK
+ * Asc( "ż" )             OK
  *
  * $CATEGORY$
  *

@@ -20,6 +20,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Round( Pi(), 6 )               OK
+ * Round( Pi() * nRadius ^ 2, 6 ) OK
  *
  * $CATEGORY$
  *

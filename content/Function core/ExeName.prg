@@ -20,6 +20,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Len( ExeName() ) > 0 OK
+ * File( ExeName() )    OK
  *
  * $CATEGORY$
  *

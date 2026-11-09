@@ -24,6 +24,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * aScores[ 4 ]  OK
+ * aSeats[ 1 ]   OK
+ * aSeats[ 3 ]   OK
+ * aSeats[ 4 ]   OK
  *
  * $CATEGORY$
  *

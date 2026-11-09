@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * LToN()                  OK
+ * LToN( .F. )             OK
+ * LToN( .T. )             OK
+ * 365 + LToN( lLeapYear ) OK
  *
  * $CATEGORY$
  *

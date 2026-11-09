@@ -29,6 +29,17 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Mask positions: OK
+ * Keep spaces: OK
+ * Delete all: OK
+ * Long mask: OK
+ * Empty mask: OK
+ * Empty text: OK
+ * Zero mask byte deletes: OK
+ * Binary source: OK
+ * Original unchanged: OK
+ * Expected argument error: OK
+ * Expected missing mask error: OK
  *
  * $CATEGORY$
  * Function core

@@ -30,6 +30,20 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Encoding return: OK
+ * Encoding success: OK
+ * Envelope header: OK
+ * Decoding return: OK
+ * Decoding success: OK
+ * Binary round trip: OK
+ * In-memory decoding: OK
+ * Corrupt input return: OK
+ * Expected malformed-data error: OK
+ * Failure preserves destination: OK
+ * Missing source return: OK
+ * Expected I/O error: OK
+ * Expected argument error: OK
+ * Expected missing destination error: OK
  *
  * $CATEGORY$
  * Function core

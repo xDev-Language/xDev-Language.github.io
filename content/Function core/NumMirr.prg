@@ -27,6 +27,21 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Zero: OK
+ * Low bit to high bit: OK
+ * High bit to low bit: OK
+ * All bits set: OK
+ * Known value: OK
+ * Eight bits preserve high byte: OK
+ * Hexadecimal input: OK
+ * Fraction discarded: OK
+ * Reverse twice: OK
+ * Reverse twice in byte mode: OK
+ * Expected error: negative: OK
+ * Expected error: range: OK
+ * Expected error: mode: OK
+ * Expected error: missing: OK
+ * Expected overflow: OK
  *
  * $CATEGORY$
  * Function core

@@ -24,6 +24,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * RangeRepl( Chr( 0 ), Chr( 31 ), cText, "." )  OK
+ * RangeRepl( "", Chr( 65 ), "123400", "0" )     OK
+ * RangeRepl( "0", "8", "0212 - 78 67 43", "9" ) OK
+ * RangeRepl( 91, 64, "A()&BC/?D", "-" )         OK
  *
  * $CATEGORY$
  *

@@ -21,6 +21,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Ceiling( 1.9 )  OK
+ * Ceiling( 1.1 )  OK
+ * Ceiling( 0.9 )  OK
+ * Ceiling( -0.1 ) OK
+ * Ceiling( -0.9 ) OK
+ * Ceiling( -1.1 ) OK
  *
  * $CATEGORY$
  *

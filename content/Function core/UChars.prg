@@ -21,6 +21,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Len( UChars( "Łódź" ) )                OK
+ * UChars( "Łódź" )[ 1 ]                  OK
+ * UChars( "a😀b" )[ 2 ]                   OK
+ * Len( UChars( "" ) )                    OK
+ * Len( UChars( "a" + HexToStr( "FF" ) ) ) OK
  *
  * $CATEGORY$
  *

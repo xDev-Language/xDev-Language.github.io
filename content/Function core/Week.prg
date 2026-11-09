@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Week( SToD( "20261102" ) ) OK
+ * Week( SToD( "20270101" ) ) OK
+ * Week( SToD( "20241230" ) ) OK
  *
  * $CATEGORY$
  *

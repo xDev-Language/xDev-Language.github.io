@@ -22,6 +22,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * RemAll( "  xDev  " )           OK
+ * RemAll( "***Total***", "*" )   OK
+ * RemAll( "--42--", Asc( "-" ) ) OK
  *
  * $CATEGORY$
  *

@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharEven( "a1b2c3" ) OK
+ * CharEven( "x" )      OK
  *
  * $CATEGORY$
  *

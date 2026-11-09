@@ -23,6 +23,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Round( nMonthly * 12, 4 )                 OK
+ * Round( Payment( 2500, nMonthly, 36 ), 2 ) OK
+ * Rate( 1200, 100, 12 )                     OK
  *
  * $CATEGORY$
  *

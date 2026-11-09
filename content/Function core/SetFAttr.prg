@@ -22,6 +22,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * SetFAttr( "setfattr.txt", FA_READONLY )           OK
+ * BitAnd( FileAttr( "setfattr.txt" ), FA_READONLY ) OK
+ * SetFAttr( "setfattr.txt" )                        OK
+ * BitAnd( FileAttr( "setfattr.txt" ), FA_READONLY ) OK
+ * SetFAttr( "no-such-file.txt" )                    OK
+ * FErase( "setfattr.txt" )                          OK
  *
  * $CATEGORY$
  *

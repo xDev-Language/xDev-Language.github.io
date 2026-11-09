@@ -33,6 +33,15 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Query selected area: OK
+ * Select another area returns previous: OK
+ * New area is empty: OK
+ * Select first returns previous: OK
+ * First area retains data: OK
+ * Select free area returns previous: OK
+ * Free area selected: OK
+ * Expected area range error: OK
+ * Expected type error: OK
  *
  * $CATEGORY$
  * Function core

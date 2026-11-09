@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * GetClearB() after SetClearB( "." ) OK
+ * GetClearB() after SetClearB()      OK
  *
  * $CATEGORY$
  *

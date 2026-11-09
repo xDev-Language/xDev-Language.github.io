@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharAND( "123abc   ", "123" ) OK
+ * CharAND( "xdev", Chr( 223 ) ) OK
  *
  * $CATEGORY$
  *

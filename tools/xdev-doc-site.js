@@ -506,7 +506,7 @@ function computePageTitle(page, catalog) {
 function renderHead(title, page, prefix, options) {
   const description =
     page.document?.summary ||
-    'The xDev language reference: functions, commands, syntax and downloadable PRG examples.';
+    'The xDev language reference: functions, syntax and downloadable PRG examples.';
 
   const liveMeta = options.live
     ? `<meta name="doc-version" content="${esc(options.version)}"><script src="${href(prefix, 'assets/js/live.js')}" defer></script>`
@@ -566,7 +566,7 @@ function renderSearchDialog(catalog) {
     '<dialog class="search-dialog" aria-labelledby="search-title">' +
     `<div class="search-input-row">${icons.search}` +
     '<label class="sr-only" id="search-title" for="doc-search">Search documentation</label>' +
-    '<input id="doc-search" type="search" placeholder="Search functions, commands, and more…" autocomplete="off" spellcheck="false">' +
+    '<input id="doc-search" type="search" placeholder="Search functions, classes, and more…" autocomplete="off" spellcheck="false">' +
     '<button type="button" class="close-search" aria-label="Close search">Esc</button>' +
     '</div>' +
     '<div class="search-filters"><label for="search-category">Category</label>' +

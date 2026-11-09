@@ -21,6 +21,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * cLast                          OK
+ * TokenSep()                     OK
+ * TokenSep( .T. )                OK
+ * Token( "32+45*70", "+-*/", 2 ) OK
+ * TokenSep()                     OK
+ * TokenSep( .T. )                OK
  *
  * $CATEGORY$
  *

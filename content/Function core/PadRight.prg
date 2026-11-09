@@ -23,6 +23,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * PadRight( "123456", 4 )      OK
+ * PadRight( "123456", 8 )      OK
+ * PadRight( "123456", 8, "." ) OK
+ * PadRight( "123456", -1 )     OK
  *
  * $CATEGORY$
  *

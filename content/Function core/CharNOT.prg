@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharNOT( CharNOT( "123ABCabc" ) ) OK
+ * Asc( CharNOT( Chr( 0 ) ) )        OK
  *
  * $CATEGORY$
  *

@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * NToCDoW( 1 ) OK
+ * NToCDoW( 2 ) OK
+ * NToCDoW( 8 ) OK
  *
  * $CATEGORY$
  *

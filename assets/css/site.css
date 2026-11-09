@@ -227,6 +227,7 @@ li code {
 .header-nav {
   align-self: stretch;
   display: flex;
+  margin-left: 100px;
   gap: 25px;
   font-size: calc(0.9375rem + var(--font-step));
   font-weight: 550;

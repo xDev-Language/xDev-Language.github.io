@@ -23,6 +23,15 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * lReady         OK
+ * TokenAt()      OK
+ * TokenNext()    OK
+ * TokenAt()      OK
+ * TokenNext()    OK
+ * TokenAt()      OK
+ * TokenAt( .T. ) OK
+ * TokenAt( , 4 ) OK
+ * TokenAt( , 5 ) OK
  *
  * $CATEGORY$
  *

@@ -22,6 +22,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * FileDelete( "fd*.tmp" )                  OK
+ * File( "fd1.tmp" ) .OR. File( "fd2.tmp" ) OK
+ * FileDelete( "fd*.tmp" )                  OK
  *
  * $CATEGORY$
  *

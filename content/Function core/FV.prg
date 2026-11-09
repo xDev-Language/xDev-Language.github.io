@@ -23,6 +23,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Round( FV( 150, nMonthlyRate, 36 ), 2 ) OK
+ * FV( 100, 0, 12 )                        OK
  *
  * $CATEGORY$
  *

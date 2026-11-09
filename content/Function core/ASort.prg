@@ -24,6 +24,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * aNumbers[ 1 ] after ASort( aNumbers )        OK
+ * aNumbers[ 1 ] after sorting downwards        OK
+ * aPeople[ 1 ][ 1 ] after sorting by age       OK
  *
  * $CATEGORY$
  *

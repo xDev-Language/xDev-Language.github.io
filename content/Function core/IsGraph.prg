@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * IsGraph( "!" )      OK
+ * IsGraph( "~" )      OK
+ * IsGraph( " " )      OK
+ * IsGraph( Chr( 9 ) ) OK
  *
  * $CATEGORY$
  *

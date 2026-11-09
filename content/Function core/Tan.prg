@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Tan( 0 )                    OK
+ * Round( Tan( Pi() / 4 ), 6 ) OK
+ * Round( Tan( Pi() / 9 ), 6 ) OK
  *
  * $CATEGORY$
  *

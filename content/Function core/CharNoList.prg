@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharRem( CharNoList( "XYZ" ), cString ) OK
+ * Len( CharNoList() )                     OK
  *
  * $CATEGORY$
  *

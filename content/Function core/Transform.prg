@@ -22,6 +22,14 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Transform( "Łódź", "XXXX" )        OK
+ * Transform( "Łódź", "XX" )          OK
+ * Transform( "ąęśćźż", "@R XX-XX" )  OK
+ * Transform( "żółw", "@R X.X.X.X" )  OK
+ * Transform( "zażółć", "@!" )        OK
+ * Transform( "abc", "@R !!-X" )      OK
+ * Transform( "ab", "@R XX-XX" )      OK
+ * Transform( "kółko", "X-XX" )       OK
  *
  * $CATEGORY$
  *

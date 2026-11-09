@@ -21,6 +21,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharUnpack( CharPack( "AAAAAAAAAAAA" ) ) OK
+ * Len( CharPack( cLine ) ) < Len( cLine )  OK
+ * CharUnpack( CharPack( cLine ) )          OK
+ * CharUnpack( CharPack( cData ) )          OK
+ * CharUnpack( CharPack( "" ) )             OK
  *
  * $CATEGORY$
  *

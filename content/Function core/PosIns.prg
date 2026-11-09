@@ -23,6 +23,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * PosIns( "abcdefgh", "123", 2 )               OK
+ * PosIns( "abcdefgh", "123", 8 )               OK
+ * PosIns( "abcdefgh", "123", 10 )              OK
+ * PosIns( PosIns( cDate, "-", 7 ), "-", 5 )    OK
  *
  * $CATEGORY$
  *

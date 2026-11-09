@@ -38,6 +38,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * yes
+ * no
+ * .T.
  *
  * $CATEGORY$
  * Function core

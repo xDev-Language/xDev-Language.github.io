@@ -23,6 +23,15 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * lReady           OK
+ * TokenNext()      OK
+ * TokenNext()      OK
+ * TokenNext()      OK
+ * TokenNext()      OK
+ * TokenNext()      OK
+ * TokenNext()      OK
+ * TokenNext( , 2 ) OK
+ * TokenNext()      OK
  *
  * $CATEGORY$
  *

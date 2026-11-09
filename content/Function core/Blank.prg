@@ -22,6 +22,17 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Blank( 99 )                 OK
+ * Blank( .T. )                OK
+ * Blank( "abc" )              OK
+ * Blank( "abc", .T. )         OK
+ * Empty( Blank( Date() ) )    OK
+ * Blank( @cName )             OK
+ * cName                       OK
+ * Len( Blank( aList ) )       OK
+ * Len( aList )                OK
+ * ValType( Blank( hPerson ) ) OK
+ * Len( Blank( hPerson ) )     OK
  *
  * $CATEGORY$
  *

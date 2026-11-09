@@ -21,6 +21,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * lReady      OK
+ * TokenEnd()  OK
+ * TokenNext() OK
+ * TokenEnd()  OK
+ * TokenNext() OK
+ * TokenEnd()  OK
  *
  * $CATEGORY$
  *

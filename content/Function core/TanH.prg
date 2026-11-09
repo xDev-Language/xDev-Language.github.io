@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * TanH( 0 )                OK
+ * Round( TanH( 1 ), 6 )    OK
+ * TanH( -1 ) == -TanH( 1 ) OK
  *
  * $CATEGORY$
  *

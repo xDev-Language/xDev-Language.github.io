@@ -24,6 +24,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharRela( "b", "b b b b", "1", "bbb11111" ) OK
+ * CharRela( "x", "abc", "y", "abc" )          OK
  *
  * $CATEGORY$
  *

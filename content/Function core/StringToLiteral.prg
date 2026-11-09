@@ -29,6 +29,15 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Plain string: OK
+ * Empty string: OK
+ * Zero byte: OK
+ * Line feed: OK
+ * Mixed binary data: OK
+ * Backslash is literal: OK
+ * Matches serializer: OK
+ * Expected argument error: OK
+ * Expected missing argument error: OK
  *
  * $CATEGORY$
  * Function core

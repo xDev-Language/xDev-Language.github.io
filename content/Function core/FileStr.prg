@@ -24,6 +24,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * FileStr( "filestr.txt" )                           OK
+ * FileStr( "filestr.txt", 4, 2 )                     OK
+ * FileStr( "filestr2.txt", .T. )                     OK
+ * FileStr( "no-such-file.txt" )                      OK
+ * FErase( "filestr.txt" ) + FErase( "filestr2.txt" ) OK
  *
  * $CATEGORY$
  *

@@ -24,6 +24,17 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * TokenInit( cString, "!?.,-" ) OK
+ * TokenNum()                    OK
+ * TokenNext()                   OK
+ * TokenNext()                   OK
+ * cString                       OK
+ * TokenInit()                   OK
+ * TokenNext()                   OK
+ * TokenInit( "p q", , , @cEnv ) OK
+ * TokenNext( , , @cEnv )        OK
+ * TokenNext()                   OK
+ * TokenNext( , , @cEnv )        OK
  *
  * $CATEGORY$
  *

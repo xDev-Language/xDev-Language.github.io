@@ -23,6 +23,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * TabPack( "AAAAAAA*", "*" )    OK
+ * TabPack( "AAAAA***", "*" )    OK
+ * TabPack( "AAAAA*****", "*" )  OK
+ * TabPack( cText, 4, "+" )      OK
+ * TabPack( cLine )              OK
+ * TabExpand( TabPack( cLine ) ) OK
  *
  * $CATEGORY$
  *

@@ -27,6 +27,21 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * First byte: OK
+ * Last byte: OK
+ * Fractional position: OK
+ * Zero byte: OK
+ * Unsigned byte: OK
+ * UTF-8 first byte: OK
+ * UTF-8 second byte: OK
+ * Empty string: OK
+ * Zero position: OK
+ * Negative position: OK
+ * Beyond end: OK
+ * Huge position: OK
+ * Expected error: text type: OK
+ * Expected error: position type: OK
+ * Expected error: missing position: OK
  *
  * $CATEGORY$
  * Function core

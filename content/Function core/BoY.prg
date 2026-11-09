@@ -21,6 +21,7 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * BoY( SToD( "20261115" ) ) OK
  *
  * $CATEGORY$
  *

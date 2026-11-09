@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Len( DirName() ) > 0         OK
+ * DirName() == TrueName( "." ) OK
  *
  * $CATEGORY$
  *

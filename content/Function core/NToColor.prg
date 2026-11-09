@@ -22,6 +22,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * NToColor( 7 )                        OK
+ * NToColor( 116 )                      OK
+ * NToColor( 31, .T. )                  OK
+ * NToColor( ColorToN( "GR+/R" ), .T. ) OK
+ * NToColor( 380 )                      OK
  *
  * $CATEGORY$
  *

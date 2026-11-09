@@ -23,6 +23,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * NumAt( ";", cLine ) + 1        OK
+ * NumAt( "an", "banana" )        OK
+ * NumAt( "aa", "aaaa" )          OK
+ * NumAt( "an", "banana", 3 )     OK
  *
  * $CATEGORY$
  *

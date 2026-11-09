@@ -20,6 +20,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * GetClearA()                    OK
+ * NToColor( GetClearA(), .T. )   OK
  *
  * $CATEGORY$
  *

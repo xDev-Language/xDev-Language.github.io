@@ -23,6 +23,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * ReplLeft( Str( nInvoice, 6 ), "0" ) OK
+ * ReplLeft( "xDev", "0" )             OK
  *
  * $CATEGORY$
  *

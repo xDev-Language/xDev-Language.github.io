@@ -30,6 +30,15 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Mixed whitespace: OK
+ * Empty file: OK
+ * Only whitespace: OK
+ * Chunk boundary: OK
+ * UTF-8 bytes: OK
+ * Missing file result: OK
+ * Expected I/O error: OK
+ * Expected argument error: OK
+ * Expected missing argument error: OK
  *
  * $CATEGORY$
  * Function core

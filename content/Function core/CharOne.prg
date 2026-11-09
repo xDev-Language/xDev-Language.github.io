@@ -22,6 +22,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharOne( "a  b   c" )             OK
+ * CharOne( "bookkeeper" )           OK
+ * CharOne( " ", "Hello   world!!" ) OK
  *
  * $CATEGORY$
  *

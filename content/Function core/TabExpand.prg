@@ -23,6 +23,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * TabExpand( "-" + Chr( 9 ) + "!" )            OK
+ * TabExpand( "----" + Chr( 9 ) + "!" )         OK
+ * TabExpand( "-" + Chr( 9 ) + "!", "+" )       OK
+ * TabExpand( "-" + Chr( 9 ) + "!", 4 )         OK
+ * TabExpand( "----" + Chr( 9 ) + "!", 8, "+" ) OK
  *
  * $CATEGORY$
  *

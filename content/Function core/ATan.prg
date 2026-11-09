@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * ATan( 0 )                     OK
+ * Round( ATan( Pi() / 4 ), 6 )  OK
+ * Round( RToD( ATan( 1 ) ), 6 ) OK
  *
  * $CATEGORY$
  *

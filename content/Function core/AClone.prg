@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * aPrices[ 1 ] after a change in aCopy      OK
+ * aPrices[ 3 ][ 1 ] after a change in aCopy OK
+ * aPrices[ 1 ] after a change in aSame      OK
  *
  * $CATEGORY$
  *

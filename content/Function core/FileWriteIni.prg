@@ -35,6 +35,23 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Write succeeds: OK
+ * I/O success: OK
+ * Whitespace round trip: OK
+ * Numeric value becomes text: OK
+ * Logical value becomes text: OK
+ * Quotes round trip: OK
+ * Backslash and comment marker preserved: OK
+ * Header is a comment: OK
+ * Explicit MAIN section write: OK
+ * MAIN header present: OK
+ * Expected multiline-value error: OK
+ * Invalid data preserves destination: OK
+ * Expected root type error: OK
+ * Missing-directory result: OK
+ * Expected I/O error: OK
+ * Empty hash write: OK
+ * Empty hash produces empty file: OK
  *
  * $CATEGORY$
  * Function core

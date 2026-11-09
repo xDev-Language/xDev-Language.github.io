@@ -58,7 +58,7 @@
  *
  * $OUTPUT$
  * Current output encoding: UTF-8
- * Encoding at startup:     UTF-8
+ * Encoding at startup:     CP852
  * Current result is a string OK
  * Initial result is a string OK
  * Default means current      OK

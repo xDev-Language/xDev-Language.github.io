@@ -25,6 +25,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * aTarget[ 5 ] after ACopy( aSource, aTarget ) OK
+ * aPart after ACopy( aSource, aPart, 2, 3, 1 ) OK
  *
  * $CATEGORY$
  *

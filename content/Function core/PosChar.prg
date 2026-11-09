@@ -23,6 +23,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * PosChar( "ABCDEF", "X", 3 ) OK
+ * PosChar( "ABCDEF", "X" )    OK
+ * PosChar( @cVar, "X" )       OK
  *
  * $CATEGORY$
  *

@@ -29,6 +29,17 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Known vector: OK
+ * Envelope: OK
+ * Empty input: OK
+ * Empty data body: OK
+ * Space zero form: OK
+ * CRLF input: OK
+ * No final newline: OK
+ * Expected truncated line error: OK
+ * Expected missing terminator error: OK
+ * Expected missing end error: OK
+ * Expected argument error: OK
  *
  * $CATEGORY$
  * Function core

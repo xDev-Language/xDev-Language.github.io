@@ -23,6 +23,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * PadLeft( "123456", 4 )      OK
+ * PadLeft( "123456", 8 )      OK
+ * PadLeft( "123456", 8, "." ) OK
+ * PadLeft( "7", 3, 48 )       OK
+ * PadLeft( "123456", -1 )     OK
  *
  * $CATEGORY$
  *

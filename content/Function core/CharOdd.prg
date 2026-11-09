@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharOdd( "a1b2c3" ) OK
+ * CharOdd( "x" )      OK
  *
  * $CATEGORY$
  *

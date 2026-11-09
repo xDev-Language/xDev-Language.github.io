@@ -23,6 +23,13 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * SetFDaTi( "setfdati.txt", SToD( "19910101" ), "01:10:00" ) OK
+ * DToS( FileDate( "setfdati.txt" ) )                         OK
+ * FileTime( "setfdati.txt" )                                 OK
+ * SetFDaTi( "setfdati.txt" )                                 OK
+ * FileDate( "setfdati.txt" ) == Date()                       OK
+ * SetFDaTi( "no-such-file.txt" )                             OK
+ * FErase( "setfdati.txt" )                                   OK
  *
  * $CATEGORY$
  *

@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * GetClrPair( cColors, 3 ) OK
+ * GetClrPair( cColors, 5 ) OK
  *
  * $CATEGORY$
  *

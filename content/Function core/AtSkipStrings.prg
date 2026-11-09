@@ -35,6 +35,27 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Plain match: OK
+ * Double quotes: OK
+ * Single quotes: OK
+ * Brackets: OK
+ * Only quoted: OK
+ * Before quote: OK
+ * Empty quoted part: OK
+ * Other quotes inside brackets: OK
+ * All quote styles: OK
+ * No crossing delimiters: OK
+ * Unclosed double quote: OK
+ * Unclosed bracket: OK
+ * Case sensitive: OK
+ * Empty search: OK
+ * Empty text: OK
+ * Longer search: OK
+ * Binary data: OK
+ * UTF-8 byte position: OK
+ * Expected error: search type: OK
+ * Expected error: text type: OK
+ * Expected error: missing text: OK
  *
  * $CATEGORY$
  * Function core

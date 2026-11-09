@@ -22,6 +22,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * GetPairPos( cColors, 2 ) OK
+ * GetPairPos( cColors, 3 ) OK
+ * GetPairPos( cColors, 4 ) OK
  *
  * $CATEGORY$
  *

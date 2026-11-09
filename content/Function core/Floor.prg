@@ -21,6 +21,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Floor( 1.9 )  OK
+ * Floor( 1.1 )  OK
+ * Floor( 0.9 )  OK
+ * Floor( -0.1 ) OK
+ * Floor( -0.9 ) OK
+ * Floor( -1.1 ) OK
  *
  * $CATEGORY$
  *

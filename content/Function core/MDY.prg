@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * MDY( SToD( "20261102" ) ) OK
+ * MDY( SToD( "20261102" ) ) OK
  *
  * $CATEGORY$
  *
@@ -31,13 +33,12 @@
  * $DOCEND$
  */
 
-#include "std.ch"
 
 PROCEDURE Main()
 
    Check( 'MDY( SToD( "20261102" ) ) ', MDY( SToD( "20261102" ) ), "November 2, 26" )
 
-   SET CENTURY ON
+   SetCentury( .T. )
 
    Check( 'MDY( SToD( "20261102" ) ) ', MDY( SToD( "20261102" ) ), "November 2, 2026" )
 

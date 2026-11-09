@@ -24,6 +24,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * AtNum( "\", cPath )                      OK
+ * SubStr( cPath, AtNum( "\", cPath ) + 1 ) OK
+ * AtNum( "bc", "abcdeabc", 1 )             OK
+ * AtNum( "bc", "abcdeabc", 1, 3 )          OK
+ * AtNum( "aa", "aaa" )                     OK
+ * AtNum( "/", cPath )                      OK
  *
  * $CATEGORY$
  *

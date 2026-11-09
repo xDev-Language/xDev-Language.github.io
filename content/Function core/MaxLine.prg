@@ -28,6 +28,16 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Empty: OK
+ * One line: OK
+ * LF lines: OK
+ * CRLF lines: OK
+ * CR lines: OK
+ * Only endings: OK
+ * Tab is one byte: OK
+ * Embedded zero: OK
+ * UTF-8 bytes: OK
+ * Expected argument error: OK
  *
  * $CATEGORY$
  * Function core

@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * EoQ( SToD( "20261115" ) ) OK
+ * EoQ( SToD( "20240210" ) ) OK
  *
  * $CATEGORY$
  *

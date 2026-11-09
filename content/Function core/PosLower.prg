@@ -23,6 +23,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * PosLower( cString )          OK
+ * PosLower( cString, .T. )     OK
+ * PosLower( cString, .F., 7 )  OK
  *
  * $CATEGORY$
  *

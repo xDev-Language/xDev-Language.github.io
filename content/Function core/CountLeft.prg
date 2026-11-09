@@ -22,6 +22,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CountLeft( "   Indented" )    OK
+ * CountLeft( "000123", "0" )    OK
+ * CountLeft( "xDev" )           OK
  *
  * $CATEGORY$
  *

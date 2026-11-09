@@ -27,6 +27,22 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Zero: OK
+ * Full width low bit: OK
+ * Full width high bit: OK
+ * All bits set: OK
+ * One bit is unchanged: OK
+ * Four low bits: OK
+ * Hexadecimal input: OK
+ * Sixteen bits: OK
+ * Reverse twice: OK
+ * Fractional width: OK
+ * Expected error: zero width: OK
+ * Expected error: excessive width: OK
+ * Expected error: negative value: OK
+ * Expected error: range: OK
+ * Expected error: missing value: OK
+ * Expected overflow: OK
  *
  * $CATEGORY$
  * Function core

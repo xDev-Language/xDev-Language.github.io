@@ -22,6 +22,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * StrSwap( @cStr1, @cStr2 ) OK
+ * cStr1                     OK
+ * cStr2                     OK
  *
  * $CATEGORY$
  *

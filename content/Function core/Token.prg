@@ -26,6 +26,17 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Token( "Clipper" )                                  OK
+ * Token( " ,   Clipper . " )                          OK
+ * Token( "Clipper COMPILER!" )                        OK
+ * Token( "Clipper COMPILER!", 1 )                     OK
+ * Token( "This is a test.", 3 )                       OK
+ * Token( "This is a test.", 5 )                       OK
+ * Token( cString, ",", 3, 1 )                         OK
+ * Token( cString, ",", 4, 1 )                         OK
+ * Token( "32+45*70", "+-*/", 2, , @cBefore, @cAfter ) OK
+ * cBefore                                             OK
+ * cAfter                                              OK
  *
  * $CATEGORY$
  *

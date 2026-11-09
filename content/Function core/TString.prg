@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * TString( 3661 )  OK
+ * TString( 90061 ) OK
  *
  * $CATEGORY$
  *

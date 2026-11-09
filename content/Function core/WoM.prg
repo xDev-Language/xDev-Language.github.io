@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * WoM( SToD( "20261101" ) ) OK
+ * WoM( SToD( "20261102" ) ) OK
+ * WoM( SToD( "20261130" ) ) OK
  *
  * $CATEGORY$
  *

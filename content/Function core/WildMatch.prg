@@ -38,6 +38,36 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Prefix by default: OK
+ * Entire string required: OK
+ * Exact match: OK
+ * Not a substring search: OK
+ * Leading star: OK
+ * Leading star in full mode: OK
+ * Trailing star: OK
+ * Star can be empty: OK
+ * Question mark: OK
+ * Question needs a byte: OK
+ * Consecutive stars: OK
+ * Several stars: OK
+ * Retry after partial match: OK
+ * Retry in full mode: OK
+ * Failed suffix: OK
+ * Empty prefix: OK
+ * Empty pattern full mode: OK
+ * Both empty: OK
+ * Star and empty text: OK
+ * Question and empty text: OK
+ * Case sensitive: OK
+ * Dot is literal: OK
+ * NIL means prefix: OK
+ * Binary data: OK
+ * UTF-8 needs two bytes: OK
+ * One byte is insufficient: OK
+ * Expected error: pattern type: OK
+ * Expected error: text type: OK
+ * Expected error: mode type: OK
+ * Expected error: missing text: OK
  *
  * $CATEGORY$
  * Function core

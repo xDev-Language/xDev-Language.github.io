@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * JustLeft( "   xDev" )     OK
+ * JustLeft( "--42", "-" )   OK
  *
  * $CATEGORY$
  *

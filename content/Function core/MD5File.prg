@@ -21,6 +21,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * lWritten                                 OK
+ * MD5File( "md5file.txt" )                 OK
+ * MD5File( "md5file.txt" ) == MD5( "abc" ) OK
+ * MD5File( "no-such-file.txt" )            OK
+ * FErase( "md5file.txt" )                  OK
  *
  * $CATEGORY$
  *

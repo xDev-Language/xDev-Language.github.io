@@ -21,6 +21,18 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Chr( 65 )                   OK
+ * Chr( 32 )                   OK
+ * Asc( Chr( 0 ) )             OK
+ * Len( Chr( 0 ) )             OK
+ * Asc( Chr( 196 ) )           OK
+ * Len( Chr( 196 ) )           OK
+ * Chr( 256 )                 OK
+ * Chr( 257 )                 OK
+ * Chr( -1 )                  OK
+ * All bytes 0..255            OK
+ * Chr( "A" ): expected error  OK
+ * Chr(): expected error       OK
  *
  * $CATEGORY$
  *

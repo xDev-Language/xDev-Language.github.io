@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * ASin( 0 )                     OK
+ * Round( ASin( 0.5 ), 6 )       OK
+ * Round( RToD( ASin( 1 ) ), 6 ) OK
  *
  * $CATEGORY$
  *

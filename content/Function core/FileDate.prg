@@ -21,6 +21,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * FileDate( "filedate.txt" ) == Date()           OK
+ * SetFDaTi( "filedate.txt", SToD( "20240115" ) ) OK
+ * DToS( FileDate( "filedate.txt" ) )             OK
+ * Empty( FileDate( "no-such-file.txt" ) )        OK
+ * FErase( "filedate.txt" )                       OK
  *
  * $CATEGORY$
  *

@@ -21,6 +21,7 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Days( 200000 ) OK
  *
  * $CATEGORY$
  *

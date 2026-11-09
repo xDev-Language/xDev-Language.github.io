@@ -24,6 +24,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * TokenLower( "good Morning" )      OK
+ * TokenLower( "good Morning", , 5 ) OK
+ * TokenLower( "/AB/AB/AB", "/", 2 ) OK
  *
  * $CATEGORY$
  *

@@ -46,6 +46,25 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * All matches: OK
+ * First two: OK
+ * Only second: OK
+ * Only last: OK
+ * Delete: OK
+ * No overlap: OK
+ * No repeated search: OK
+ * Same replacement: OK
+ * Missing occurrence: OK
+ * Count exceeds matches: OK
+ * Empty search: OK
+ * Empty text: OK
+ * Binary string: OK
+ * Reference result: OK
+ * Reference updated: OK
+ * Longer result: OK
+ * Reference keeps length: OK
+ * Expected argument error: non-string replacement: OK
+ * Expected argument error: non-logical mode: OK
  *
  * $CATEGORY$
  * Function core

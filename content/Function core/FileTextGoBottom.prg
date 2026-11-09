@@ -32,6 +32,13 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Return value: OK
+ * Last record: OK
+ * Last contents: OK
+ * Last record is not EOF: OK
+ * Bottom from EOF: OK
+ * Closed-area return: OK
+ * Expected closed-area error: OK
  *
  * $CATEGORY$
  * Function core

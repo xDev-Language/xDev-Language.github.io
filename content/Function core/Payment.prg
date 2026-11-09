@@ -23,6 +23,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Round( Payment( 2000, nMonthlyRate, 24 ), 2 ) OK
+ * Payment( 1200, 0, 12 )                        OK
  *
  * $CATEGORY$
  *

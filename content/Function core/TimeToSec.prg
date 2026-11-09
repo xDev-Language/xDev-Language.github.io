@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * TimeToSec( "12:44:33:22" )            OK
+ * TimeToSec( "12:00" )                  OK
+ * TimeToSec( cEnd ) - TimeToSec( cBegin ) OK
+ * TimeToSec( "25:00:00" )               OK
  *
  * $CATEGORY$
  *

@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * RToD( 0 )        OK
+ * RToD( Pi() )     OK
+ * RToD( 2 * Pi() ) OK
+ * RToD( -Pi() )    OK
  *
  * $CATEGORY$
  *

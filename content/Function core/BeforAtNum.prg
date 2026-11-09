@@ -24,6 +24,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * BeforAtNum( "\", cPath )                 OK
+ * BeforAtNum( ".", "archive.tar.gz" )      OK
+ * BeforAtNum( ".", "archive.tar.gz", 1 )   OK
+ * BeforAtNum( "/", "archive.tar.gz" )      OK
  *
  * $CATEGORY$
  *

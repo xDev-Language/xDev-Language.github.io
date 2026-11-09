@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Len( cPunct )   OK
+ * IsPunct( "," )  OK
+ * IsPunct( "a" )  OK
  *
  * $CATEGORY$
  *

@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * RemRight( "12.500", "0" ) OK
+ * RemRight( "xDev   " )     OK
  *
  * $CATEGORY$
  *

@@ -48,6 +48,15 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Eol() on Windows                 OK
+ * Eol( "a" + CRLF + "b" )          OK
+ * Eol( "a" + LF + "b" )            OK
+ * Eol( "a" + CR + "b" )            OK
+ * Eol( "abc" ), no end of line     OK
+ * Eol( "a" + LF + "b" + CRLF )     OK
+ * the file keeps LF                OK
+ * the file has no CR               OK
+ * the changed line                 OK
  *
  * $CATEGORY$
  * Function core

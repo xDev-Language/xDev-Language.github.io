@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * ElapTime( "08:00:00", "16:45:30" ) OK
+ * ElapTime( "23:00:00", "01:30:00" ) OK
  *
  * $CATEGORY$
  *

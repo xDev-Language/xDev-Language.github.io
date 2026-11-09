@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * GetClrFore( "W+/B" )                      OK
+ * GetClrFore( GetClrPair( "W/N,GR+/R", 2 ) ) OK
  *
  * $CATEGORY$
  *

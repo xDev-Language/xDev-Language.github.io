@@ -22,6 +22,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * RenameFile( "old.txt", "new.txt" )  OK
+ * File( "new.txt" )                   OK
+ * RenameFile( "old.txt", "new2.txt" ) OK
+ * FErase( "new.txt" )                 OK
  *
  * $CATEGORY$
  *

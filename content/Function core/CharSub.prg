@@ -22,6 +22,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharSub( cString, Chr( 9 ) )                OK
+ * CharSub( cString, Space( 3 ) )              OK
+ * CharSub( CharAdd( cString, "key" ), "key" ) OK
  *
  * $CATEGORY$
  *

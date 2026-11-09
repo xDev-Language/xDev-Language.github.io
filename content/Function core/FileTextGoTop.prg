@@ -31,6 +31,13 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Return value: OK
+ * First record: OK
+ * First contents: OK
+ * Not EOF: OK
+ * Top from EOF: OK
+ * Closed-area return: OK
+ * Expected closed-area error: OK
  *
  * $CATEGORY$
  * Function core

@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * GetClearA() after SetClearA( "W+/B" ) OK
+ * GetClearA() after SetClearA()         OK
  *
  * $CATEGORY$
  *

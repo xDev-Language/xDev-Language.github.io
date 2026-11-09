@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * LastDayOM( SToD( "20240210" ) ) OK
+ * LastDayOM( 11 )                 OK
  *
  * $CATEGORY$
  *

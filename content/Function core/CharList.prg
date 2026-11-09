@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharList( "mississippi" ) OK
+ * CharList( "" )            OK
  *
  * $CATEGORY$
  *

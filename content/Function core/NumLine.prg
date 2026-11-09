@@ -29,6 +29,20 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Empty: OK
+ * One line: OK
+ * Wrap: OK
+ * Exact width: OK
+ * Final ending: OK
+ * Blank line: OK
+ * CRLF: OK
+ * LFCR: OK
+ * Only ending: OK
+ * Default width: OK
+ * Fractional width: OK
+ * UTF-8 bytes: OK
+ * Expected zero width error: OK
+ * Expected argument error: OK
  *
  * $CATEGORY$
  * Function core

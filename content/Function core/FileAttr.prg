@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * BitAnd( FileAttr( "fileattr.txt" ), FA_DIRECTORY ) OK
+ * BitAnd( FileAttr( "." ), FA_DIRECTORY )            OK
+ * FileAttr( "no-such-file.txt" )                     OK
+ * FErase( "fileattr.txt" )                           OK
  *
  * $CATEGORY$
  *

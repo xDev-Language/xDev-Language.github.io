@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * aHist[ Asc( "e" ) + 1 ] OK
+ * aHist[ Asc( "l" ) + 1 ] OK
+ * aHist[ Asc( "z" ) + 1 ] OK
+ * Len( CharHist() )       OK
  *
  * $CATEGORY$
  *

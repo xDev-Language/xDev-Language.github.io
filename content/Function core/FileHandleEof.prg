@@ -29,6 +29,13 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Initially not EOF: OK
+ * Position preserved: OK
+ * At EOF: OK
+ * Past EOF: OK
+ * Expected invalid handle result: OK
+ * Expected I/O error: OK
+ * Expected argument error: OK
  *
  * $CATEGORY$
  * Function core

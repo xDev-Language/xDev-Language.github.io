@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharUnpack( CharPack( cText ) )    OK
+ * CharUnpack( CharPack( "abcabc" ) ) OK
+ * CharUnpack( "not packed" )         OK
  *
  * $CATEGORY$
  *

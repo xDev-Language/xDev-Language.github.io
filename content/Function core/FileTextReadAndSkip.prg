@@ -33,6 +33,17 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * First record: OK
+ * Advanced position: OK
+ * Blank record: OK
+ * Final record: OK
+ * EOF after final: OK
+ * EOF result: OK
+ * Quoted multiline record: OK
+ * Physical position after multiline: OK
+ * Malformed quoted record: OK
+ * Expected malformed-data error: OK
+ * Malformed record preserves position: OK
  *
  * $CATEGORY$
  * Function core

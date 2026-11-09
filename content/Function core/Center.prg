@@ -24,6 +24,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Center( "xx", 10 )           OK
+ * Center( "xx", 10, .T. )      OK
+ * Center( "xx     ", 10, .T. ) OK
+ * Center( "xx", 10, "." )      OK
+ * Center( "xx", 10, ".", .T. ) OK
+ * Center( "x", 10, ".", .T. )  OK
  *
  * $CATEGORY$
  *

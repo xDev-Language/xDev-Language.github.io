@@ -29,6 +29,25 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Replace first: OK
+ * Replace last: OK
+ * Fractional position: OK
+ * Fractional byte: OK
+ * Unsigned byte: OK
+ * Empty string: OK
+ * Zero position: OK
+ * Beyond end: OK
+ * Huge position: OK
+ * By-value result: OK
+ * Original preserved: OK
+ * By-reference result: OK
+ * Reference updated: OK
+ * Old copy preserved: OK
+ * Length preserved: OK
+ * Expected error: negative byte: OK
+ * Expected error: excessive byte: OK
+ * Expected error: text type: OK
+ * Expected error: missing byte: OK
  *
  * $CATEGORY$
  * Function core

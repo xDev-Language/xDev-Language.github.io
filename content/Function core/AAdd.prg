@@ -22,6 +22,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Len( aShopping )            OK
+ * aShopping[ 2 ]              OK
+ * AAdd( aShopping, "eggs" )   OK
+ * ATail( aShopping )          OK
  *
  * $CATEGORY$
  *

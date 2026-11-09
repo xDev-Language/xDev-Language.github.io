@@ -26,6 +26,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * ADir( "adir_*.txt" )            OK
+ * AScan( aNames, "adir_two.txt" ) OK
+ * size of adir_two.txt            OK
+ * ADir( "no_such_*.txt" )         OK
  *
  * $CATEGORY$
  *

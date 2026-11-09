@@ -30,6 +30,17 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * First handle: OK
+ * Second handle: OK
+ * Unique names: OK
+ * File exists: OK
+ * Numeric handle write: OK
+ * Data persists: OK
+ * Expected missing-directory failure: OK
+ * Expected I/O error: OK
+ * Failure clears output name: OK
+ * Expected argument error: OK
+ * Expected reference error: OK
  *
  * $CATEGORY$
  * Function core

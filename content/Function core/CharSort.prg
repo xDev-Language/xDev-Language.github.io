@@ -27,6 +27,13 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharSort( "qwert" )                    OK
+ * CharSort( "qwert", 2 )                 OK
+ * CharSort( "b1a4a3a2a1", 2, 1 )         OK
+ * CharSort( "XXXqwert", 1, 1, 3 )        OK
+ * CharSort( "b1a4a3a2a1", 2, 1, 0, 1 )   OK
+ * CharSort( "384172852", 1, 1, 0, 0, 4 ) OK
+ * CharSort( "qwert", , , , , , .T. )     OK
  *
  * $CATEGORY$
  *

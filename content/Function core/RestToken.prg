@@ -21,6 +21,14 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * lReady                           OK
+ * TokenNext()                      OK
+ * Len( cSaved := SaveToken() ) > 0 OK
+ * TokenInit( "x y" )               OK
+ * RestToken( cSaved )              OK
+ * TokenNext()                      OK
+ * RestToken( "bad" )               OK
+ * TokenNum()                       OK
  *
  * $CATEGORY$
  *

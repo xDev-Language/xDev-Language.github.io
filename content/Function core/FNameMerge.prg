@@ -27,6 +27,16 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * No arguments: OK
+ * Name only: OK
+ * Extension with dot: OK
+ * Extension without dot: OK
+ * Separator added: OK
+ * No duplicate separator: OK
+ * Path only: OK
+ * Extension only: OK
+ * Split and merge: OK
+ * Expected argument error: OK
  *
  * $CATEGORY$
  * Function core

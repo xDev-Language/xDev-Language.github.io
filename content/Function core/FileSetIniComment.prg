@@ -30,6 +30,16 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Setter returns NIL: OK
+ * Custom inline marker: OK
+ * Old marker is literal: OK
+ * Writer uses custom marker: OK
+ * Custom comment prefix: OK
+ * Disable comment recognition: OK
+ * Expected comment-output error: OK
+ * Expected marker-length error: OK
+ * Expected marker-type error: OK
+ * Restore defaults: OK
  *
  * $CATEGORY$
  * Function core

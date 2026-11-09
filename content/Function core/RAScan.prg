@@ -20,7 +20,7 @@
  * $DESCRIPTION$
  * Search proceeds backwards, including nStart. nCount limits the number of inspected elements and is clamped at
  * the beginning of the array. An out-of-range nStart or non-positive nCount returns 0. A predicate receives the
- * element and its original index, as in AScan(). Value comparisons follow AScan(), including SET EXACT when
+ * element and its original index, as in AScan(). Value comparisons follow AScan(), including Set( _SET_EXACT ) when
  * lExact is false. With lASCII true, a one-byte string can match its numeric byte code in either direction.
  *
  * $NOTES$
@@ -32,6 +32,22 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Last matching value: OK
+ * Limited start: OK
+ * Limited count: OK
+ * Predicate index: OK
+ * Not found: OK
+ * Empty array: OK
+ * Zero count: OK
+ * Start beyond end: OK
+ * NIL value: OK
+ * Exact text: OK
+ * ASCII disabled: OK
+ * ASCII enabled: OK
+ * ASCII reverse types: OK
+ * Array identity: OK
+ * Expected argument error: OK
+ * Expected missing search error: OK
  *
  * $CATEGORY$
  * Function core

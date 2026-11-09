@@ -36,6 +36,16 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Valid date: OK
+ * Leap day: OK
+ * Invalid leap day: OK
+ * Invalid day: OK
+ * Wrong length: OK
+ * Non-digit character: OK
+ * Empty string: OK
+ * NIL: OK
+ * No argument: OK
+ * Expected argument error: numeric date: OK
  *
  * $CATEGORY$
  * Function core

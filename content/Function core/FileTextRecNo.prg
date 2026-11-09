@@ -32,6 +32,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * First number: OK
+ * Blank line has number: OK
+ * Last number: OK
+ * EOF number: OK
+ * Closed number: OK
+ * Expected closed-area status: OK
  *
  * $CATEGORY$
  * Function core

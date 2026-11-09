@@ -33,6 +33,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * 50
+ * .T.
  *
  * $CATEGORY$
  * Function core

@@ -21,6 +21,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Fact( 0 )  OK
+ * Fact( 1 )  OK
+ * Fact( 5 )  OK
+ * Fact( 20 ) OK
+ * Fact( 21 ) OK
+ * Fact( 25 ) OK
  *
  * $CATEGORY$
  *

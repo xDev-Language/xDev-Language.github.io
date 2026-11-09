@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * IsPrint( " " )      OK
+ * IsPrint( "A" )      OK
+ * IsPrint( Chr( 7 ) ) OK
  *
  * $CATEGORY$
  *

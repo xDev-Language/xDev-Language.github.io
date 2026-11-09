@@ -21,6 +21,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * AltD()     OK
+ * AltD( 1 )  OK
  *
  * $CATEGORY$
  *

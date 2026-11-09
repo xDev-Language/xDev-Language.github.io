@@ -21,6 +21,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Log10( 100 )           OK
+ * Log10( 1 )             OK
+ * Log10( 0.01 )          OK
+ * Round( Log10( 2 ), 6 ) OK
  *
  * $CATEGORY$
  *

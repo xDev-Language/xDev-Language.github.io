@@ -23,6 +23,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Round( PV( 175, nMonthlyRate, 24 ), 2 ) OK
+ * Round( PV( 175, 0.095, 2 ), 2 )         OK
+ * PV( 100, 0, 12 )                        OK
  *
  * $CATEGORY$
  *

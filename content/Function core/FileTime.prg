@@ -21,6 +21,11 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Len( FileTime( "filetime.txt" ) )        OK
+ * SetFDaTi( "filetime.txt", , "12:34:56" ) OK
+ * FileTime( "filetime.txt" )               OK
+ * FileTime( "no-such-file.txt" )           OK
+ * FErase( "filetime.txt" )                 OK
  *
  * $CATEGORY$
  *

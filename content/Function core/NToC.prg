@@ -24,6 +24,15 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * NToC( 60000 )         OK
+ * NToC( 60000, 10, 7 )  OK
+ * NToC( 60000, 2 )      OK
+ * NToC( 48, 2, 8, "0" ) OK
+ * NToC( 43981, 16 )     OK
+ * NToC( 43981, 36, 4 )  OK
+ * NToC( -1, 16 )        OK
+ * NToC( 60000, 10, 3 )  OK
+ * NToC( 60000, 1, 4 )   OK
  *
  * $CATEGORY$
  *

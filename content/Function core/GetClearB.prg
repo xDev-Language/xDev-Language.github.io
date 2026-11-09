@@ -20,6 +20,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * GetClearB()        OK
+ * Chr( GetClearB() ) OK
  *
  * $CATEGORY$
  *

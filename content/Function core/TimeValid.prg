@@ -21,6 +21,13 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * TimeValid( "12:59:59:99" )  OK
+ * TimeValid( "12" )           OK
+ * TimeValid( Trim( cBegin ) ) OK
+ * TimeValid( cBegin )         OK
+ * TimeValid( "24" )           OK
+ * TimeValid( "12:60" )        OK
+ * TimeValid( "12:1" )         OK
  *
  * $CATEGORY$
  *

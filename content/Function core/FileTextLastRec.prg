@@ -32,6 +32,12 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Physical line count: OK
+ * Query preserves first record: OK
+ * Count unchanged at bottom: OK
+ * Count unchanged at EOF: OK
+ * Closed count: OK
+ * Expected closed-area status: OK
  *
  * $CATEGORY$
  * Function core

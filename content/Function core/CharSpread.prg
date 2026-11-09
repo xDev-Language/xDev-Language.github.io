@@ -23,6 +23,10 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharSpread( "123456", 20, "." )          OK
+ * CharSpread( "1.2.3.4.5.6", 20, 46 )      OK
+ * CharSpread( "11.22........33", 20, "." ) OK
+ * CharSpread( "Ala ma kota", 15 )          OK
  *
  * $CATEGORY$
  *

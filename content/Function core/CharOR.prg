@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharOR( "XDEV", " " ) OK
+ * CharOR( "xdev", " " ) OK
  *
  * $CATEGORY$
  *

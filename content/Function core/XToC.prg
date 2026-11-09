@@ -21,6 +21,13 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * XToC( .T. )                OK
+ * XToC( .F. )                OK
+ * XToC( "123ABCabc" )        OK
+ * Len( XToC( -9.9 ) )        OK
+ * XToC( 9.9 ) == FToC( 9.9 ) OK
+ * XToC( SToD( "19991231" ) ) OK
+ * XToC( SToD( "" ) )         OK
  *
  * $CATEGORY$
  *

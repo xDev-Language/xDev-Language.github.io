@@ -21,6 +21,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CosH( 0 )               OK
+ * Round( CosH( 1 ), 6 )   OK
+ * CosH( -2 ) == CosH( 2 ) OK
  *
  * $CATEGORY$
  *

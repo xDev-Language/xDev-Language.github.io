@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CountRight( "1.500", "0" ) OK
+ * CountRight( "xDev  " )     OK
  *
  * $CATEGORY$
  *

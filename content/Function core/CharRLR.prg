@@ -22,6 +22,9 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * Asc( cShift )              OK
+ * Asc( SubStr( cShift, 2 ) ) OK
+ * CharRLR( "AB", 8 )         OK
  *
  * $CATEGORY$
  *

@@ -22,6 +22,8 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * CharXOR( cSecret, cKey )               OK
+ * cSecret == "Meet at noon"              OK
  *
  * $CATEGORY$
  *
