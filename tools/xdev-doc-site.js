@@ -471,7 +471,7 @@ function documentPage(catalog, page, prefix) {
 
   return {
     body: `
-    <header class="page-heading doc-heading"><div class="doc-heading-copy"><span class="eyebrow">${category.name.toUpperCase()}</span><h1>${esc(doc.name)}</h1>${summary}</div>${navigation}</header>
+    <header class="page-heading doc-heading"><div class="doc-heading-copy"><a class="eyebrow" href="${href(prefix, category.url)}">${category.name.toUpperCase()}</a><h1>${esc(doc.name)}</h1>${summary}</div>${navigation}</header>
     ${body}`,
   };
 }
