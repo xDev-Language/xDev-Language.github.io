@@ -24,7 +24,7 @@
  * cLast                          OK
  * TokenSep()                     OK
  * TokenSep( .T. )                OK
- * Token( "32+45*70", "+-*/", 2 ) OK
+ * Token( "32+45*70", "+/-*", 2 ) OK
  * TokenSep()                     OK
  * TokenSep( .T. )                OK
  *
@@ -44,7 +44,7 @@ PROCEDURE Main()
    Check( 'cLast                          ', cLast, "World" )
    Check( 'TokenSep()                     ', TokenSep(), "," )
    Check( 'TokenSep( .T. )                ', TokenSep( .T. ), "!" )
-   Check( 'Token( "32+45*70", "+-*/", 2 ) ', Token( "32+45*70", "+-*/", 2 ), "45" )
+   Check( 'Token( "32+45*70", "+/-*", 2 ) ', Token( "32+45*70", "+/-*", 2 ), "45" )
    Check( 'TokenSep()                     ', TokenSep(), "+" )
    Check( 'TokenSep( .T. )                ', TokenSep( .T. ), "*" )
 

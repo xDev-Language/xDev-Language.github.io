@@ -34,7 +34,7 @@
  * Token( "This is a test.", 5 )                       OK
  * Token( cString, ",", 3, 1 )                         OK
  * Token( cString, ",", 4, 1 )                         OK
- * Token( "32+45*70", "+-*/", 2, , @cBefore, @cAfter ) OK
+ * Token( "32+45*70", "+/-*", 2, , @cBefore, @cAfter ) OK
  * cBefore                                             OK
  * cAfter                                              OK
  *
@@ -61,7 +61,7 @@ PROCEDURE Main()
    Check( 'Token( "This is a test.", 5 )                       ', Token( "This is a test.", 5 ), "" )
    Check( 'Token( cString, ",", 3, 1 )                         ', Token( cString, ",", 3, 1 ), "" )
    Check( 'Token( cString, ",", 4, 1 )                         ', Token( cString, ",", 4, 1 ), "four" )
-   Check( 'Token( "32+45*70", "+-*/", 2, , @cBefore, @cAfter ) ', Token( "32+45*70", "+-*/", 2, , @cBefore, @cAfter ), "45" )
+   Check( 'Token( "32+45*70", "+/-*", 2, , @cBefore, @cAfter ) ', Token( "32+45*70", "+/-*", 2, , @cBefore, @cAfter ), "45" )
    Check( 'cBefore                                             ', cBefore, "+" )
    Check( 'cAfter                                              ', cAfter, "*" )
 
