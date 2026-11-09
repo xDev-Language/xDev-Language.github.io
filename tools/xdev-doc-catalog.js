@@ -55,7 +55,6 @@ function encodePathSegments(relativePath) {
 const SOURCE_COLLECTIONS = [
   { id: 'examples', name: 'Examples', directory: 'examples' },
   { id: 'tests', name: 'Tests', directory: 'tests' },
-  { id: 'rosetta-code', name: 'Rosetta Code', directory: 'examples/rosetta-code' },
 ];
 
 function documentImages(root, sourcePath, sections, diagnostics) {
@@ -108,13 +107,7 @@ function buildSourceCollection(collection, root) {
       const relativePath = toPosixPath(path.relative(root, filePath));
 
       if (entry.isDirectory()) {
-        // Rosetta Code has its own collection.
-        const isRosettaInsideExamples =
-          collection.id === 'examples' && relativePath === 'examples/rosetta-code';
-
-        if (!isRosettaInsideExamples) {
-          walk(filePath);
-        }
+        walk(filePath);
         continue;
       }
 
