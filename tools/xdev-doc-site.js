@@ -59,6 +59,23 @@ function href(prefix, url) {
   return esc(prefix + url);
 }
 
+function tableCells(line) {
+  return line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((cell) => cell.trim());
+}
+
+// A Markdown pipe table: a header row, a |---| separator row and body rows.
+function renderTable(lines) {
+  const header = tableCells(lines[0])
+    .map((cell) => `<th>${inlineMarkdown(cell)}</th>`)
+    .join('');
+  const rows = lines
+    .slice(2)
+    .map((line) => `<tr>${tableCells(line).map((cell) => `<td>${inlineMarkdown(cell)}</td>`).join('')}</tr>`)
+    .join('');
+
+  return `<div class="table-wrap"><table><thead><tr>${header}</tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+
 function prose(text) {
   return text
     .split(/\n\s*\n/)
@@ -66,6 +83,14 @@ function prose(text) {
     .map((paragraph) => {
       const lines = paragraph.split('\n');
       const isList = lines.every((line) => /^\s*[-*]\s/.test(line));
+      const isTable =
+        lines.length >= 2 &&
+        lines.every((line) => /^\s*\|.*\|\s*$/.test(line)) &&
+        /^\s*\|(?:\s*:?-{3,}:?\s*\|)+\s*$/.test(lines[1]);
+
+      if (isTable) {
+        return renderTable(lines);
+      }
 
       if (isList) {
         const items = lines
@@ -193,11 +218,14 @@ function sidebar(catalog, page, prefix) {
     .map((collection) => renderSidebarCollection(collection, page, prefix))
     .join('');
 
+  const classes = catalog.categories.find((category) => category.id === 'classes');
+
   return (
     '<aside class="sidebar" id="site-navigation">' +
     '<div class="sidebar-top"><button class="close-menu" type="button" aria-label="Close navigation">×</button></div>' +
     `<a class="sidebar-link${page.type === 'home' ? ' active' : ''}" href="${href(prefix, 'index.html')}">Overview</a>` +
     `<a class="sidebar-link${page.type === 'index' ? ' active' : ''}" href="${href(prefix, 'reference/index.html')}">All Functions</a>` +
+    sidebarCategoryLink(classes, page, prefix) +
     groupLinks +
     collectionLinks +
     '</aside>'

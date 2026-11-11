@@ -7,9 +7,10 @@ const { parseSource } = require('./xdev-doc-parser');
 const ROOT = path.resolve(__dirname, '..');
 
 const CATEGORIES = [
-  { id: 'core', folder: 'Function core', name: 'Functions core', group: 'RTL', description: 'Strings, numbers, dates, arrays and file operations.' },
-  { id: 'gt', folder: 'Function GT', name: 'Functions GT', group: 'RTL', description: 'Terminal settings and graphics-driver interfaces.' },
-  { id: 'ct', folder: 'Function CT', name: 'Functions CT', group: 'RTL', description: 'Additional utilities and text-window functions.' },
+  { id: 'core', folder: 'Function-Core', name: 'Functions Core', group: 'RTL', description: 'Strings, numbers, dates, arrays and file operations.' },
+  { id: 'gt', folder: 'Function-GT', name: 'Functions GT', group: 'RTL', description: 'Terminal settings and graphics-driver interfaces.' },
+  { id: 'ct', folder: 'Function-CT', name: 'Functions CT', group: 'RTL', description: 'Additional utilities and text-window functions.' },
+  { id: 'gfx', folder: 'Functions-GFX', name: 'Functions GFX', group: 'RTL', description: 'Graphics primitives: pixels, lines, shapes and screen access.' },
   { id: 'curl', folder: 'user-lib/curl', name: 'CURL', group: 'User libraries', description: 'HTTP and network transfer bindings.' },
   { id: 'fonts', folder: 'user-lib/fonts', name: 'Fonts', group: 'User libraries', description: 'Bitmap fonts and font-conversion resources.' },
   { id: 'gtglfw', folder: 'user-lib/gtglfw', name: 'GTGLFW', group: 'User libraries', description: 'GLFW terminal driver.' },
@@ -22,7 +23,7 @@ const CATEGORIES = [
   { id: 'mytiff', folder: 'user-lib/mytiff', name: 'MyTiff', group: 'User libraries', description: 'Widget toolkit and application event handling.' },
   { id: 'openssl', folder: 'user-lib/openssl', name: 'OpenSSL', group: 'User libraries', description: 'Cryptography and TLS bindings.' },
   { id: 'qrcode', folder: 'user-lib/qrcode', name: 'QRCode', group: 'User libraries', description: 'QR code generation.' },
-  { id: 'rdd', folder: 'Function RDD', name: 'RDD', group: 'User libraries', description: 'Database areas, records and database-driver interfaces.' },
+  { id: 'rdd', folder: 'Function-RDD', name: 'RDD', group: 'User libraries', description: 'Database areas, records and database-driver interfaces.' },
   { id: 'svg', folder: 'user-lib/svg', name: 'SVG', group: 'User libraries', description: 'SVG generation from xDev programs.' },
   { id: 'tui', folder: 'user-lib/tui', name: 'TUI', group: 'User libraries', description: 'Text user interface controls.' },
   { id: 'xml', folder: 'user-lib/xml', name: 'XML', group: 'User libraries', description: 'XML parsing and document operations.' },

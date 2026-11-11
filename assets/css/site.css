@@ -1003,6 +1003,31 @@ a.eyebrow:hover {
   padding-left: 20px;
 }
 
+.table-wrap {
+  overflow-x: auto;
+  margin: 0 0 16px;
+}
+
+.table-wrap table {
+  border-collapse: collapse;
+  font-size: calc(0.875rem + var(--font-step));
+  color: var(--muted);
+}
+
+.table-wrap th,
+.table-wrap td {
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table-wrap th {
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .doc-image {
   margin: 0 0 20px;
 }

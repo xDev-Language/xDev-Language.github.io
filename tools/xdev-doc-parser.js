@@ -199,7 +199,24 @@ function parseSource(source) {
   return { documents, diagnostics };
 }
 
-function classifyToken(token, source, index) {
+// Names declared as constants in the source: ENUM constants and #define names
+function declaredConstants(source) {
+  const names = new Set();
+
+  for (const block of source.matchAll(/^[\t ]*ENUM\b[^\n]*\n([\s\S]*?)^[\t ]*END(?:ENUM)?\b/gim)) {
+    for (const line of block[1].matchAll(/^[\t ]*([a-z_]\w*)/gim)) {
+      names.add(line[1].toUpperCase());
+    }
+  }
+
+  for (const define of source.matchAll(/^[\t ]*#define[\t ]+([a-z_]\w*)/gim)) {
+    names.add(define[1].toUpperCase());
+  }
+
+  return names;
+}
+
+function classifyToken(token, source, index, constants) {
   const called = /^\s*\(/.test(source.slice(index + token.length));
 
   const lineStart = source.lastIndexOf('\n', index - 1) + 1;
@@ -246,7 +263,7 @@ function classifyToken(token, source, index) {
   }
 
   if (/^[a-z_]\w*$/i.test(token)) {
-    if (CONSTANT_PATTERN.test(token)) {
+    if (CONSTANT_PATTERN.test(token) || constants.has(token.toUpperCase())) {
       return 'constant';
     }
 
@@ -261,6 +278,7 @@ function classifyToken(token, source, index) {
 
 function highlightCode(source) {
   const text = String(source);
+  const constants = declaredConstants(text);
   let output = '';
   let offset = 0;
 
@@ -268,7 +286,7 @@ function highlightCode(source) {
     output += escapeHtml(text.slice(offset, match.index));
 
     const token = match[0];
-    const kind = classifyToken(token, text, match.index);
+    const kind = classifyToken(token, text, match.index, constants);
 
     const classes =
       kind === 'control' || kind === 'directive'
