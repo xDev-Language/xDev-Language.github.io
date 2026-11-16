@@ -10,15 +10,20 @@
  * WOpen( nTop, nLeft, nBottom, nRight, [lClear] ) --> nWindow
  *
  * $ARGUMENTS$
- * `nTop`, `nLeft`, `nBottom`, `nRight` Screen coordinates of the window. The window may lie
- * partly or completely outside the screen.
+ * `nTop` The screen row of the top border of the window.
+ * `nLeft` The screen column of the left border of the window.
+ * `nBottom` The screen row of the bottom border of the window.
+ * `nRight` The screen column of the right border of the window.
  * `lClear` .T. clears the window with the current color and the SetClearB() character. The
  * default .F. keeps the screen contents under the window.
  *
  * $RETURNS$
- * The handle of the new window, from 1 to 255, or -1 when the window cannot be opened.
+ * The handle of the new window, from 1 to 255. -1 when nBottom is above nTop, nRight is left of
+ * nLeft, or 255 windows are already open; the selected window does not change then.
  *
  * $DESCRIPTION$
+ * The window may lie partly or completely outside the screen or the area set by WBoard().
+ *
  * The new window becomes the selected window and lies on top of all other windows. All screen
  * output goes to the selected window: coordinates are relative to its top left corner, output is
  * clipped to the window, and MaxRow() and MaxCol() give its size. The window takes the color and
@@ -34,7 +39,7 @@
  * $OUTPUT$
  *
  * $CATEGORY$
- * Function CT
+ * Functions CT
  *
  * $HEADER$
  *

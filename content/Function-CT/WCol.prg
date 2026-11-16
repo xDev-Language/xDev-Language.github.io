@@ -17,7 +17,8 @@
  * The screen column of the left border of the selected window. In window 0 it is 0.
  *
  * $DESCRIPTION$
- * WRow() and WCol() give the position of the selected window on the screen, for example to open the window again at the same place after the user moved it.
+ * WRow() and WCol() give the position of the selected window on the screen, for example to open
+ * the window again at the same place after WMove() or WCenter() moved it.
  *
  * $NOTES$
  * The value can lie outside the screen when WMode() allows moving windows over the border.
@@ -27,7 +28,7 @@
  * $OUTPUT$
  *
  * $CATEGORY$
- * Function CT
+ * Functions CT
  *
  * $HEADER$
  *

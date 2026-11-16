@@ -12,14 +12,13 @@
  * $ARGUMENTS$
  * `nRows` Rows of one vertical step, at most 6.
  * `nColumns` Columns of one horizontal step, at most 20.
- * A larger value is set to the maximum.
  *
  * $RETURNS$
  * 0 when the step is set, -1 when a window is open or a value is smaller than 1.
  *
  * $DESCRIPTION$
  * The step is used when the user moves a window with the cursor keys, see WSetMove(). The
- * default step is 2 rows and 5 columns.
+ * default step is 2 rows and 5 columns. A value above the maximum is set to the maximum.
  *
  * $NOTES$
  * WStep() works only while no window is open. xDev keeps the setting, but the interactive
@@ -30,7 +29,7 @@
  * $OUTPUT$
  *
  * $CATEGORY$
- * Function CT
+ * Functions CT
  *
  * $HEADER$
  *

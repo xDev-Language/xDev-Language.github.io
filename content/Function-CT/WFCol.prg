@@ -10,14 +10,16 @@
  * WFCol( [lRelative] ) --> nCol
  *
  * $ARGUMENTS$
- * `lRelative` .T. returns the width of the margin between the border of the window and the
- * usable area instead of the screen position. The default is .F.
+ * `lRelative` .T. returns the number of columns of the margin between the border of the window
+ * and the usable area instead of the screen position. The default is .F.
  *
  * $RETURNS$
  * The screen column of the left side of the usable area, or with `lRelative` the left margin.
  *
  * $DESCRIPTION$
- * WFRow(), WFCol(), WFLastRow() and WFLastCol() give the usable area of the selected window, set by WFormat() and WBox(), for example to save it to a file. The margin can be passed later to WFormat() to set the same usable area again.
+ * WFRow(), WFCol(), WFLastRow() and WFLastCol() give the usable area of the selected window,
+ * which WFormat() and WBox() make smaller than the window. The margins returned with lRelative
+ * can be passed later to WFormat() to set the same usable area again.
  *
  * $NOTES$
  * In window 0, the screen, the function gives the area set by WBoard().
@@ -27,7 +29,7 @@
  * $OUTPUT$
  *
  * $CATEGORY$
- * Function CT
+ * Functions CT
  *
  * $HEADER$
  *

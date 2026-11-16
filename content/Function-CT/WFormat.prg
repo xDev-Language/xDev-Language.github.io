@@ -10,14 +10,19 @@
  * WFormat( [nTop], [nLeft], [nBottom], [nRight] ) --> nWindow
  *
  * $ARGUMENTS$
- * `nTop`, `nLeft`, `nBottom`, `nRight` How many rows and columns each side of the usable area
- * moves inwards. Negative values move it outwards, at most to the border of the window.
- * Without arguments all margins are removed and the whole window is usable again.
+ * `nTop` How many rows the top of the usable area moves down.
+ * `nLeft` How many columns the left side of the usable area moves to the right.
+ * `nBottom` How many rows the bottom of the usable area moves up.
+ * `nRight` How many columns the right side of the usable area moves to the left.
  *
  * $RETURNS$
  * The handle of the selected window, or -1 when no cell would remain usable.
  *
  * $DESCRIPTION$
+ * Positive values make the usable area smaller and negative values make it larger again, at
+ * most up to the border of the window. Without arguments all margins are removed and the whole
+ * window is usable again.
+ *
  * Output to the window goes only to its usable area: row 0, column 0 is the top left cell of
  * this area, and MaxRow() and MaxCol() give its size. The margins keep their contents, so a
  * frame drawn before WFormat() stays visible. The change adds to the margins already set, also
@@ -31,7 +36,7 @@
  * $OUTPUT$
  *
  * $CATEGORY$
- * Function CT
+ * Functions CT
  *
  * $HEADER$
  *

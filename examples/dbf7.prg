@@ -1,13 +1,13 @@
 /*
  * $DOC$
  * $NAME$
- * xBase 7 table
+ * xDev 7 table
  *
  * $ONELINER$
- * Demonstrates xBase 7 field names, memo data, and Polish text.
+ * Demonstrates xDev 7 field names, memo data, and Polish UTF-8 text.
  *
  * $DESCRIPTION$
- * Creates faktury.dbf and faktury.dbt with field names longer than 10 characters, Polish text, and memo data, then reopens and prints the records. The files use CP852.
+ * Creates faktury.dbf and faktury.dbt with field names longer than 10 characters, Polish UTF-8 text, and memo data, then reopens and prints the records.
  *
  * $EXAMPLES$
  * examples/dbf7.prg

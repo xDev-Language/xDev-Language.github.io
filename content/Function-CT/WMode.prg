@@ -10,13 +10,18 @@
  * WMode( [lTop], [lLeft], [lBottom], [lRight] ) --> nError
  *
  * $ARGUMENTS$
- * `lTop`, `lLeft`, `lBottom`, `lRight` .T. allows moving windows over this border of the area
- * set by WBoard(), .F. forbids it. A missing argument keeps the setting of its border.
+ * `lTop` .T. allows moving windows over the top border, .F. forbids it.
+ * `lLeft` .T. allows moving windows over the left border, .F. forbids it.
+ * `lBottom` .T. allows moving windows over the bottom border, .F. forbids it.
+ * `lRight` .T. allows moving windows over the right border, .F. forbids it.
  *
  * $RETURNS$
  * Always 0.
  *
  * $DESCRIPTION$
+ * The borders are those of the area set by WBoard(). A missing argument keeps the setting of
+ * its border.
+ *
  * The setting is valid for all windows and for every later WMove(). At the start all four
  * borders are forbidden, so WMove() keeps windows completely visible. With a border allowed, a
  * window can move partly or completely over it.
@@ -29,7 +34,7 @@
  * $OUTPUT$
  *
  * $CATEGORY$
- * Function CT
+ * Functions CT
  *
  * $HEADER$
  *

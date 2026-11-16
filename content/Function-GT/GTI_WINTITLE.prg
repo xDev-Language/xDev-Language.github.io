@@ -1,7 +1,7 @@
 /*
  * $DOC$
  * $NAME$
- * GtInfo( ... )
+ * GTI_WINTITLE
  *
  * $ONELINER$
  * Query or change the title of the window
@@ -10,24 +10,30 @@
  * GtInfo( GTI_WINTITLE, [cTitle] ) --> cPrevious
  *
  * $ARGUMENTS$
- * GTI_WINTITLE
- * cTitle
+ * `GTI_WINTITLE` The selector, from gtinfo.ch.
+ * `cTitle` The new title in UTF-8.
  *
  * $RETURNS$
+ * The title before the call.
  *
  * $DESCRIPTION$
+ * The title is shown in the title bar of the window and in the task bar.
  *
  * $NOTES$
+ * Supported by GTWVT, GTSDL3, GTXWC and GTGLFW. On other terminals the result is NIL.
  *
  * $EXAMPLES$
  *
  * $OUTPUT$
  *
  * $CATEGORY$
+ * Functions GT
  *
  * $HEADER$
+ * gtinfo.ch
  *
  * $SEEALSO$
+ * GTI_ICONFILE
  *
  * $DOCEND$
  */

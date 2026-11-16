@@ -17,7 +17,8 @@
  * The screen column of the right border of the selected window. In window 0 it is MaxCol().
  *
  * $DESCRIPTION$
- * WLastRow() and WLastCol() give the bottom right corner of the selected window on the screen, without adding the window size to WRow() and WCol().
+ * WLastRow() and WLastCol() give the bottom right corner of the selected window on the screen,
+ * without adding the window size to WRow() and WCol().
  *
  * $NOTES$
  * The value can lie outside the screen when WMode() allows moving windows over the border.
@@ -27,7 +28,7 @@
  * $OUTPUT$
  *
  * $CATEGORY$
- * Function CT
+ * Functions CT
  *
  * $HEADER$
  *

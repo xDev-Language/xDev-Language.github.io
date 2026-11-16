@@ -19,13 +19,15 @@
  * windows that are already closed; WSelect() returns -1 for them.
  *
  * $NOTES$
+ * WClose() frees the handle of the closed window for the next WOpen(), so WNum() becomes smaller
+ * when the window with the highest handle is closed.
  *
  * $EXAMPLES$
  *
  * $OUTPUT$
  *
  * $CATEGORY$
- * Function CT
+ * Functions CT
  *
  * $HEADER$
  *

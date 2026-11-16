@@ -26,11 +26,9 @@
  *
  * $EXAMPLES$
  *
- * $OUTPUT$
- *
  * $IMAGE$
  * GFX_CLIPLEFT.png
- * 
+ *
  * $CATEGORY$
  * Functions GFX
  *

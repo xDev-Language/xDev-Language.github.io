@@ -1,7 +1,7 @@
 /*
  * $DOC$
  * $NAME$
- * GtInfo( ... )
+ * GTI_SCREENWIDTH
  *
  * $ONELINER$
  * Query or change the width of the window in pixels
@@ -10,24 +10,31 @@
  * GtInfo( GTI_SCREENWIDTH, [nPixels] ) --> nPixels
  *
  * $ARGUMENTS$
- * GTI_SCREENWIDTH
- * nPixels
+ * `GTI_SCREENWIDTH` The selector, from gtinfo.ch.
+ * `nPixels` The new width of the text area in pixels.
  *
  * $RETURNS$
+ * The width before the call: the number of columns times the width of a cell.
  *
  * $DESCRIPTION$
+ * A new width changes the size of the window, but not while the window is maximized or in full
+ * screen. GTI_RESIZEFONT decides whether the font or the number of columns follows the new size.
  *
  * $NOTES$
+ * Supported by GTWVT, GTSDL3, GTXWC and GTGLFW. On other terminals the result is NIL.
  *
  * $EXAMPLES$
  *
  * $OUTPUT$
  *
  * $CATEGORY$
+ * Functions GT
  *
  * $HEADER$
+ * gtinfo.ch
  *
  * $SEEALSO$
+ * GTI_SCREENHEIGHT, GTI_SCREENSIZE, GTI_RESIZEFONT, GTI_FONTWIDTH
  *
  * $DOCEND$
  */

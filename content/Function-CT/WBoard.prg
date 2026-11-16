@@ -10,13 +10,17 @@
  * WBoard( [nTop], [nLeft], [nBottom], [nRight] ) --> nError
  *
  * $ARGUMENTS$
- * `nTop`, `nLeft`, `nBottom`, `nRight` The screen area where windows are visible. Without
- * arguments the area is the whole screen again.
+ * `nTop` The first screen row where windows are visible.
+ * `nLeft` The first screen column where windows are visible.
+ * `nBottom` The last screen row where windows are visible.
+ * `nRight` The last screen column where windows are visible.
  *
  * $RETURNS$
  * 0 when the area is set, -1 when a window is open or the coordinates are wrong.
  *
  * $DESCRIPTION$
+ * Without arguments the area is the whole screen again.
+ *
  * Windows are visible only inside this area, so the rest of the screen, for example a help row,
  * cannot be covered by a window, also when the window is moved. WMove(), WCenter() and WMode()
  * work with the borders of this area. Window 0, the screen, is not limited by the area.
@@ -30,7 +34,7 @@
  * $OUTPUT$
  *
  * $CATEGORY$
- * Function CT
+ * Functions CT
  *
  * $HEADER$
  *

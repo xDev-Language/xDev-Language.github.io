@@ -11,13 +11,14 @@
  *
  * $ARGUMENTS$
  * `cColor` The shadow color as a color string, for example "N+/N".
- * `nColor` The shadow color as a number, or -1 to turn the shadow off.
- * Without the argument the setting does not change.
+ * `nColor` The shadow color as a number from 0 to 255, or -1 to turn the shadow off.
  *
  * $RETURNS$
  * The previous shadow color, -1 when there was no shadow.
  *
  * $DESCRIPTION$
+ * Without the argument WSetShadow() only returns the current color.
+ *
  * The shadow lies below and to the right of every window opened later; windows already open keep
  * their shadow. The characters under the shadow stay visible in the shadow color. The right
  * shadow is two columns wide, the bottom shadow one row high. A window with a shadow is always
@@ -31,7 +32,7 @@
  * $OUTPUT$
  *
  * $CATEGORY$
- * Function CT
+ * Functions CT
  *
  * $HEADER$
  *

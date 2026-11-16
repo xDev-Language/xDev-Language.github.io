@@ -9,9 +9,10 @@
  * $SYNTAX$
  * Error():New() --> oError
  * ErrorNew( [cSubSystem], [nGenCode], [nSubCode], [cOperation], [cDescription], [aArgs] ) --> oError
+ * Throw( oError ) --> NIL
  *
  * $DESCRIPTION$
- * An Error object describes a runtime error. A new object has empty texts, zero numbers, .F. in the logical variables and NIL in args and cargo. The variables have types, so a text assigned to genCode is an error. The block of ErrorBlock() receives an object of the same class.
+ * An Error object describes a runtime error. A new object has empty texts, zero numbers, .F. in the logical variables and NIL in args and cargo. The variables have types, so a text assigned to genCode is an error. The block of ErrorBlock() receives an object of the same class. Throw() raises an Error object of the program as a runtime error; the block of ErrorBlock() receives that very object, so cargo and the other variables keep their values.
  *
  * $EXAMPLES$
  *
@@ -35,6 +36,10 @@
  * runtime error gives an object     OK
  * runtime error: subCode            OK
  * runtime error: tries is 0         OK
+ * Throw(): the same object          OK
+ * Throw(): cargo survives           OK
+ * Throw(): subCode                  OK
+ * Throw( "text" ) is an error       OK
  *
  * $DOCEND$
  */
@@ -44,6 +49,7 @@ PROCEDURE Main()
    LOCAL oError := Error():New()
    LOCAL oFile
    LOCAL oRuntime
+   LOCAL oThrown
 
    s_Check( "Error():New() gives an object     ", ValType( oError ), "O" )
    s_Check( "description is empty              ", oError:description, "" )
@@ -79,6 +85,14 @@ PROCEDURE Main()
    s_Check( "runtime error gives an object     ", ValType( oRuntime ), "O" )
    s_Check( "runtime error: subCode            ", oRuntime:subCode, 1102 )
    s_Check( "runtime error: tries is 0         ", oRuntime:tries, 0 )
+
+   oFile:cargo := "kept"
+   oThrown := s_Caught( {|| Throw( oFile ) } )
+
+   s_Check( "Throw(): the same object          ", oThrown == oFile, .T. )
+   s_Check( "Throw(): cargo survives           ", oThrown:cargo, "kept" )
+   s_Check( "Throw(): subCode                  ", oThrown:subCode, 2001 )
+   s_Check( 'Throw( "text" ) is an error       ', s_Caught( {|| Throw( "text" ) } ):subCode, 1102 )
 
 RETURN
 

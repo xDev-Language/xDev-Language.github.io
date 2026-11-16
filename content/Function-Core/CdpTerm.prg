@@ -51,8 +51,7 @@
  * Reporting an encoding does not link its conversion table. A legacy table
  * must be included separately with REQUEST before it is used for conversion.
  *
- * The optional lInitial argument is an xDev extension to the Harbour-style
- * function name. Unsupported argument types raise error 1102.
+ * An argument other than a logical value or NIL raises error 1102.
  *
  * $EXAMPLES$
  *

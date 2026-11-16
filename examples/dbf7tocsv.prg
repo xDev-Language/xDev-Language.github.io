@@ -7,7 +7,7 @@
  * Converts a DBF table and its memo data to a spreadsheet-ready CSV file.
  *
  * $DESCRIPTION$
- * Reads xBase 7 and classic DBF files with DBT, FPT, or SMT memo fields. Writes UTF-8 CSV using semicolons, skips deleted records, and returns 0 on success or 1 on error. The output path is optional.
+ * Reads xDev 7 and classic UTF-8 DBF files with DBT, FPT, or SMT memo fields. Writes UTF-8 CSV using semicolons, skips deleted records, and returns 0 on success or 1 on error. The output path is optional.
  *
  * $EXAMPLES$
  * examples/dbf7tocsv.prg
@@ -44,8 +44,8 @@ FUNCTION Main( cTable, cCsv )
 
    BEGIN SEQUENCE
       Set( _SET_DELETED, .T. )
-      // The DBF driver detects the memo type from the header; read-only, CP852 for unmarked files
-      dbUseArea( .T., "DBF", cTable, NIL, .T., .T., "CP852" )
+      // The DBF driver detects the memo type from the header; all text is UTF-8
+      dbUseArea( .T., "DBF", cTable, NIL, .T., .T. )
       nCount := DbExportCsv( cCsv )
       dbCloseArea()
       OutStd( "Zapisano " + LTrim( Str( nCount ) ) + " " + s_Records( nCount ) + " do " + cCsv + Chr( 10 ) )

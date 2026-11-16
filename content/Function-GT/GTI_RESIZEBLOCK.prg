@@ -1,33 +1,41 @@
 /*
  * $DOC$
  * $NAME$
- * GtInfo( ... )
+ * GTI_RESIZEBLOCK
  *
  * $ONELINER$
- * Set the code block evaluated after the window changed its size
+ * Query or change the block called after a resize
  *
  * $SYNTAX$
  * GtInfo( GTI_RESIZEBLOCK, [bBlock] ) --> bPrevious
  *
  * $ARGUMENTS$
- * GTI_RESIZEBLOCK
- * bBlock
+ * `GTI_RESIZEBLOCK` The selector, from gtinfo.ch.
+ * `bBlock` A block without arguments. NIL removes the block.
  *
  * $RETURNS$
+ * The block set before the call, or NIL.
  *
  * $DESCRIPTION$
+ * The terminal evaluates the block after the window changed the number of rows or columns, also
+ * while the user drags the border. The block draws the screen again for the new MaxRow() and
+ * MaxCol().
  *
  * $NOTES$
+ * Handled by the terminal layer, so it works with every GT driver.
  *
  * $EXAMPLES$
  *
  * $OUTPUT$
  *
  * $CATEGORY$
+ * Functions GT
  *
  * $HEADER$
+ * gtinfo.ch
  *
  * $SEEALSO$
+ * GTI_RESIZABLE, GTI_RESIZEFONT, MaxRow(), MaxCol()
  *
  * $DOCEND$
  */

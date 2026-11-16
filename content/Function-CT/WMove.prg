@@ -10,7 +10,8 @@
  * WMove( nTop, nLeft ) --> nWindow
  *
  * $ARGUMENTS$
- * `nTop`, `nLeft` The new screen position of the top left corner of the window.
+ * `nTop` The new screen row of the top border of the window.
+ * `nLeft` The new screen column of the left border of the window.
  *
  * $RETURNS$
  * The handle of the selected window.
@@ -29,7 +30,7 @@
  * $OUTPUT$
  *
  * $CATEGORY$
- * Function CT
+ * Functions CT
  *
  * $HEADER$
  *
