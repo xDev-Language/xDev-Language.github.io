@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ RecNo()
+ * $NAME$
+ * RecNo()
  * $ONELINER$ Return the identity at the record pointer
  * $SYNTAX$ RecNo() --> Identity
  * $ARGUMENTS$ None.

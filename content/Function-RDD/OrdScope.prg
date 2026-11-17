@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ OrdScope()
+ * $NAME$
+ * OrdScope()
  * $ONELINER$ Set or return order-scope boundaries
  * $SYNTAX$ OrdScope( nScope, [expNewValue] ) --> uCurrentValue
  * $ARGUMENTS$ `nScope` Scope selector. `expNewValue` Optional boundary value.

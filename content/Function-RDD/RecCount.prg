@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ RecCount()
+ * $NAME$
+ * RecCount()
  * $ONELINER$ Return the number of records
  * $SYNTAX$ RecCount() --> nRecords
  * $ARGUMENTS$ None.

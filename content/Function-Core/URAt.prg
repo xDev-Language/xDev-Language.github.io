@@ -90,7 +90,7 @@
  * No header file is required.
  *
  * $SEEALSO$
- * UAt(), USubStr(), ULen(), RAt(), StrIsUTF8(), StrToUTF8()
+ * UAt(), USubStr(), ULen(), RAt(), StrIsUTF8()
  *
  * $DOCEND$
  */

@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ OrdName()
+ * $NAME$
+ * OrdName()
  * $ONELINER$ Return the name of an order
  * $SYNTAX$ OrdName( nOrder, [cOrderBagName] ) --> cOrderName
  * $ARGUMENTS$ `nOrder` Order position. `cOrderBagName` Optional bag file.

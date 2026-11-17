@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ OrdSetFocus()
+ * $NAME$
+ * OrdSetFocus()
  * $ONELINER$ Set the controlling order
  * $SYNTAX$ OrdSetFocus( [cOrderName | nOrder], [cOrderBagName] ) --> cPrevOrderNameInFocus
  * $ARGUMENTS$ Optional order selector and bag file.

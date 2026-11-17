@@ -35,7 +35,8 @@
  *
  * Asc() remains byte-based and returns the value of the first byte.
  * UTF8Asc() returns a Unicode value and does not interpret legacy code pages.
- * Convert legacy bytes with StrToUTF8() before reading their Unicode values.
+ * Text values in xDev are UTF-8; convert external data before passing it to
+ * this function.
  * No GT driver, terminal setting or Unicode font is required.
  *
  * $EXAMPLES$
@@ -67,7 +68,7 @@
  * No header file is required.
  *
  * $SEEALSO$
- * UTF8Chr(), UPeek(), UPoke(), StrIsUTF8(), Asc(), StrToUTF8(), UChars()
+ * UTF8Chr(), UPeek(), UPoke(), StrIsUTF8(), Asc(), UChars()
  *
  * $DOCEND$
  */

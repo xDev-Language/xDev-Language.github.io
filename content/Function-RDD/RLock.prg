@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ RLock()
+ * $NAME$
+ * RLock()
  * $ONELINER$ Lock the current record and release other record locks
  * $SYNTAX$ RLock( [nRecord] ) --> lSuccess
  * $ARGUMENTS$ Optional record identity.

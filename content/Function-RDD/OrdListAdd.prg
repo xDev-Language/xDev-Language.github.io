@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ OrdListAdd()
+ * $NAME$
+ * OrdListAdd()
  * $ONELINER$ Add orders from an order bag
  * $SYNTAX$ OrdListAdd( cOrderBagName, [cOrderName] ) --> NIL
  * $ARGUMENTS$ `cOrderBagName` Order-bag file. `cOrderName` Optional order name.

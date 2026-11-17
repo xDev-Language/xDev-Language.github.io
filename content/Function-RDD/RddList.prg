@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ RddList()
+ * $NAME$
+ * RddList()
  * $ONELINER$ Return the available database drivers
  * $SYNTAX$ RddList( [nRDDType] ) --> aRDDList
  * $ARGUMENTS$ Optional driver-type selector.

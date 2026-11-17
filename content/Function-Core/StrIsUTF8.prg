@@ -32,8 +32,8 @@
  *
  * This is a strict validity check. It does not identify the original encoding
  * of a file: bytes from a legacy encoding can happen to form valid UTF-8.
- * When the source encoding is known, use StrToUTF8() or Translate() explicitly.
- * Valid UTF-8 does not guarantee that a terminal can draw all its characters.
+ * xDev uses UTF-8 for text. Valid UTF-8 does not guarantee that a terminal can
+ * draw all its characters.
  *
  * $EXAMPLES$
  *
@@ -66,7 +66,7 @@
  * No header file is required.
  *
  * $SEEALSO$
- * UTF8Chr(), UTF8Asc(), UPeek(), UPoke(), URAt(), StrToUTF8(), UTF8ToStr(), Translate(), UChars()
+ * UTF8Chr(), UTF8Asc(), UPeek(), UPoke(), URAt(), UChars()
  *
  * $DOCEND$
  */

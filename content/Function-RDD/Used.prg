@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ Used()
+ * $NAME$
+ * Used()
  * $ONELINER$ Determine whether a database file is open
  * $SYNTAX$ Used() --> lDbfOpen
  * $ARGUMENTS$ None.

@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ OrdSetRelation()
+ * $NAME$
+ * OrdSetRelation()
  * $ONELINER$ Relate areas and scope the child order
  * $SYNTAX$ OrdSetRelation( nArea | cAlias, bExpr, [cExpr], [lScoped] ) --> NIL
  * $ARGUMENTS$ Child area, link block, optional expression text and scoped flag.

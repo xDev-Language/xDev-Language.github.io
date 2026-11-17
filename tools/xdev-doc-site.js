@@ -321,11 +321,29 @@ function indexPage(catalog, page, prefix) {
   const category = catalog.categories.find((item) => item.id === page.category);
   const functions = functionCategories(catalog);
 
-  const documents = catalog.documents.filter((doc) =>
-    category
+  const landing = category?.landing
+    ? catalog.documents.find((doc) => doc.category === category.id && doc.name === category.landing)
+    : null;
+
+  if (landing) {
+    const summary = landing.summary ? `<p>${esc(landing.summary)}</p>` : '';
+    return {
+      body: `
+      <header class="page-heading doc-heading">
+        <div class="doc-heading-copy"><span class="eyebrow">${esc(category.name)}</span><h1>${esc(landing.name)}</h1>${summary}</div>
+      </header>
+      ${documentSections(catalog, landing, prefix)}`,
+    };
+  }
+
+  const documents = catalog.documents.filter((doc) => {
+    const inCategory = category
       ? doc.category === category.id
-      : functions.some((item) => item.id === doc.category),
-  );
+      : functions.some((item) => item.id === doc.category);
+    // Landing documents are rendered directly for their category, so they
+    // must not appear as a second list entry in the category index.
+    return inCategory && !(category?.landing && doc.name === category.landing);
+  });
 
   const chips = category
     ? ''
@@ -334,6 +352,7 @@ function indexPage(catalog, page, prefix) {
   return {
     body: `
     <header class="page-heading"><h1>${category?.name || 'All Functions'}</h1></header>
+    ${category?.details ? `<div class="category-description">${prose(category.details)}</div>` : ''}
     ${chips}${entryList(documents, catalog, prefix)}`,
   };
 }
@@ -370,6 +389,12 @@ function linkifySeeAlso(value, catalog, prefix, categoryId) {
     .map((name) => name.trim())
     .filter(Boolean)
     .map((name) => {
+      const category = catalog.categories.find(
+        (item) => normalizeName(item.name) === normalizeName(name),
+      );
+      if (category) {
+        return `<a href="${href(prefix, category.url)}">${esc(name)} </a>`;
+      }
       const matches = catalog.documents.filter(
         (item) => normalizeName(item.name) === normalizeName(name),
       );

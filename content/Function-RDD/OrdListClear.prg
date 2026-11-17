@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ OrdListClear()
+ * $NAME$
+ * OrdListClear()
  * $ONELINER$ Clear the current order list
  * $SYNTAX$ OrdListClear() --> NIL
  * $ARGUMENTS$ None.

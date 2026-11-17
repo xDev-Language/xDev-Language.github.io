@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ RecSize()
+ * $NAME$
+ * RecSize()
  * $ONELINER$ Return the record length
  * $SYNTAX$ RecSize() --> nBytes
  * $ARGUMENTS$ None.

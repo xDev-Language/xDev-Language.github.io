@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ RddSetDefault()
+ * $NAME$
+ * RddSetDefault()
  * $ONELINER$ Return or set the default RDD
  * $SYNTAX$ RddSetDefault( [cNewDefaultRDD] ) --> cPreviousDefaultRDD
  * $ARGUMENTS$ Optional new driver name.

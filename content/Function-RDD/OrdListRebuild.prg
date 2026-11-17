@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ OrdListRebuild()
+ * $NAME$
+ * OrdListRebuild()
  * $ONELINER$ Rebuild all orders in the order list
  * $SYNTAX$ OrdListRebuild() --> NIL
  * $ARGUMENTS$ None.

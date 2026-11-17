@@ -73,7 +73,7 @@
  * No header file is required.
  *
  * $SEEALSO$
- * UTF8Asc(), UPeek(), UPoke(), StrIsUTF8(), Chr(), ULen(), UChars(), UTF8ToStr()
+ * UTF8Asc(), UPeek(), UPoke(), StrIsUTF8(), Chr(), ULen(), UChars()
  *
  * $DOCEND$
  */

@@ -12,11 +12,23 @@ const CATEGORIES = [
   { id: 'ct', folder: 'Function-CT', name: 'Functions CT', group: 'RTL', description: 'Additional utilities and text-window functions.' },
   { id: 'gfx', folder: 'Functions-GFX', name: 'Functions GFX', group: 'RTL', description: 'Graphics primitives: pixels, lines, shapes and screen access.' },
   { id: 'curl', folder: 'user-lib/curl', name: 'CURL', group: 'User libraries', description: 'HTTP and network transfer bindings.' },
-  { id: 'fonts', folder: 'user-lib/fonts', name: 'Fonts', group: 'User libraries', description: 'Bitmap fonts and font-conversion resources.' },
-  { id: 'gtglfw', folder: 'user-lib/gtglfw', name: 'GTGLFW', group: 'User libraries', description: 'GLFW terminal driver.' },
-  { id: 'gtsdl3', folder: 'user-lib/gtsdl3', name: 'GTSDL3', group: 'User libraries', description: 'SDL3 terminal driver.' },
-  { id: 'gtwvt', folder: 'user-lib/gtwvt', name: 'GTWVT', group: 'User libraries', description: 'Windows terminal driver.' },
-  { id: 'gtxwc', folder: 'user-lib/gtxwc', name: 'GTXWC', group: 'User libraries', description: 'X11 terminal driver.' },
+  { id: 'fonts', folder: 'user-lib/fonts', name: 'Fonts', group: 'User libraries', description: 'Built-in 9x15 and 9x18 bitmap fonts plus the BDF-to-xDev-header conversion tool used by terminal and GUI libraries.' },
+  {
+    id: 'gtglfw',
+    folder: 'user-lib/gtglfw',
+    name: 'GTGLFW',
+    group: 'User libraries',
+    description: 'GLFW and OpenGL terminal driver for Windows and Linux; settings and dialogs are documented under Functions GT.',
+    landing: 'GTGLFW',
+    details: `GTGLFW is the xDev terminal window driver for Windows and Linux, built on GLFW and OpenGL. It provides a UTF-8 text screen in its own resizable window. Standard screen functions such as DispOutAt(), Inkey(), SetColor() and DispBox() work through the driver.
+
+It supports resizing, maximization, Alt+Enter full screen, monitor DPI scaling, keyboard and mouse input, the clipboard, a blinking cursor, window titles and icons, images, message boxes and file dialogs. The built-in 9x18 bitmap font means that no font file is required.
+
+Supported platforms are Windows, Linux X11 and Linux Wayland. macOS is not supported. Build with make and install with make install. The driver is requested with REQUEST GTGLFW; its settings and dialogs are documented in Functions GT.`,
+  },
+  { id: 'gtsdl3', folder: 'user-lib/gtsdl3', name: 'GTSDL3', group: 'User libraries', description: 'SDL3 terminal driver for Windows and Linux; settings and dialogs are documented under Functions GT.', landing: 'GTSDL3', details: 'GTSDL3 is the xDev terminal window driver built on SDL3. It provides a UTF-8 text screen, resizing, full screen, DPI scaling, keyboard and mouse input, clipboard text, images, sound, message boxes and file dialogs on Windows, Linux X11 and Linux Wayland. It includes a 9x18 bitmap font. Build with make and install with make install; SDL3 is supplied through pkg-config sdl3. See Functions GT for GtInfo( GTI_* ) settings.' },
+  { id: 'gtwvt', folder: 'user-lib/gtwvt', name: 'GTWVT', group: 'User libraries', description: 'Windows terminal driver; settings and dialogs are documented under Functions GT.', landing: 'GTWVT', details: 'GTWVT is the xDev terminal window driver for Windows. It provides a UTF-8 text screen, resizing, full screen, DPI scaling, selectable font properties, keyboard and mouse input, clipboard text, message boxes and file dialogs. Build with make and install with make install. See Functions GT for GtInfo( GTI_* ) settings.' },
+  { id: 'gtxwc', folder: 'user-lib/gtxwc', name: 'GTXWC', group: 'User libraries', description: 'X11 terminal driver for Linux; settings and dialogs are documented under Functions GT.', landing: 'GTXWC', details: 'GTXWC is the xDev terminal window driver for Linux, built on Xlib. It supports X11 and Wayland through XWayland, UTF-8 text, resizing, full screen, keyboard and mouse input, clipboard text, images, sound, message boxes and file dialogs. It uses the fixed 9x18 font from xfonts-base. See Functions GT for GtInfo( GTI_* ) settings.' },
   { id: 'gui', folder: 'user-lib/gui', name: 'GUI', group: 'User libraries', description: 'Windows graphical user interface bindings.' },
   { id: 'hpdf', folder: 'user-lib/hpdf', name: 'HPDF', group: 'User libraries', description: 'PDF generation with libHaru.' },
   { id: 'json', folder: 'user-lib/json', name: 'JSON', group: 'User libraries', description: 'JSON parsing and serialization.' },

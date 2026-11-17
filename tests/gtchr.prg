@@ -4,10 +4,13 @@
  * GT character test
  *
  * $ONELINER$
+ * Shows that the GT displays full UTF-8: Polish letters, other alphabets, box drawing and symbols on one screen.
  *
  * $DESCRIPTION$
+ * xDev keeps all text in UTF-8, so the GT has no code page to select. One screen shows Polish text, Latin-1, Latin Extended-A, Greek, Cyrillic, the box drawing characters, block elements and shapes, and common symbols; the character ranges are built with UTF8Chr(). It also shows Len() and ULen(), ULeft(), UTF8Asc(), a lone byte that is not valid UTF-8, a frame drawn with box characters from the source text, and single and double boxes drawn by DispBox().
  *
  * $EXAMPLES$
+ * gtchr
  *
  * $OUTPUT$
  *
@@ -25,84 +28,91 @@
    REQUEST GTWVT
 #endif
 
-REQUEST ISO_8859_2
-REQUEST CP437
-REQUEST CP852
-REQUEST CP1250
-REQUEST MAZOVIA
+PROCEDURE Main()
 
-PROCEDURE Main( cCodepage )
+   LOCAL cColor := SetColor( "W/N" )
+   LOCAL nCursor := SetCursor( 0 )
 
-   LOCAL i, j, x
-   LOCAL cText := "Zażółć gęślą jaźń"
-   LOCAL cLegacy
-   LOCAL cOldCodepage := GtInfo( GTI_CODEPAGE )
-   LOCAL cColor, nCursor
-
-   IF Empty( cCodepage )
-      cCodepage := "CP437"
-   ELSE
-      cCodepage := Upper( cCodepage )
-   ENDIF
-
-   IF ! CdpExists( cCodepage ) .OR. GtInfo( GTI_CODEPAGE, cCodepage ) == NIL
-      QOut( "Cannot select GT code page:", cCodepage )
-      QOut( "Use CP437, CP852, CP1250, ISO-8859-2, MAZOVIA or UTF-8." )
-      Inkey( 0, INKEY_KEYBOARD )
-      ErrorLevel( 1 )
-      RETURN
-   ENDIF
-
-   cColor := SetColor( "W/N" )
-   nCursor := SetCursor( 0 )
+   GtInfo( GTI_WINTITLE, "GT character test" )
    Scroll()
 
-   DispOutAt( 0, 0, "GT code page: " + GtInfo( GTI_CODEPAGE ) )
-   DispOutAt( 1, 0, "Console at startup: " + CdpTerm( .T. ) )
-   DispOutAt( 2, 0, "Current console encoding: " + CdpTerm() )
-   DispOutAt( 3, 0, "Byte value = column + row (hex)" )
-
-   FOR j := 0 TO 15
-      DispOutAt( 4, 6 + j * 3, NumToHex( j, 1 ) )
-   NEXT
-   FOR i := 0 TO 15
-      SetPos( 5 + i, 0 )
-      DispOut( "  " + NumToHex( i, 1 ) + " " )
-      FOR j := 0 TO 15
-         x := j * 16 + i
-         DispOut( "  " + Chr( x ) )
-      NEXT
-   NEXT
-
-   DispOutAt( 4, 55, "UTF-8 source:" )
-   DispOutAt( 5, 55, cText )
-
-   IF cCodepage == "CP852" .OR. cCodepage == "CP1250" .OR. ;
-      cCodepage == "ISO-8859-2" .OR. cCodepage == "MAZOVIA"
-      cLegacy := UTF8ToStr( cText, cCodepage )
-      DispOutAt( 7, 55, "Encoded legacy bytes:" )
-      DispOutAt( 8, 55, cLegacy )
-      DispOutAt( 10, 55, "StrToUTF8():" )
-      DispOutAt( 11, 55, StrToUTF8( cLegacy, cCodepage ) )
-      DispOutAt( 13, 55, "Translate() to UTF-8:" )
-      DispOutAt( 14, 55, Translate( cLegacy, cCodepage, "UTF-8" ) )
-   ENDIF
-
-   DispOutAt( 16, 55, "Single byte C4:" )
-   DispOutAt( 17, 55, Chr( 196 ) )
-   DispOutAt( 18, 55, "C4 85 (valid UTF-8):" )
-   DispOutAt( 19, 55, Chr( 196 ) + Chr( 133 ) )
-
-   DispBox( 22, 0, 24, 37, 1 )
-   DispOutAt( 23, 2, "Single: " + cText )
-   DispBox( 22, 40, 24, 77, 2 )
-   DispOutAt( 23, 42, "Double: " + cText )
-   DispOutAt( 21, 0, "Press any key to exit." )
+   DispOutAt( 0, 0, "GT character test: full UTF-8, no code pages" )
+   s_Alphabets()
+   s_Functions()
+   s_Frames()
+   DispOutAt( 24, 0, "Press any key to exit." )
 
    Inkey( 0, INKEY_KEYBOARD )
 
    SetCursor( nCursor )
    SetColor( cColor )
-   GtInfo( GTI_CODEPAGE, cOldCodepage )
+
+RETURN
+
+// One line: the name of a range and its characters
+STATIC PROCEDURE s_Line( nRow, cName, cCharacters )
+
+   DispOutAt( nRow, 0, cName )
+   DispOutAt( nRow, 14, cCharacters )
+
+RETURN
+
+// The characters from code point nFrom to nTo
+STATIC FUNCTION s_Range( nFrom, nTo )
+
+   LOCAL cText := ""
+   LOCAL n
+
+   FOR n := nFrom TO nTo
+      cText += UTF8Chr( n )
+   NEXT
+
+RETURN cText
+
+STATIC PROCEDURE s_Alphabets()
+
+   s_Line( 2, "Polish", "Zażółć gęślą jaźń  ZAŻÓŁĆ GĘŚLĄ JAŹŃ" )
+   s_Line( 3, "Latin-1", s_Range( 0x00C0, 0x00FF ) )
+   s_Line( 4, "Latin Ext-A", s_Range( 0x0100, 0x013F ) )
+   s_Line( 5, "", s_Range( 0x0140, 0x017F ) )
+   s_Line( 6, "Greek", s_Range( 0x0391, 0x03A1 ) + s_Range( 0x03A3, 0x03A9 ) + " " + s_Range( 0x03B1, 0x03C9 ) )
+   s_Line( 7, "Cyrillic", s_Range( 0x0410, 0x044F ) )
+   s_Line( 8, "Box drawing", s_Range( 0x2500, 0x253F ) )
+   s_Line( 9, "", s_Range( 0x2540, 0x257F ) )
+   s_Line( 10, "Blocks", s_Range( 0x2580, 0x259F ) + " " + s_Range( 0x25A0, 0x25BF ) )
+   s_Line( 11, "Symbols", "€ £ ¥ © ® ° ± × ÷ ≤ ≥ ≠ ∞ √ ← ↑ → ↓ ↔ ♠ ♣ ♥ ♦ ☺" )
+
+RETURN
+
+// Bytes and characters of a UTF-8 text; a lone byte C4 is not valid UTF-8
+STATIC PROCEDURE s_Functions()
+
+   LOCAL cText := "Zażółć gęślą jaźń"
+   LOCAL cBytes := LTrim( Str( Len( cText ) ) )
+   LOCAL cCharacters := LTrim( Str( ULen( cText ) ) )
+   LOCAL cCode := NumToHex( UTF8Asc( "ż" ), 4 )
+
+   DispOutAt( 13, 0, cText + ": Len() " + cBytes + " bytes, ULen() " + cCharacters + " characters" )
+   DispOutAt( 14, 0, "ULeft( 6 ): " + ULeft( cText, 6 ) + '   UTF8Asc( "ż" ): U+' + cCode )
+   DispOutAt( 15, 0, "UTF8Chr( 0x0105 ): " + UTF8Chr( 0x0105 ) )
+   DispOutAt( 16, 0, "Byte C4 alone: " + Chr( 196 ) + "   bytes C4 85: " + Chr( 196 ) + Chr( 133 ) )
+
+RETURN
+
+// A frame written with box characters in the source, and the boxes of DispBox()
+STATIC PROCEDURE s_Frames()
+
+   DispOutAt( 17, 0, "Box characters in the text:" )
+   DispOutAt( 18, 0, "┌────────┬────────┐  ╔════════╦════════╗" )
+   DispOutAt( 19, 0, "│ Zażółć │ gęślą  │  ║ Zażółć ║ gęślą  ║" )
+   DispOutAt( 20, 0, "├────────┼────────┤  ╠════════╬════════╣" )
+   DispOutAt( 21, 0, "│ jaźń   │ ĄĘĆŃŚ  │  ║ jaźń   ║ ĄĘĆŃŚ  ║" )
+   DispOutAt( 22, 0, "└────────┴────────┘  ╚════════╩════════╝" )
+
+   DispOutAt( 17, 44, "DispBox():" )
+   DispBox( 18, 44, 20, 79, 1 )
+   DispOutAt( 19, 46, "Single: Zażółć gęślą jaźń" )
+   DispBox( 21, 44, 23, 79, 2 )
+   DispOutAt( 22, 46, "Double: Zażółć gęślą jaźń" )
 
 RETURN

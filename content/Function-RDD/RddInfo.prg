@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ RddInfo()
+ * $NAME$
+ * RddInfo()
  * $ONELINER$ Return or change information about a database driver
  * $SYNTAX$ RddInfo( nInfoType, [expNewSetting], [cDriver], [nConnection] ) --> uCurrentSetting
  * $ARGUMENTS$ Selector, optional setting, driver name and connection number.

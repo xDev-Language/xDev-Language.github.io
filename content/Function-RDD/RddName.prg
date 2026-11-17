@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ RddName()
+ * $NAME$
+ * RddName()
  * $ONELINER$ Return the driver name of the current work area
  * $SYNTAX$ RddName() --> cRDDName
  * $ARGUMENTS$ None.

@@ -1,5 +1,6 @@
 /* $DOC$
- * $NAME$ Select()
+ * $NAME$
+ * Select()
  * $ONELINER$ Return the selected work-area number
  * $SYNTAX$ Select( [cAlias] ) --> nWorkArea
  * $ARGUMENTS$ Optional alias to look up.
