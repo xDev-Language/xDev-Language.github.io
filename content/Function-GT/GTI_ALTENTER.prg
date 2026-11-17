@@ -37,3 +37,11 @@
  *
  * $DOCEND$
  */
+
+#include "gtinfo.ch"
+
+PROCEDURE Main()
+
+   QOut( "Previous Alt+Enter: " + IIF( GtInfo( GTI_ALTENTER ), "ON", "OFF" ) )
+
+RETURN

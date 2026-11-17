@@ -38,3 +38,12 @@
  *
  * $DOCEND$
  */
+
+#include "gtinfo.ch"
+
+PROCEDURE Main()
+
+   GtInfo( GTI_CLIPBOARDDATA, "xDev clipboard example" )
+   QOut( "Clipboard: " + GtInfo( GTI_CLIPBOARDDATA ) )
+
+RETURN

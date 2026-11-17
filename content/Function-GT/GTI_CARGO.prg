@@ -37,3 +37,12 @@
  *
  * $DOCEND$
  */
+
+#include "gtinfo.ch"
+
+PROCEDURE Main()
+
+   QOut( "Previous cargo: " + ValType( GtInfo( GTI_CARGO, "demo" ) ) )
+   QOut( "Stored cargo: " + GtInfo( GTI_CARGO ) )
+
+RETURN

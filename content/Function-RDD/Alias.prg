@@ -33,23 +33,14 @@
 
 PROCEDURE Main()
 
-   DbCreate( "people.dbf", { { "NAME", "C", 20, 0 }, { "BORN", "D", 8, 0 } } )
+   DbCreate( "alias_demo.dbf", { { "NAME", "C", 20, 0 } } )
+   DbUseArea( .T., , "alias_demo.dbf", "Staff" )
 
-   USE people ALIAS staff NEW
+   QOut( "Current alias: " + Alias() )
+   QOut( "Alias by area: " + Alias( Select() ) )
 
-   Check( 'Alias()                    ', Alias(), "STAFF" )
-   Check( 'Alias( Select() )          ', Alias( Select() ), "STAFF" )
-
-   CLOSE staff
-
-   Check( 'Alias() after CLOSE staff  ', Alias(), "" )
-
-   FErase( "people.dbf" )
-
-RETURN
-
-STATIC PROCEDURE Check( cTitle, xResult, xExpected )
-
-   QOut( cTitle + IIF( xResult == xExpected, "OK", "ERROR" ) )
+   DbCloseArea()
+   QOut( "After close: " + IIF( Used(), "OPEN", "CLOSED" ) )
+   FErase( "alias_demo.dbf" )
 
 RETURN

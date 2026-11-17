@@ -39,3 +39,11 @@
  *
  * $DOCEND$
  */
+
+#include "gtinfo.ch"
+
+PROCEDURE Main()
+
+   QOut( "Compatible buffers: " + IIF( GtInfo( GTI_COMPATBUFFER ), "YES", "NO" ) )
+
+RETURN

@@ -37,3 +37,12 @@
  *
  * $DOCEND$
  */
+
+#include "gtinfo.ch"
+
+PROCEDURE Main()
+
+   GtInfo( GTI_CLIPBOARDDATA, "paste" )
+   QOut( "Pasted: " + IIF( GtInfo( GTI_CLIPBOARDPASTE ), "YES", "NO" ) )
+
+RETURN

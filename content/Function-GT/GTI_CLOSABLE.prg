@@ -38,3 +38,11 @@
  *
  * $DOCEND$
  */
+
+#include "gtinfo.ch"
+
+PROCEDURE Main()
+
+   QOut( "Previous closable: " + IIF( GtInfo( GTI_CLOSABLE ), "YES", "NO" ) )
+
+RETURN

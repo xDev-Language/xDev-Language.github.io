@@ -40,3 +40,11 @@
  *
  * $DOCEND$
  */
+
+#include "gtinfo.ch"
+
+PROCEDURE Main()
+
+   QOut( "Code page: " + GtInfo( GTI_CODEPAGE ) )
+
+RETURN

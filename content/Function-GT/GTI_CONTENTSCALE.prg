@@ -36,3 +36,11 @@
  *
  * $DOCEND$
  */
+
+#include "gtinfo.ch"
+
+PROCEDURE Main()
+
+   QOut( "Content scale: " + LTrim( Str( GtInfo( GTI_CONTENTSCALE ) ) ) )
+
+RETURN

@@ -45,3 +45,11 @@
  *
  * $DOCEND$
  */
+
+#include "gtinfo.ch"
+
+PROCEDURE Main()
+
+   QOut( "Previous close mode: " + LTrim( Str( GtInfo( GTI_CLOSEMODE ) ) ) )
+
+RETURN

@@ -37,3 +37,11 @@
  *
  * $DOCEND$
  */
+
+#include "gtinfo.ch"
+
+PROCEDURE Main()
+
+   QOut( "Key map result: " + ValType( GtInfo( GTI_ADDKEYMAP, {} ) ) )
+
+RETURN
