@@ -7,7 +7,7 @@
  * Tests the padding and spacing functions with UTF-8 text and UTF-8 fill characters.
  *
  * $DESCRIPTION$
- * Pad(), PadR(), PadL(), PadC(), Center(), PadLeft(), PadRight(), JustLeft(), JustRight(), TabExpand(), TabPack(), CharSpread(), NToC() and Expand() count lengths and columns in characters, not bytes, and take any UTF-8 character as the fill character. Pad() pads on the right like PadR(), as in Harbour. Text without Polish letters gives the same results as before.
+ * Pad(), PadR(), PadL(), PadC(), Center(), PadLeft(), PadRight(), JustLeft(), JustRight(), TabExpand(), TabPack(), CharSpread(), NToC() and Expand() count lengths and columns in characters, not bytes, and take any UTF-8 character as the fill character. Pad() pads on the right like PadR(). Text without Polish letters gives the same results as before.
  *
  * $EXAMPLES$
  *
