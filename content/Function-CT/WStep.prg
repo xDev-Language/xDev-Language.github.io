@@ -20,13 +20,20 @@
  * The step is used when the user moves a window with the cursor keys, see WSetMove(). The
  * default step is 2 rows and 5 columns. A value above the maximum is set to the maximum.
  *
+ * Two opposite cursor keys pressed one after the other, for example Left and then Right, move
+ * the window on that axis by 1. So every position can be reached, also with a large step. The
+ * step of WStep() comes back after a key that is not a cursor key, or with Scroll Lock off.
+ *
  * $NOTES$
- * WStep() works only while no window is open. xDev keeps the setting, but the interactive
- * moving is not available yet.
+ * WStep() works only while no window is open.
  *
  * $EXAMPLES$
  *
  * $OUTPUT$
+ * WStep( 1, 3 )                  OK
+ * WStep( 10, 30 ), set to 6, 20  OK
+ * WStep( 0, 3 )                  OK
+ * WStep() with an open window    OK
  *
  * $CATEGORY$
  * Functions CT

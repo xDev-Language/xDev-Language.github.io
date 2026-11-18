@@ -5,7 +5,7 @@
  * CheckSum()
  *
  * $ONELINER$
- * Calculate the legacy Clipper Tools 32-bit checksum
+ * Calculate the classic xBase 32-bit checksum
  *
  * $SYNTAX$
  * CheckSum( cString ) --> nCheckSum
@@ -18,8 +18,8 @@
  *
  * $DESCRIPTION$
  * Adds the overlapping little-endian 16-bit words starting at every byte, with an implied final zero byte. The
- * low 24 bits hold the sum modulo 2^24; the high byte holds the input length modulo 256. This is the Clipper
- * Tools CheckSum algorithm, not Adler-32.
+ * low 24 bits hold the sum modulo 2^24; the high byte holds the input length modulo 256. This is the classic
+ * xBase CheckSum algorithm, not Adler-32.
  *
  * $NOTES$
  * This is an integrity check, not a cryptographic hash. Binary zeroes are included. Wrong or missing arguments

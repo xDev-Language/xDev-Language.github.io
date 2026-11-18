@@ -23,16 +23,13 @@
  * (bits 8..15). NumLow() returns the low one without changing the argument.
  * The operation works on contemporary machines; it extracts data bits and
  * requires neither a 16-bit operating system nor special hardware.
- * For hexadecimal strings, parsing follows HexToNum(): it stops at the
- * first non-hexadecimal byte, with no leading spaces, sign or 0x prefix.
- * An empty string or a non-hexadecimal first byte therefore gives 0.
+ * A hexadecimal string may start with spaces. Reading stops at the first
+ * byte that is not a hexadecimal digit, so "ABCD!FF" is read as "ABCD".
  *
  * $NOTES$
- * Numbers or decoded hexadecimal values outside 0..65535 raise argument
- * error 1102. A hexadecimal value requiring more than 64 bits raises
- * integer overflow error 3106. Missing arguments, NIL and other types raise
- * error 1102. The deliberately invalid calls below verify these codes;
- * s_ErrorCode() catches each error so the example can continue.
+ * An invalid argument gives -1 and raises no error: a value outside
+ * 0..65535, a string without a hexadecimal digit at the start, a missing
+ * argument, NIL or another type.
  *
  * $EXAMPLES$
  *
@@ -46,18 +43,18 @@
  * High bit: OK
  * Maximum: OK
  * Leading zeroes: OK
+ * Leading spaces: OK
  * Stop at invalid byte: OK
- * Empty string: OK
- * Non-hex first byte: OK
  * Fraction discarded: OK
  * Matches binary representation: OK
- * Expected error: negative: OK
- * Expected error: numeric range: OK
- * Expected error: hexadecimal range: OK
- * Expected error: logical: OK
- * Expected error: NIL: OK
- * Expected error: missing argument: OK
- * Expected overflow: OK
+ * Invalid: negative: OK
+ * Invalid: numeric range: OK
+ * Invalid: hexadecimal range: OK
+ * Invalid: empty string: OK
+ * Invalid: non-hex first byte: OK
+ * Invalid: logical: OK
+ * Invalid: NIL: OK
+ * Invalid: missing argument: OK
  *
  * $CATEGORY$
  * Function core
@@ -81,19 +78,19 @@ PROCEDURE Main()
    s_Check( 'High bit', NumLow( 32768 ), 0 )
    s_Check( 'Maximum', NumLow( 65535 ), 255 )
    s_Check( 'Leading zeroes', NumLow( "0000ABCD" ), 205 )
+   s_Check( 'Leading spaces', NumLow( "  ABCD" ), 205 )
    s_Check( 'Stop at invalid byte', NumLow( "ABCD!FF" ), 205 )
-   s_Check( 'Empty string', NumLow( "" ), 0 )
-   s_Check( 'Non-hex first byte', NumLow( "Z12" ), 0 )
    s_Check( 'Fraction discarded', NumLow( 43981.75 ), 205 )
    s_Check( 'Matches binary representation', NumLow( 43981 ), Asc( Left( W2Bin( 43981 ), 1 ) ) )
 
-   s_Check( 'Expected error: negative', s_ErrorCode( {|| NumLow( -1 ) } ), 1102 )
-   s_Check( 'Expected error: numeric range', s_ErrorCode( {|| NumLow( 65536 ) } ), 1102 )
-   s_Check( 'Expected error: hexadecimal range', s_ErrorCode( {|| NumLow( "10000" ) } ), 1102 )
-   s_Check( 'Expected error: logical', s_ErrorCode( {|| NumLow( .T. ) } ), 1102 )
-   s_Check( 'Expected error: NIL', s_ErrorCode( {|| NumLow( NIL ) } ), 1102 )
-   s_Check( 'Expected error: missing argument', s_ErrorCode( {|| NumLow() } ), 1102 )
-   s_Check( 'Expected overflow', s_ErrorCode( {|| NumLow( "10000000000000000" ) } ), 3106 )
+   s_Check( 'Invalid: negative', NumLow( -1 ), -1 )
+   s_Check( 'Invalid: numeric range', NumLow( 65536 ), -1 )
+   s_Check( 'Invalid: hexadecimal range', NumLow( "10000" ), -1 )
+   s_Check( 'Invalid: empty string', NumLow( "" ), -1 )
+   s_Check( 'Invalid: non-hex first byte', NumLow( "Z12" ), -1 )
+   s_Check( 'Invalid: logical', NumLow( .T. ), -1 )
+   s_Check( 'Invalid: NIL', NumLow( NIL ), -1 )
+   s_Check( 'Invalid: missing argument', NumLow(), -1 )
 
 RETURN
 
@@ -102,18 +99,3 @@ STATIC PROCEDURE s_Check( cTitle, xResult, xExpected )
    QOut( cTitle + ": " + IIF( ValType( xResult ) == ValType( xExpected ) .AND. xResult == xExpected, "OK", "ERROR" ) )
 
 RETURN
-
-STATIC FUNCTION s_ErrorCode( bAction )
-
-   LOCAL nCode := 0
-   LOCAL oError
-   LOCAL bPrevious := ErrorBlock( {| oFailure | Break( oFailure ) } )
-
-   BEGIN SEQUENCE
-      Eval( bAction )
-   RECOVER USING oError
-      nCode := oError:SubCode
-   END SEQUENCE
-   ErrorBlock( bPrevious )
-
-RETURN nCode

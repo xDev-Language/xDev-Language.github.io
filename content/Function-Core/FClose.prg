@@ -5,7 +5,7 @@
  * FClose()
  *
  * $ONELINER$
- * Close a caller-owned numeric file handle using the original Clipper API
+ * Close a caller-owned numeric file handle using the classic xBase API
  *
  * $SYNTAX$
  * FClose( nHandle ) --> lSuccess
@@ -17,7 +17,7 @@
  * .T. when the OS close succeeds; .F. on failure. FError() gives the I/O error.
  *
  * $DESCRIPTION$
- * Close a caller-owned numeric file handle using the original Clipper API. The programmer is responsible for
+ * Close a caller-owned numeric file handle using the classic xBase API. The programmer is responsible for
  * closing it exactly once. A numeric variable or its copies are not changed or invalidated by this function.
  * This differs from FileClose(), which accepts the managed resource returned by FileOpen() and marks that
  * shared resource closed. Never pass a FileOpen() resource here, and never close a numeric handle borrowed from

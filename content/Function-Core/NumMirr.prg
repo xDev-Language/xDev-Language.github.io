@@ -12,17 +12,17 @@
  *
  * $ARGUMENTS$
  * `nInteger | cHex`: a number in 0..65535 or hexadecimal text in that range. Numeric fractions are discarded after range checking.
- * `lEightBits`: .T. reverses only bits 0..7; .F., NIL or omission reverses all 16 bits.
+ * `lEightBits`: .T. reverses only bits 0..7; any other value or omission reverses all 16 bits.
  *
  * $RETURNS$
  * An integer in 0..65535 with the selected low bits reversed.
  *
  * $DESCRIPTION$
  * Returns the reversed bits as a non-negative integer. In 8-bit mode, the high byte is preserved. Reversing twice with the same mode restores the original value.
- * Hexadecimal input follows HexToNum(): leading zeroes are allowed and parsing stops at the first non-hexadecimal byte. There is no sign, whitespace or 0x prefix recognition.
+ * A hexadecimal string may start with spaces and leading zeroes. Reading stops at the first byte that is not a hexadecimal digit. There is no sign or 0x prefix.
  *
  * $NOTES$
- * Wrong argument types or values outside 0..65535 raise error 1102. Hexadecimal input exceeding 64 bits raises overflow error 3106. No special hardware or 16-bit operating system is required.
+ * An invalid argument gives -1 and raises no error: a value outside 0..65535, a string without a hexadecimal digit at the start, a missing argument or another type. No special hardware or 16-bit operating system is required.
  *
  * $EXAMPLES$
  *
@@ -37,11 +37,11 @@
  * Fraction discarded: OK
  * Reverse twice: OK
  * Reverse twice in byte mode: OK
- * Expected error: negative: OK
- * Expected error: range: OK
- * Expected error: mode: OK
- * Expected error: missing: OK
- * Expected overflow: OK
+ * Other mode is 16 bits: OK
+ * Invalid: negative: OK
+ * Invalid: range: OK
+ * Invalid: missing: OK
+ * Invalid: too many hex digits: OK
  *
  * $CATEGORY$
  * Function core
@@ -66,11 +66,11 @@ PROCEDURE Main()
    s_Check( 'Fraction discarded', NumMirr( 1.75 ), 32768 )
    s_Check( 'Reverse twice', NumMirr( NumMirr( 43981 ) ), 43981 )
    s_Check( 'Reverse twice in byte mode', NumMirr( NumMirr( 43981, .T. ), .T. ), 43981 )
-   s_Check( 'Expected error: negative', s_ErrorCode( {|| NumMirr( -1 ) } ), 1102 )
-   s_Check( 'Expected error: range', s_ErrorCode( {|| NumMirr( "10000" ) } ), 1102 )
-   s_Check( 'Expected error: mode', s_ErrorCode( {|| NumMirr( 1, 1 ) } ), 1102 )
-   s_Check( 'Expected error: missing', s_ErrorCode( {|| NumMirr() } ), 1102 )
-   s_Check( 'Expected overflow', s_ErrorCode( {|| NumMirr( "10000000000000000" ) } ), 3106 )
+   s_Check( 'Other mode is 16 bits', NumMirr( 1, 1 ), 32768 )
+   s_Check( 'Invalid: negative', NumMirr( -1 ), -1 )
+   s_Check( 'Invalid: range', NumMirr( "10000" ), -1 )
+   s_Check( 'Invalid: missing', NumMirr(), -1 )
+   s_Check( 'Invalid: too many hex digits', NumMirr( "10000000000000000" ), -1 )
 
 RETURN
 
@@ -79,18 +79,3 @@ STATIC PROCEDURE s_Check( cTitle, xResult, xExpected )
    QOut( cTitle + ": " + IIF( ValType( xResult ) == ValType( xExpected ) .AND. xResult == xExpected, "OK", "ERROR" ) )
 
 RETURN
-
-STATIC FUNCTION s_ErrorCode( bAction )
-
-   LOCAL nCode := 0
-   LOCAL oError
-   LOCAL bPrevious := ErrorBlock( {| oFailure | Break( oFailure ) } )
-
-   BEGIN SEQUENCE
-      Eval( bAction )
-   RECOVER USING oError
-      nCode := oError:SubCode
-   END SEQUENCE
-   ErrorBlock( bPrevious )
-
-RETURN nCode

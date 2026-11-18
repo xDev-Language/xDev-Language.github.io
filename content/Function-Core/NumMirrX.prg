@@ -19,10 +19,10 @@
  *
  * $DESCRIPTION$
  * Reverses the least significant nMaxBits bits while preserving the higher bits. The result is a non-negative integer, including when bit 31 is set.
- * Hexadecimal input uses the same parsing rules as HexToNum(). This function operates on data bits and runs on contemporary machines.
+ * A hexadecimal string may start with spaces. Reading stops at the first byte that is not a hexadecimal digit. This function operates on data bits and runs on contemporary machines.
  *
  * $NOTES$
- * Wrong argument types, a width outside 1..32 or a value outside the unsigned 32-bit range raises error 1102. Hexadecimal input requiring more than 64 bits raises overflow error 3106.
+ * An invalid argument gives -1 and raises no error: a width outside 1..32, a value outside the unsigned 32-bit range, a string without a hexadecimal digit at the start, a missing argument or another type.
  *
  * $EXAMPLES$
  *
@@ -37,12 +37,12 @@
  * Sixteen bits: OK
  * Reverse twice: OK
  * Fractional width: OK
- * Expected error: zero width: OK
- * Expected error: excessive width: OK
- * Expected error: negative value: OK
- * Expected error: range: OK
- * Expected error: missing value: OK
- * Expected overflow: OK
+ * Invalid: zero width: OK
+ * Invalid: excessive width: OK
+ * Invalid: negative value: OK
+ * Invalid: range: OK
+ * Invalid: missing value: OK
+ * Invalid: too many hex digits: OK
  *
  * $CATEGORY$
  * Function core
@@ -67,12 +67,12 @@ PROCEDURE Main()
    s_Check( 'Sixteen bits', NumMirrX( 16, 4209 ), 36360 )
    s_Check( 'Reverse twice', NumMirrX( 32, NumMirrX( 32, 123456789 ) ), 123456789 )
    s_Check( 'Fractional width', NumMirrX( 4.5, 18 ), 20 )
-   s_Check( 'Expected error: zero width', s_ErrorCode( {|| NumMirrX( 0, 1 ) } ), 1102 )
-   s_Check( 'Expected error: excessive width', s_ErrorCode( {|| NumMirrX( 33, 1 ) } ), 1102 )
-   s_Check( 'Expected error: negative value', s_ErrorCode( {|| NumMirrX( 8, -1 ) } ), 1102 )
-   s_Check( 'Expected error: range', s_ErrorCode( {|| NumMirrX( 8, "100000000" ) } ), 1102 )
-   s_Check( 'Expected error: missing value', s_ErrorCode( {|| NumMirrX( 8 ) } ), 1102 )
-   s_Check( 'Expected overflow', s_ErrorCode( {|| NumMirrX( 8, "10000000000000000" ) } ), 3106 )
+   s_Check( 'Invalid: zero width', NumMirrX( 0, 1 ), -1 )
+   s_Check( 'Invalid: excessive width', NumMirrX( 33, 1 ), -1 )
+   s_Check( 'Invalid: negative value', NumMirrX( 8, -1 ), -1 )
+   s_Check( 'Invalid: range', NumMirrX( 8, "100000000" ), -1 )
+   s_Check( 'Invalid: missing value', NumMirrX( 8 ), -1 )
+   s_Check( 'Invalid: too many hex digits', NumMirrX( 8, "10000000000000000" ), -1 )
 
 RETURN
 
@@ -81,18 +81,3 @@ STATIC PROCEDURE s_Check( cTitle, xResult, xExpected )
    QOut( cTitle + ": " + IIF( ValType( xResult ) == ValType( xExpected ) .AND. xResult == xExpected, "OK", "ERROR" ) )
 
 RETURN
-
-STATIC FUNCTION s_ErrorCode( bAction )
-
-   LOCAL nCode := 0
-   LOCAL oError
-   LOCAL bPrevious := ErrorBlock( {| oFailure | Break( oFailure ) } )
-
-   BEGIN SEQUENCE
-      Eval( bAction )
-   RECOVER USING oError
-      nCode := oError:SubCode
-   END SEQUENCE
-   ErrorBlock( bPrevious )
-
-RETURN nCode
