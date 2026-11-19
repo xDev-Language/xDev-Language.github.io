@@ -22,6 +22,9 @@
  * $NOTES$
  * The result is a string, so it can not be compared with or added to a number.
  *
+ * Nul() is not Empty(): Empty( xValue ) tests a value and gives .T. or .F.; Nul( xValue ) drops the
+ * value and always gives "".
+ *
  * $EXAMPLES$
  *
  * $OUTPUT$
@@ -35,6 +38,7 @@
  * $HEADER$
  *
  * $SEEALSO$
+ * Empty()
  *
  * $DOCEND$
  */
