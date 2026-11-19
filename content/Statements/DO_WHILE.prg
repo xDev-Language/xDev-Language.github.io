@@ -17,17 +17,15 @@
  *
  * $ARGUMENTS$
  * `lCondition` is the logical control expression of the loop.
- * `EXIT` leaves a DO WHILE or FOR ... NEXT loop and continues after the
- * corresponding ENDDO or NEXT.
- * `LOOP` goes back to the most recently executed DO WHILE or FOR statement.
+ * `EXIT` leaves the innermost enclosing loop or SWITCH.
+ * `LOOP` skips the rest of the current iteration.
  *
  * $DESCRIPTION$
  * DO WHILE ... ENDDO executes a block of statements repeatedly, as long as
  * `lCondition` is true (.T.). While the condition is true, control passes
  * into the loop and goes on until EXIT, LOOP or ENDDO. ENDDO returns control
- * to the DO WHILE statement and the process repeats. EXIT continues after the
- * nearest ENDDO or NEXT. LOOP goes back to the nearest DO WHILE or FOR. When
- * the condition is false (.F.), the loop ends and control passes to the
+ * to the condition and the process repeats. Within this loop, LOOP also
+ * returns to the condition. When the condition is false (.F.), control passes to the
  * statement after ENDDO.
  *
  * Use EXIT to end a loop on a condition other than the DO WHILE condition.
@@ -44,8 +42,6 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
- * Odd numbers: 1 3 5 7
- * Steps to reach 1 from 6: 8
  *
  * $CATEGORY$
  *
@@ -59,31 +55,23 @@
 
 PROCEDURE Main()
 
-   LOCAL nNumber := 0
-   LOCAL cOdd    := "Odd numbers:"
-   LOCAL nValue  := 6
-   LOCAL nSteps  := 0
-   LOCAL lMore   := .T.
+   LOCAL nDue
+   LOCAL nBalance
+   LOCAL nWeek
 
-   // LOOP skips even numbers, EXIT ends the loop after 7
-   DO WHILE .T.
-      nNumber++
-      IF nNumber % 2 == 0
-         LOOP
-      ENDIF
-      cOdd += " " + LTrim( Str( nNumber ) )
-      IF nNumber >= 7
-         EXIT
-      ENDIF
-   ENDDO
-   QOut( cOdd )
-
-   // a repeat-until loop: the condition is checked at the end of each turn
-   DO WHILE lMore
-      nValue := IIF( nValue % 2 == 0, nValue / 2, nValue * 3 + 1 )
-      nSteps++
-      lMore := ( nValue != 1 )
-   ENDDO
-   QOut( "Steps to reach 1 from 6: " + LTrim( Str( nSteps ) ) )
+   FOR EACH nDue IN { 0, 65, 140 }
+      nBalance := nDue
+      nWeek := 0
+      DO WHILE nBalance > 0
+         nWeek++
+         IF nBalance <= 50
+            QOut( "Final payment", nBalance )
+            nBalance := 0
+         ELSE
+            nBalance -= 50
+         ENDIF
+      ENDDO
+      QOut( "Starting balance", nDue, "weeks to clear", nWeek )
+   NEXT
 
    RETURN

@@ -7,8 +7,7 @@
  * Execute a block of statements a specified number of times
  *
  * $SYNTAX$
- * FOR idCounter := nStart TO nEnd
- *    [STEP nIncrement]
+ * FOR idCounter := nStart TO nEnd [STEP nIncrement]
  *    statements...
  *    [EXIT]
  *    statements...
@@ -20,13 +19,13 @@
  * be a declared variable.
  * `nStart` is the initial value assigned to `idCounter`.
  * `TO nEnd` defines the final value of `idCounter`. If `nIncrement` is
- * negative, `nStart` must be greater than `nEnd`; otherwise `nStart` must be
- * less than `nEnd`.
+ * negative, the body runs while the counter is at least `nEnd`. Otherwise
+ * it runs while the counter is at most `nEnd`.
  * `STEP nIncrement` defines the amount `idCounter` changes in each turn of
  * the loop. It can be positive or negative. Without STEP, `idCounter` grows
  * by one in each turn.
  * `EXIT` leaves the FOR ... NEXT loop and continues after the nearest NEXT.
- * `LOOP` goes back to the most recently executed FOR or DO WHILE statement.
+ * `LOOP` skips the rest of the body and applies the step.
  *
  * $DESCRIPTION$
  * FOR ... NEXT executes a block of statements a specified number of times.
@@ -35,8 +34,8 @@
  * increment are evaluated again before each turn.
  *
  * The loop runs until `idCounter` is greater than `nEnd`, or until an EXIT
- * statement. Control then goes to the statement after NEXT. LOOP goes back
- * to the current FOR statement.
+ * statement. Control then goes to the statement after NEXT. LOOP applies
+ * the step and checks the limit again.
  *
  * With a negative `nIncrement`, `idCounter` decreases, and the loop runs
  * until `idCounter` is less than `nEnd`.
@@ -55,10 +54,6 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
- * Work days: Mon Tue Wed Thu Fri
- * Backwards: Sun Sat Fri Thu Wed Tue Mon
- * Every second day: Mon Wed Fri Sun
- * First weekend day: Sat
  *
  * $CATEGORY$
  *
@@ -70,48 +65,25 @@
  * $DOCEND$
  */
 
-ENUM WEEKDAY
-   MONDAY,
-   TUESDAY,
-   WEDNESDAY,
-   THURSDAY,
-   FRIDAY,
-   SATURDAY,
-   SUNDAY
-ENDENUM
-
 PROCEDURE Main()
 
-   LOCAL aDays := { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
-   LOCAL nDay
-   LOCAL cLine
+   LOCAL aStock := { 3, 8, 2, 4 }
+   LOCAL nNeed := 10
+   LOCAL nBin
+   LOCAL nTake
 
-   // ENUM constants are array subscripts: MONDAY is 1, SUNDAY is 7
-   cLine := "Work days:"
-   FOR nDay := MONDAY TO FRIDAY
-      cLine += " " + aDays[ nDay ]
-   NEXT
-   QOut( cLine )
-
-   // a negative STEP goes backwards
-   cLine := "Backwards:"
-   FOR nDay := SUNDAY TO MONDAY STEP -1
-      cLine += " " + aDays[ nDay ]
-   NEXT nDay
-   QOut( cLine )
-
-   cLine := "Every second day:"
-   FOR nDay := MONDAY TO SUNDAY STEP 2
-      cLine += " " + aDays[ nDay ]
-   NEXT
-   QOut( cLine )
-
-   // EXIT leaves the loop; the counter keeps its value
-   FOR nDay := MONDAY TO SUNDAY
-      IF nDay >= SATURDAY
+   // Consume the newest bins first. Each index identifies the bin to update.
+   FOR nBin := Len( aStock ) TO 1 STEP -1
+      nTake := aStock[ nBin ]
+      IF nTake > nNeed
+         nTake := nNeed
+      ENDIF
+      aStock[ nBin ] -= nTake
+      nNeed -= nTake
+      QOut( "Bin", nBin, "picked", nTake, "remaining", aStock[ nBin ] )
+      IF nNeed == 0
          EXIT
       ENDIF
    NEXT
-   QOut( "First weekend day: " + aDays[ nDay ] )
 
    RETURN

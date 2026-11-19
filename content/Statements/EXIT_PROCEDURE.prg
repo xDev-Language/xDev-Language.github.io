@@ -49,8 +49,6 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
- * Main() is working
- * EXIT PROCEDURE: Main() did 3 steps
  *
  * $CATEGORY$
  *
@@ -62,27 +60,26 @@
  * $DOCEND$
  */
 
-STATIC s_nSteps
-
-INIT PROCEDURE StepsStart()
-
-   s_nSteps := 0
-
-   RETURN
+STATIC s_nCount := 0
+STATIC s_nCents := 0
 
 PROCEDURE Main()
 
-   LOCAL i
+   LOCAL nAmount
 
-   QOut( "Main() is working" )
-   FOR i := 1 TO 3
-      s_nSteps++
+   FOR EACH nAmount IN { 120, 75, -1, 30 }
+      IF nAmount < 0
+         QOut( "Closing register on invalid entry" )
+         RETURN
+      ENDIF
+      s_nCount++
+      s_nCents += nAmount
    NEXT
 
    RETURN
 
-EXIT PROCEDURE StepsReport()
+EXIT PROCEDURE RegisterSummary()
 
-   QOut( "EXIT PROCEDURE: Main() did " + LTrim( Str( s_nSteps ) ) + " steps" )
+   QOut( "Entries posted", s_nCount, "total in cents", s_nCents )
 
    RETURN

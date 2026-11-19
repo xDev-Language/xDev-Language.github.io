@@ -9,10 +9,8 @@
  * $SYNTAX$
  * BEGIN SEQUENCE
  *    statements...
- * [BREAK [exp]]
- *    statements...
- * [RECOVER [USING idVar]]
- *    statements...
+ * [RECOVER [USING idVar]
+ *    statements...]
  * END [SEQUENCE]
  *
  * $ARGUMENTS$
@@ -47,10 +45,6 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
- * Before BREAK
- * RECOVER got: stopped
- * After END SEQUENCE
- * Error 1102: Argument error
  *
  * $CATEGORY$
  *
@@ -64,33 +58,27 @@
 
 PROCEDURE Main()
 
-   LOCAL xValue
-   LOCAL xNumber := 1
-   LOCAL oError
-   LOCAL bPrevious
+   LOCAL aBatch
+   LOCAL nPosted := 0
+   LOCAL nPending
+   LOCAL nAmount
+   LOCAL cReason
 
-   // BREAK with a value goes to RECOVER USING
-   BEGIN SEQUENCE
-      QOut( "Before BREAK" )
-      BREAK "stopped"
-      QOut( "This line is skipped" )
-   RECOVER USING xValue
-      QOut( "RECOVER got: " + xValue )
-   END SEQUENCE
-
-   // without RECOVER, BREAK goes to the statement after END
-   BEGIN SEQUENCE
-      BREAK
-   END SEQUENCE
-   QOut( "After END SEQUENCE" )
-
-   // a runtime error becomes a BREAK through the error block
-   bPrevious := ErrorBlock( {| oFailure | Break( oFailure ) } )
-   BEGIN SEQUENCE
-      Upper( xNumber )
-   RECOVER USING oError
-      QOut( "Error " + LTrim( Str( oError:SubCode ) ) + ": " + oError:Description )
-   END SEQUENCE
-   ErrorBlock( bPrevious )
+   FOR EACH aBatch IN { { 8, 12 }, { 7, -3, 10 }, { 5 } }
+      nPending := 0
+      BEGIN SEQUENCE
+         FOR EACH nAmount IN aBatch
+            IF nAmount <= 0
+               BREAK "Quantity must be positive"
+            ENDIF
+            nPending += nAmount
+         NEXT
+         // Commit only after every line has passed validation.
+         nPosted += nPending
+      RECOVER USING cReason
+         QOut( "Rejected batch", cReason )
+      END SEQUENCE
+      QOut( "Posted so far", nPosted )
+   NEXT
 
    RETURN

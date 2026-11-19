@@ -29,8 +29,6 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
- * The CustomInit module is ready
- * Main() runs after the INIT PROCEDURE
  *
  * $CATEGORY$
  *
@@ -42,16 +40,17 @@
  * $DOCEND$
  */
 
-ANNOUNCE CustomInit
+// Companion library module for REQUEST.prg.
+ANNOUNCE InvoiceAudit
 
-INIT PROCEDURE CustomStart()
+INIT PROCEDURE OpenAudit()
 
-   QOut( "The CustomInit module is ready" )
+   QOut( "Invoice audit started" )
 
    RETURN
 
-PROCEDURE Main()
+EXIT PROCEDURE CloseAudit()
 
-   QOut( "Main() runs after the INIT PROCEDURE" )
+   QOut( "Invoice audit finished" )
 
    RETURN

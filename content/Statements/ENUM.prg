@@ -24,10 +24,10 @@
  * ENUM declares a list of named integer constants. The compiler computes
  * their values, so a constant costs nothing at runtime.
  *
- * The first constant has the value 1, like the first array subscript, and
- * each next constant without := has the value of the previous one + 1. The
- * value 0 is left free to mean "no value". An ENUM constant can therefore be
- * used directly as an array subscript or as a boundary of a FOR loop.
+ * Without an explicit initializer, the first constant is 1 and each later
+ * constant is one more than its predecessor. An explicit initializer sets
+ * the value, including zero when needed. Positive enum values can serve as
+ * array subscripts or FOR boundaries.
  *
  * Use ENUM instead of numbers written in the code: a name says what the
  * number means, and a mistyped name is a compile error, while a mistyped
@@ -41,10 +41,6 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
- * RED = 1, GREEN = 2, BLUE = 3
- * CUSTOM = 10, CUSTOM_NEXT = 11
- * GREEN is called Green
- * No color selected
  *
  * $CATEGORY$
  *
@@ -56,32 +52,22 @@
  * $DOCEND$
  */
 
-ENUM COLOR
-   RED,
-   GREEN,
-   BLUE,
-   CUSTOM := 10,
-   CUSTOM_NEXT
+ENUM ManifestColumn
+   SKU,
+   UNITS,
+   UNIT_CENTS
 ENDENUM
 
 PROCEDURE Main()
 
-   LOCAL aNames  := { "Red", "Green", "Blue" }
-   LOCAL nChosen := 0
+   LOCAL aManifest := { { "B17", 3, 450 }, { "A02", 2, 180 } }
+   LOCAL aLine
+   LOCAL nTotal := 0
 
-   QOut( "RED = " + s_Num( RED ) + ", GREEN = " + s_Num( GREEN ) + ", BLUE = " + s_Num( BLUE ) )
-   QOut( "CUSTOM = " + s_Num( CUSTOM ) + ", CUSTOM_NEXT = " + s_Num( CUSTOM_NEXT ) )
-
-   // the constants start at 1, so they are array subscripts
-   QOut( "GREEN is called " + aNames[ GREEN ] )
-
-   // 0 is free for "no value"
-   IF nChosen == 0
-      QOut( "No color selected" )
-   ENDIF
+   FOR EACH aLine IN aManifest
+      nTotal += aLine[ UNITS ] * aLine[ UNIT_CENTS ]
+      QOut( aLine[ SKU ], "line total", aLine[ UNITS ] * aLine[ UNIT_CENTS ] )
+   NEXT
+   QOut( "Manifest total in cents", nTotal )
 
    RETURN
-
-STATIC FUNCTION s_Num( nValue )
-
-   RETURN LTrim( Str( nValue ) )

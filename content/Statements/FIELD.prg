@@ -38,9 +38,6 @@
  * $EXAMPLES$
  *
  * $OUTPUT$
- * Name: Anna
- * City: Lodz
- * Employee: Jan
  *
  * $CATEGORY$
  *
@@ -54,27 +51,29 @@
 
 PROCEDURE Main()
 
-   FIELD Name, City
-   FIELD EmpName IN Employee
+   FIELD Client IN Buyers
+   FIELD Units, Price IN Lines
+   LOCAL cBuyers := "stmt_field_buyers.dbf"
+   LOCAL cLines := "stmt_field_lines.dbf"
 
-   DbCreate( "fld_employee", { { "EMPNAME", "C", 10, 0 } } )
-   DbCreate( "fld_orders", { { "NAME", "C", 10, 0 }, { "CITY", "C", 10, 0 } } )
-
-   DbUseArea( .T., , "fld_employee", "Employee" )
+   IF FileExists( cBuyers ) .OR. FileExists( cLines )
+      QOut( "Example tables already exist" )
+      RETURN
+   ENDIF
+   DbCreate( cBuyers, { { "CLIENT", "C", 16, 0 } } )
+   DbCreate( cLines, { { "UNITS", "N", 4, 0 }, { "PRICE", "N", 8, 0 } } )
+   DbUseArea( .T., , cBuyers, "Buyers" )
    DbAppend()
-   FieldPut( 1, "Jan" )
-
-   DbUseArea( .T., , "fld_orders", "Orders" )
+   FieldPut( 1, "North Shop" )
+   DbUseArea( .T., , cLines, "Lines" )
    DbAppend()
-   FieldPut( 1, "Anna" )
-   FieldPut( 2, "Lodz" )
+   FieldPut( 1, 3 )
+   FieldPut( 2, 250 )
 
-   QOut( "Name: " + RTrim( Name ) )            // Orders->NAME, the current work area
-   QOut( "City: " + RTrim( City ) )            // Orders->CITY
-   QOut( "Employee: " + RTrim( EmpName ) )     // Employee->EMPNAME
-
+   // The selected area is Lines. Client still resolves to Buyers.
+   QOut( RTrim( Client ), "invoice cents", Units * Price )
    DbCloseAll()
-   FErase( "fld_employee.dbf" )
-   FErase( "fld_orders.dbf" )
+   FErase( cLines )
+   FErase( cBuyers )
 
    RETURN
