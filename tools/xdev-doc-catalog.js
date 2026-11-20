@@ -38,7 +38,7 @@ Supported platforms are Windows, Linux X11 and Linux Wayland. macOS is not suppo
   { id: 'rdd', folder: 'Function-RDD', name: 'RDD', group: 'User libraries', description: 'Database areas, records and database-driver interfaces.' },
   { id: 'svg', folder: 'user-lib/svg', name: 'SVG', group: 'User libraries', description: 'SVG generation from xDev programs.' },
   { id: 'tui', folder: 'user-lib/tui', name: 'TUI', group: 'User libraries', description: 'Text user interface controls.' },
-  { id: 'webgui', folder: 'user-lib/webgui', name: 'WebGUI', group: 'User libraries', description: 'Windows graphical user interface drawn in HTML by WebView2; in progress.' },
+  { id: 'webgui', folder: 'user-lib/webgui', name: 'WebGUI', group: 'User libraries', description: 'Windows desktop interfaces rendered by WebView2.', details: 'Create windows, controls and layouts in xDev, or open a local HTML page and exchange JSON messages with it. The WebGUI entry covers requirements, building and a first program.' },
   { id: 'xml', folder: 'user-lib/xml', name: 'XML', group: 'User libraries', description: 'XML parsing and document operations.' },
   { id: 'zlib', folder: 'user-lib/zlib', name: 'Zlib', group: 'User libraries', description: 'Compression and decompression bindings.' },
   { id: 'classes', folder: 'Classes', name: 'Classes', group: 'Language', description: 'Class interfaces, methods and properties.' },
